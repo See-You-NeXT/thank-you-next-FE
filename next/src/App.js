@@ -1,28 +1,18 @@
-import { Navbar, Container, Nav } from 'react-bootstrap';
-import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
+
+//component
+import Navigation from './components/Navigation';
 
 function App() {
 
-  let navigate = useNavigate();
-
   return (
     <div className="App">
-      <Navbar style={{ borderBottom : "1px solid grey" }}>
-        <Container>
-          <Nav className="me-auto">
-            <Nav.Link onClick={()=>{ navigate('/') }}><img src='/nextLogosmall.png'/></Nav.Link>
-            <Nav.Link onClick={()=>{ navigate('/') }}>NeXT</Nav.Link>
-            <Nav.Link onClick={()=>{ navigate('/') }}>게시판</Nav.Link>
-            <Nav.Link onClick={()=>{ navigate('/mypage') }}>마이페이지</Nav.Link>
-            <Nav.Link onClick={()=>{ navigate('/login') }}>로그인</Nav.Link>
-            <Nav.Link onClick={()=>{ navigate('/signup') }}>회원가입</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
+      
+      <Navigation />
 
       <Routes>
-        <Route path="/" element={<div>랜딩페이지</div>}/>
+        <Route path="/" element={<Landing/>}/>
         <Route path="/main" element={<div>메인페이지</div>}/>
         <Route path="/login" element={<div>로그인페이지</div>}/>
         <Route path="/signup" element={<div>회원가입페이지</div>}/>
@@ -31,6 +21,14 @@ function App() {
         <Route path="/free" element={<div>자유게시판페이지</div>}/>
         <Route path="/mypage" element={<div>마이페이지</div>}/>
       </Routes>
+    </div>
+  );
+}
+
+function Landing(){
+  return(
+    <div>
+      <div>랜딩페이지</div>
     </div>
   );
 }
