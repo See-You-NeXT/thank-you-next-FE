@@ -10,12 +10,13 @@ function App() {
     <div className="App">
       <Navbar style={{ borderBottom : "1px solid grey" }}>
         <Container>
-          <Navbar.Brand href="#home">NeXT Shop</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link onClick={()=>{ navigate('/') }}><img src='/nextLogosmall.png'/></Nav.Link>
             <Nav.Link onClick={()=>{ navigate('/') }}>NeXT</Nav.Link>
             <Nav.Link onClick={()=>{ navigate('/') }}>게시판</Nav.Link>
             <Nav.Link onClick={()=>{ navigate('/mypage') }}>마이페이지</Nav.Link>
+            <Nav.Link onClick={()=>{ navigate('/login') }}>로그인</Nav.Link>
+            <Nav.Link onClick={()=>{ navigate('/signup') }}>회원가입</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
