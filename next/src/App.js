@@ -19,6 +19,8 @@ function App() {
         <Route path="/notice" element={<div>공지게시판페이지</div>}/>
         <Route path="/question" element={<div>질문게시판페이지</div>}/>
         <Route path="/free" element={<div>자유게시판페이지</div>}/>
+        <Route path="/introduce" element={<div>스터디소개페이지</div>}/>
+        <Route path="/gallery" element={<div>갤러리페이지</div>}/>
         <Route path="/mypage" element={<div>마이페이지</div>}/>
       </Routes>
     </div>

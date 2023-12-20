@@ -28,7 +28,7 @@
 }
 
 .navLi{
-    flex-basis: 100px;
+    flex-basis: 120px;
     align-self: center;
     font-size: 18px;
     list-style: none;
@@ -49,7 +49,7 @@
     display: inline-block;
     background-color: #ead7d2;
     width: 33%;
-    height: 40px;
+    height: 45px;
     margin: 0px;
     margin-left: -16%;
     padding: 0;
@@ -58,11 +58,10 @@
 .dropdownLi{
     font-size: 16px;
     list-style: none;
-    line-height: 40px;
+    line-height: 45px;
     color: rgb(60, 60, 60);
     cursor: pointer;
     float: left;
-    /* width: 33%; */
     text-align: center;
     cursor: pointer;
 }

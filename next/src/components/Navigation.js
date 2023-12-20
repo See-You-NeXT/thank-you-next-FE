@@ -36,7 +36,7 @@ function Navigation(){
                     <li className={styles.navLi} onMouseOver={handleMouseOverSecond} onMouseOut={handleMouseOutSecond}>
                         게시판
                     </li>
-                    <li className={styles.navLi}>마이페이지</li>
+                    <li className={styles.navLi} onClick={()=>{ navigate('/mypage') }}>마이페이지</li>
                 </ul>
                 <div className={styles.loginArea}>
                     <div className={styles.loginItem} onClick={()=>{ navigate('/login') }}>로그인</div>
@@ -46,16 +46,16 @@ function Navigation(){
             </div>
             <Dropdown visibility={isHoveringFirst}>
                 <ul className={styles.dropdownUl} onMouseOver={handleMouseOverFirst} onMouseOut={handleMouseOutFirst}>
-                    <li className={styles.dropdownLi}>스터디소개</li>
-                    <li className={styles.dropdownLi}>갤러리</li>
+                    <li className={styles.dropdownLi} onClick={()=>{ navigate('/introduce') }}>스터디소개</li>
+                    <li className={styles.dropdownLi} onClick={()=>{ navigate('/gallery') }}>갤러리</li>
                     <li className={styles.dropdownLi}>스터디일정</li>
                 </ul>
             </Dropdown>
             <Dropdown visibility={isHoveringSecond}>
                 <ul className={styles.dropdownUl} onMouseOver={handleMouseOverSecond} onMouseOut={handleMouseOutSecond}>
-                    <li className={styles.dropdownLi}>공지게시판</li>
-                    <li className={styles.dropdownLi}>질문게시판</li>
-                    <li className={styles.dropdownLi}>자유게시판</li>
+                    <li className={styles.dropdownLi} onClick={()=>{ navigate('/notice') }}>공지게시판</li>
+                    <li className={styles.dropdownLi} onClick={()=>{ navigate('/question') }}>질문게시판</li>
+                    <li className={styles.dropdownLi} onClick={()=>{ navigate('/free') }}>자유게시판</li>
                 </ul>
             </Dropdown>
         </div>
