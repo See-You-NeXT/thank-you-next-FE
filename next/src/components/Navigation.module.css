@@ -42,6 +42,7 @@
 .navLi:not(:last-of-type):hover{
     height: 55px;
     border-bottom: 7px solid #fa7244;
+    cursor: default;
 }
 
 .dropdownUl{

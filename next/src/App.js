@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
 
 //component
@@ -30,12 +30,15 @@ function App() {
 }
 
 function Landing(){
+
+  let navigate = useNavigate();
+
   return(
     <div className='landing'>
-      랜딩페이지
+      <img src='/landingpage.png'></img>
       <div className='roadmap'>
-        <div className='shortcut'>로그인하러 가깅 ➔</div>
-        <div className='shortcut'>스터디 소개 보러가기 ➔</div>
+        <div className='shortcut' onClick={()=>{ navigate('/login') }}>로그인하러 가기 ➔</div>
+        <div className='shortcut' onClick={()=>{ navigate('/introduce') }}>스터디 소개 보러가기 ➔</div>
       </div>
       <Footer />
     </div>
