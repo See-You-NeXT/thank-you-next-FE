@@ -3,16 +3,18 @@ import './App.css';
 
 //component
 import Navigation from './components/Navigation';
+import Footer from './components/Footer';
 
 function App() {
 
   return (
     <div className="App">
-      
       <Navigation />
-
       <Routes>
-        <Route path="/" element={<Landing/>}/>
+        <Route path="/" element={<div>
+          <Landing />
+          
+        </div>}/>
         <Route path="/main" element={<div>메인페이지</div>}/>
         <Route path="/login" element={<div>로그인페이지</div>}/>
         <Route path="/signup" element={<div>회원가입페이지</div>}/>
@@ -29,8 +31,13 @@ function App() {
 
 function Landing(){
   return(
-    <div>
-      <div>랜딩페이지</div>
+    <div className='landing'>
+      랜딩페이지
+      <div className='roadmap'>
+        <div className='shortcut'>로그인하러 가깅 ➔</div>
+        <div className='shortcut'>스터디 소개 보러가기 ➔</div>
+      </div>
+      <Footer />
     </div>
   );
 }
