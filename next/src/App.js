@@ -5,6 +5,9 @@ import './App.css';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 
+//pages
+import Main from './pages/Main';
+
 function App() {
 
   return (
@@ -15,7 +18,7 @@ function App() {
           <Landing />
           
         </div>}/>
-        <Route path="/main" element={<div>메인페이지</div>}/>
+        <Route path="/main" element={<Main />}/>
         <Route path="/login" element={<div>로그인페이지</div>}/>
         <Route path="/signup" element={<div>회원가입페이지</div>}/>
         <Route path="/notice" element={<div>공지게시판페이지</div>}/>
@@ -24,6 +27,8 @@ function App() {
         <Route path="/introduce" element={<div>스터디소개페이지</div>}/>
         <Route path="/gallery" element={<div>갤러리페이지</div>}/>
         <Route path="/mypage" element={<div>마이페이지</div>}/>
+
+        <Route path="*" element={<h2>404 Not Found</h2>}/>
       </Routes>
       <Footer />
     </div>
