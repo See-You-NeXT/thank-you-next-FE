@@ -2,6 +2,8 @@
   text-align: center;
 }
 
+ul,li {margin:0; padding:0;}
+
 .landing{
   background-image: linear-gradient(rgb(255, 252, 250), #ffefe9);
   height: calc(100vh - 120px);
