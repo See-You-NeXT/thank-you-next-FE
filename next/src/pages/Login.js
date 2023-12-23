@@ -37,7 +37,7 @@ function Login(){
 
                 <div className={styles.emailArea}>
                     <div className={styles.inputText}>
-                        email
+                        이메일
                     </div>
                     <input 
                     placeholder='이메일을 입력해주세요'
@@ -52,7 +52,7 @@ function Login(){
 
                 <div className={styles.pwArea}>
                     <div className={styles.inputText}>
-                        Password
+                        비밀번호
                     </div>
                     <input 
                     type='password'

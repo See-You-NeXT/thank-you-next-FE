@@ -34,9 +34,9 @@
 
 .inputText{
     text-align: left;
-    font-size: 20px;
+    font-size: 19px;
     color: rgb(70, 70, 70);
-    font-weight: 400;
+    font-weight: 500;
     margin-left: 14%;
 }
 
@@ -46,7 +46,7 @@
     width: 70%;
     font-size: 15px;
     padding: 13px 11px 13px 11px;
-    margin: 10px 0 30px 0;
+    margin: 10px 0 35px 0;
 }
 
 .loginBtn{
@@ -54,7 +54,7 @@
     width: 60%;
     height: 8%;
     line-height: 40px;
-    margin: 9% auto 10% auto;
+    margin: 8% auto 10% auto;
 }
 
 .shortcut{

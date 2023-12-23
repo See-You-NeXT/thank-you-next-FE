@@ -1,0 +1,110 @@
+.signupArea{
+    background-color: #ffefe9;
+    border-radius: 20px;
+    width: 50%;
+    height: 720px;
+    margin: 7% auto 6% auto;
+}
+
+.textArea{
+    text-align: left;
+    padding: 10% 0 10% 13%;
+}
+
+.signupInKo{
+    display: inline-block;
+    font-size: 28px;
+    color: rgb(70, 70, 70);
+    font-weight: 800;
+}
+
+.signupInEng{
+    display: inline-block;
+    font-size: 20px;
+    color: rgb(120, 120, 120);
+    margin-left: 5px;
+}
+
+.vertical{
+    display: inline-block;
+    font-size: 25px;
+    color: rgb(140, 140, 140);
+    margin-left: 15px;
+}
+
+.emailArea{
+    height: 50px;
+    margin-bottom: 35px;
+}
+
+.emailInputBox{
+    border-radius: 7px;
+    border: none;
+    width: 216px;
+    font-size: 15px;
+    padding: 13px 11px 13px 11px;
+}
+
+.dupBtn{
+    float: right;
+    background-color: #ffd0bf;
+    width: 90px;
+    height: 37px;
+    line-height: 37px;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 10px;
+    font-size: 15px;
+    margin-right: 13%;
+    cursor: pointer;
+}
+
+.pwArea{
+    height: 50px;
+    margin-bottom: 35px;
+}
+
+.confirmPwArea{
+    height: 50px;
+    margin-bottom: 35px;
+}
+
+.nameArea{
+    height: 50px;
+    margin-bottom: 35px;
+}
+
+.classNumArea{
+    height: 50px;
+    margin-bottom: 35px;
+}
+
+.inputText{
+    float: left;
+    width: 150px;
+    text-align: left;
+    font-size: 19px;
+    color: rgb(70, 70, 70);
+    font-weight: 500;
+    line-height: 40px;
+    margin-left: 13%;
+}
+
+.inputBox{
+    float: right;
+    border-radius: 7px;
+    border: none;
+    width: 320px;
+    font-size: 15px;
+    padding: 13px 11px 13px 11px;
+    /* margin: 10px 0 30px 0; */
+    margin-right: 13%;
+    
+}
+
+.signupBtn{
+    border-radius: 25px;
+    width: 60%;
+    height: 6%;
+    line-height: 40px;
+    margin: 10% auto 10% auto;
+}

@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 //pages
 import Main from './pages/Main';
 import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
         </div>}/>
         <Route path="/main" element={<Main />}/>
         <Route path="/login" element={<Login />}/>
-        <Route path="/signup" element={<div>회원가입페이지</div>}/>
+        <Route path="/signup" element={<Signup />}/>
         <Route path="/notice" element={<div>공지게시판페이지</div>}/>
         <Route path="/question" element={<div>질문게시판페이지</div>}/>
         <Route path="/free" element={<div>자유게시판페이지</div>}/>
