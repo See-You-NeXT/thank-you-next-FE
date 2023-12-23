@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './Login.module.css';
 
 function Login(){
+
+    let navigate = useNavigate();
 
     let [email, setEmail] = useState('');
     let [password, setPassword] = useState('');
@@ -68,6 +71,11 @@ function Login(){
                         cursor: emailnValid && pwValid ? "pointer" : "auto"}}>
                     로그인
                 </div>
+
+                
+            </div>
+            <div className={styles.shortcut} onClick={()=>{ navigate('/signup') }}>
+                회원가입하러 가기 ➔
             </div>
         </div>
     );

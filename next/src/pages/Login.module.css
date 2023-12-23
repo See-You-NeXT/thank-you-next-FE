@@ -3,7 +3,7 @@
     border-radius: 20px;
     width: 30%;
     height: 490px;
-    margin: 7% auto 7% auto;
+    margin: 7% auto 0 auto;
 }
 
 .textArea{
@@ -55,4 +55,12 @@
     height: 8%;
     line-height: 40px;
     margin: 9% auto 10% auto;
+}
+
+.shortcut{
+    display: inline-block;
+    font-size: 15px;
+    color: rgb(60, 60, 60);
+    cursor: pointer;
+    margin: 2% auto 6% auto;
 }
