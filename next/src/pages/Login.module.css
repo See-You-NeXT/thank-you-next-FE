@@ -50,11 +50,9 @@
 }
 
 .loginBtn{
-    background-color: #ecddd7;
     border-radius: 25px;
     width: 60%;
     height: 8%;
     line-height: 40px;
     margin: 9% auto 10% auto;
-    cursor: pointer;
 }

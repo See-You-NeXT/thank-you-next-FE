@@ -4,15 +4,15 @@
 }
 
 .imgArea{
-    width: 35%;
-    margin-left: -5%;
+    width: 33%;
+    /* margin-left: -2%; */
 }
 
 .navbar img{
     flex-basis: 50px;
     height: 30px;
     width: 30px;
-    margin: 12px 0 12px 0;
+    margin: 13px 0 12px 0;
     cursor: pointer;
 }
 
@@ -21,7 +21,7 @@
     /* flex-wrap: wrap; */
     justify-content: space-evenly;
     align-items: center;
-    width: 40%;
+    width: 42%;
 
 }
 
@@ -38,8 +38,8 @@
 }
 
 .navLi:not(:last-of-type):hover{
-    height: 55px;
-    border-bottom: 7px solid #fa7244;
+    height: 53px;
+    border-bottom: 7px solid #ed754c;
     cursor: default;
 }
 
@@ -47,10 +47,10 @@
     position: absolute;
     display: inline-block;
     background-color: #ead7d2;
-    width: 33%;
+    width: 36%;
     height: 45px;
-    margin: 0px;
-    margin-left: -16%;
+    /* margin: 0px; */
+    margin-left: -19%;
     padding: 0;
 }
 

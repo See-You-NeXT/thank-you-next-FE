@@ -1,6 +1,22 @@
+import { useState } from 'react';
 import styles from './Login.module.css';
 
 function Login(){
+
+    let [email, setEmail] = useState('');
+    let [password, setPassword] = useState('');
+
+    const [emailnValid,setEmailValid] = useState(false);
+    const [pwValid,setPwValid] = useState(false);
+
+    const checkValid = () =>{
+        const regexId = /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/;
+        const regexPw = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
+
+        regexId.test(email) ? setEmailValid(true) : setEmailValid(false);
+        regexPw.test(password) ? setPwValid(true) : setEmailValid(false);
+    }
+
     return(
         <div className={styles.login}>
             <div className={styles.loginArea}>
@@ -15,6 +31,7 @@ function Login(){
                         Login
                     </div>
                 </div>
+
                 <div className={styles.emailArea}>
                     <div className={styles.inputText}>
                         email
@@ -23,8 +40,13 @@ function Login(){
                     placeholder='이메일을 입력해주세요'
                     id='email'
                     className={styles.inputBox} 
+                    onKeyUp={checkValid}
+                    onChange={e=>{
+                        setEmail(e.target.value)
+                    }}
                     />
                 </div>
+
                 <div className={styles.pwArea}>
                     <div className={styles.inputText}>
                         Password
@@ -34,14 +56,23 @@ function Login(){
                     placeholder='비밀번호를 입력해주세요'
                     id='password'
                     className={styles.inputBox} 
+                    onKeyUp={checkValid}
+                    onChange={e=>{
+                        setPassword(e.target.value)
+                    }}
                     />
                 </div>
-                <div className={styles.loginBtn}>
+
+                <div className={styles.loginBtn} 
+                    style={{ backgroundColor: emailnValid && pwValid ? "#ecc6b7" : "#ecddd7", 
+                        cursor: emailnValid && pwValid ? "pointer" : "auto"}}>
                     로그인
                 </div>
             </div>
         </div>
     );
 }
+
+
 
 export default Login;
