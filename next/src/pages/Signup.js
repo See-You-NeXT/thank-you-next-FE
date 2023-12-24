@@ -5,16 +5,28 @@ function Signup(){
 
     let [email, setEmail] = useState('');
     let [password, setPassword] = useState('');
+    let [confirmPw, setConfirmPw] = useState('');
+    let [name,setName] = useState('');
+    let [classNum,setClassNum] = useState('');
 
     const [emailnValid,setEmailValid] = useState(false);
     const [pwValid,setPwValid] = useState(false);
+    const [confirmPwValid,setConfirmPwValid] = useState(false);
+    const [nameValid,setNameValid] = useState(false);
+    const [classNumValid,setClassNumValid] = useState(false);
 
     const checkValid = () =>{
         const regexId = /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/;
-        const regexPw = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/
+        const regexPw = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+        const regexName = /[가-힣]{2,}$/;
+        const regexClassNum = /^[0-9]{8,}$/;
 
         regexId.test(email) ? setEmailValid(true) : setEmailValid(false);
-        regexPw.test(password) ? setPwValid(true) : setEmailValid(false);
+        regexPw.test(password) ? setPwValid(true) : setPwValid(false);
+        confirmPw == password ? setConfirmPwValid(true) : setConfirmPwValid(false);
+        regexName.test(name) ? setNameValid(true) : setNameValid(false);
+        regexClassNum.test(classNum) ? setClassNumValid(true) : setClassNumValid(false);
+
     }
 
     return(
@@ -77,7 +89,7 @@ function Signup(){
                     className={styles.inputBox} 
                     onKeyUp={checkValid}
                     onChange={e=>{
-                        setPassword(e.target.value)
+                        setConfirmPw(e.target.value)
                     }}
                     />
                 </div>
@@ -93,7 +105,7 @@ function Signup(){
                     className={styles.inputBox} 
                     onKeyUp={checkValid}
                     onChange={e=>{
-                        setPassword(e.target.value)
+                        setName(e.target.value)
                     }}
                     />
                 </div>
@@ -109,14 +121,14 @@ function Signup(){
                     className={styles.inputBox} 
                     onKeyUp={checkValid}
                     onChange={e=>{
-                        setPassword(e.target.value)
+                        setClassNum(e.target.value)
                     }}
                     />
                 </div>
 
                 <div className={styles.signupBtn} 
-                    style={{ backgroundColor: emailnValid && pwValid ? "#ecc6b7" : "#ecddd7", 
-                        cursor: emailnValid && pwValid ? "pointer" : "auto"}}>
+                    style={{ backgroundColor: emailnValid && pwValid && confirmPwValid && nameValid && classNumValid ? "#ecc6b7" : "#ecddd7", 
+                        cursor: emailnValid && pwValid && confirmPwValid && nameValid && classNumValid ? "pointer" : "auto"}}>
                     회원가입
                 </div>     
             </div>
