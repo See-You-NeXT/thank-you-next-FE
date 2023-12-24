@@ -2,8 +2,8 @@
     background-color: #ffefe9;
     border-radius: 20px;
     width: 50%;
-    height: 720px;
-    margin: 7% auto 6% auto;
+    height: 740px;
+    margin: 7% auto 7% auto;
 }
 
 .textArea{
@@ -34,7 +34,6 @@
 
 .emailArea{
     height: 50px;
-    margin-bottom: 35px;
 }
 
 .emailInputBox{
@@ -60,22 +59,18 @@
 
 .pwArea{
     height: 50px;
-    margin-bottom: 35px;
 }
 
 .confirmPwArea{
     height: 50px;
-    margin-bottom: 35px;
 }
 
 .nameArea{
     height: 50px;
-    margin-bottom: 35px;
 }
 
 .classNumArea{
     height: 50px;
-    margin-bottom: 35px;
 }
 
 .inputText{
@@ -96,9 +91,16 @@
     width: 320px;
     font-size: 15px;
     padding: 13px 11px 13px 11px;
-    /* margin: 10px 0 30px 0; */
     margin-right: 13%;
     
+}
+
+.errorMessage{
+    text-align: left;
+    height: 35px;
+    color: rgb(182, 0, 0);
+    font-size: 14px;
+    margin-left: 255px;
 }
 
 .signupBtn{
@@ -106,5 +108,5 @@
     width: 60%;
     height: 6%;
     line-height: 40px;
-    margin: 10% auto 10% auto;
+    margin: 6% auto 10% auto;
 }

@@ -9,7 +9,7 @@ function Signup(){
     let [name,setName] = useState('');
     let [classNum,setClassNum] = useState('');
 
-    const [emailnValid,setEmailValid] = useState(false);
+    const [emailValid,setEmailValid] = useState(false);
     const [pwValid,setPwValid] = useState(false);
     const [confirmPwValid,setConfirmPwValid] = useState(false);
     const [nameValid,setNameValid] = useState(false);
@@ -61,6 +61,13 @@ function Signup(){
                         중복 확인
                     </div>
                 </div>
+                <div className={styles.errorMessage}>
+                    {
+                        !emailValid && email.length > 0 &&(
+                            <div>올바른 이메일 형식이 아닙니다.</div>
+                        )
+                    }
+                </div>
 
                 <div className={styles.pwArea}>
                     <div className={styles.inputText}>
@@ -76,6 +83,13 @@ function Signup(){
                         setPassword(e.target.value)
                     }}
                     />
+                </div>
+                <div className={styles.errorMessage}>
+                    {
+                        !pwValid && password.length > 0 &&(
+                            <div>비밀번호는 대소문자/숫자 포함 8자 이상 입력해주세요.</div>
+                        )
+                    }
                 </div>
 
                 <div className={styles.confirmPwArea}>
@@ -93,6 +107,13 @@ function Signup(){
                     }}
                     />
                 </div>
+                <div className={styles.errorMessage}>
+                    {
+                        !confirmPwValid && confirmPw.length > 0 &&(
+                            <div>비밀번호가 일치하지 않습니다.</div>
+                        )
+                    }
+                </div>
 
                 <div className={styles.nameArea}>
                     <div className={styles.inputText}>
@@ -108,6 +129,13 @@ function Signup(){
                         setName(e.target.value)
                     }}
                     />
+                </div>
+                <div className={styles.errorMessage}>
+                    {
+                        !nameValid && name.length > 0 &&(
+                            <div>이름은 한글 2자 이상 입력해주세요.</div>
+                        )
+                    }
                 </div>
 
                 <div className={styles.classNumArea}>
@@ -125,10 +153,17 @@ function Signup(){
                     }}
                     />
                 </div>
+                <div className={styles.errorMessage}>
+                    {
+                        !classNumValid && classNum.length > 0 &&(
+                            <div>올바른 학번이 아닙니다.</div>
+                        )
+                    }
+                </div>
 
                 <div className={styles.signupBtn} 
-                    style={{ backgroundColor: emailnValid && pwValid && confirmPwValid && nameValid && classNumValid ? "#ecc6b7" : "#ecddd7", 
-                        cursor: emailnValid && pwValid && confirmPwValid && nameValid && classNumValid ? "pointer" : "auto"}}>
+                    style={{ backgroundColor: emailValid && pwValid && confirmPwValid && nameValid && classNumValid ? "#ecc6b7" : "#ecddd7", 
+                        cursor: emailValid && pwValid && confirmPwValid && nameValid && classNumValid ? "pointer" : "auto"}}>
                     회원가입
                 </div>     
             </div>
