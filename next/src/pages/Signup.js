@@ -48,18 +48,21 @@ function Signup(){
                     <div className={styles.inputText}>
                         이메일
                     </div>
-                    <input 
-                    placeholder='ex) mjkim@mju.ac.kr'
-                    id='email'
-                    className={styles.emailInputBox} 
-                    onKeyUp={checkValid}
-                    onChange={e=>{
-                        setEmail(e.target.value)
-                    }}
-                    />
-                    <div className={styles.dupBtn}>
-                        중복 확인
+                    <div className={styles.emailContent}>
+                        <input 
+                        placeholder='ex) mjkim@mju.ac.kr'
+                        id='email'
+                        className={styles.emailInputBox} 
+                        onKeyUp={checkValid}
+                        onChange={e=>{
+                            setEmail(e.target.value)
+                        }}
+                        />
+                        <div className={styles.dupBtn}>
+                            중복 확인
+                        </div>
                     </div>
+                    
                 </div>
                 <div className={styles.errorMessage}>
                     {

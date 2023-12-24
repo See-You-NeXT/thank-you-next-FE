@@ -1,14 +1,14 @@
 .signupArea{
     background-color: #ffefe9;
     border-radius: 20px;
-    width: 50%;
-    height: 740px;
-    margin: 7% auto 7% auto;
+    width: 90vh;
+    height: 90vh;
+    margin: 13vh auto 13vh auto;
 }
 
 .textArea{
     text-align: left;
-    padding: 10% 0 10% 13%;
+    padding: 9vh 0 9vh 11vh;
 }
 
 .signupInKo{
@@ -33,15 +33,21 @@
 }
 
 .emailArea{
-    height: 50px;
+    height: 6.5vh;
+}
+
+.emailContent{
+    float: right;
 }
 
 .emailInputBox{
+    float: left;
     border-radius: 7px;
     border: none;
-    width: 216px;
+    width: 200px;
     font-size: 15px;
     padding: 13px 11px 13px 11px;
+    margin-right: 3vh;
 }
 
 .dupBtn{
@@ -53,35 +59,35 @@
     border: 1px solid rgb(180, 180, 180);
     border-radius: 10px;
     font-size: 15px;
-    margin-right: 13%;
+    margin-right: 11vh;
     cursor: pointer;
 }
 
 .pwArea{
-    height: 50px;
+    height: 6.5vh;
 }
 
 .confirmPwArea{
-    height: 50px;
+    height: 6.5vh;
 }
 
 .nameArea{
-    height: 50px;
+    height: 6.5vh;
 }
 
 .classNumArea{
-    height: 50px;
+    height: 6.5vh;
 }
 
 .inputText{
     float: left;
-    width: 150px;
+    width: 15vh;
     text-align: left;
     font-size: 19px;
     color: rgb(70, 70, 70);
     font-weight: 500;
     line-height: 40px;
-    margin-left: 13%;
+    margin-left: 11vh;
 }
 
 .inputBox{
@@ -91,22 +97,22 @@
     width: 320px;
     font-size: 15px;
     padding: 13px 11px 13px 11px;
-    margin-right: 13%;
+    margin-right: 11vh;
     
 }
 
 .errorMessage{
     text-align: left;
-    height: 35px;
+    height: 4vh;
     color: rgb(182, 0, 0);
     font-size: 14px;
-    margin-left: 255px;
+    margin-left: 39vh;
 }
 
 .signupBtn{
     border-radius: 25px;
-    width: 60%;
-    height: 6%;
-    line-height: 40px;
-    margin: 6% auto 10% auto;
+    width: 40vh;
+    height: 5vh;
+    line-height: 5vh;
+    margin: 4vh auto 0 auto;
 }
