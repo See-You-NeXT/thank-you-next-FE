@@ -23,9 +23,19 @@ function Notice(){
 
             <div className={styles.noticeListArea}>
                 <div className={styles.listTitle}>
-                    <div>작성자</div>
-                    <div>제목</div>
-                    <div>날짜</div>
+                    <div className={styles.listTitleItems}>작성자</div>
+                    <div className={styles.listTitleItems}>제목</div>
+                    <div className={styles.listTitleItems}>날짜</div>
+                </div>
+                <div className={styles.listContent}>
+                    <div className={styles.listContentItems}>양승민</div>
+                    <div className={styles.listContentItems}>안녕하세요줄바꿈테스트입니다안녕하세요줄바꿈테스트입니다안녕하세요줄바꿈테스트입니다</div>
+                    <div className={styles.listContentItems}>XX.XX</div>
+                </div>
+                <div className={styles.listContent}>
+                    <div className={styles.listContentItems}>양승민</div>
+                    <div className={styles.listContentItems}>안녕하세요줄바꿈테스트입니다안녕하세요줄바꿈테스트입니다안녕하세요줄바꿈테스트입니다</div>
+                    <div className={styles.listContentItems}>XX.XX</div>
                 </div>
             </div>
             
