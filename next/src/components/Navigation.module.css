@@ -1,18 +1,19 @@
 .navbar{
     display: flex;
     border-bottom: 1px solid rgb(210, 210, 210);
+    height: 60px;
 }
 
 .imgArea{
-    width: 33%;
-    /* margin-left: -2%; */
+    width: 50vh;
+    padding-right: 9vh;
 }
 
 .navbar img{
     flex-basis: 50px;
     height: 30px;
     width: 30px;
-    margin: 13px 0 12px 0;
+    margin: 15px 0 14px 0;
     cursor: pointer;
 }
 
@@ -21,7 +22,7 @@
     /* flex-wrap: wrap; */
     justify-content: space-evenly;
     align-items: center;
-    width: 42%;
+    width: 80vh;
 
 }
 
@@ -38,7 +39,7 @@
 }
 
 .navLi:not(:last-of-type):hover{
-    height: 53px;
+    height: 56px;
     border-bottom: 7px solid #ed754c;
     cursor: default;
 }
@@ -47,10 +48,9 @@
     position: absolute;
     display: inline-block;
     background-color: #ead7d2;
-    width: 36%;
+    width: 70vh;
     height: 45px;
-    /* margin: 0px; */
-    margin-left: -19%;
+    margin-left: -35vh;
     padding: 0;
 }
 
@@ -66,17 +66,17 @@
 }
 
 .dropdownLi:nth-child(1){
-    margin-left: 10%;
-    width: 26%;
+    margin-left: 7vh;
+    width: 18vh;
 }
 
 .dropdownLi:nth-child(2){
-    width: 26%;
+    width: 18vh;
 }
 
 .dropdownLi:nth-child(3){
-    margin-right: 10%;
-    width: 26%;
+    margin-right: 7vh;
+    width: 18vh;
     
 }
 
@@ -86,8 +86,8 @@
     justify-content: flex-end;
     align-items: center;
     align-content: space-evenly;
-    width: 25%;
-    margin-right: 9%;
+    width: 40vh;
+    margin-right: 10vh;
 
 }
 
