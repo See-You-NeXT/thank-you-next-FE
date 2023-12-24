@@ -1,14 +1,14 @@
 .loginArea{
     background-color: #ffefe9;
     border-radius: 20px;
-    width: 30%;
+    width: 50vh;
     height: 490px;
-    margin: 7% auto 0 auto;
+    margin: 13vh auto 0 auto;
 }
 
 .textArea{
     text-align: left;
-    padding: 13% 0 15% 15%;
+    padding: 7vh 0 5vh 7vh;
 }
 
 .loginInKo{
@@ -37,13 +37,13 @@
     font-size: 19px;
     color: rgb(70, 70, 70);
     font-weight: 500;
-    margin-left: 14%;
+    margin-left: 7vh;
 }
 
 .inputBox{
     border-radius: 7px;
     border: none;
-    width: 70%;
+    width: 35vh;
     font-size: 15px;
     padding: 13px 11px 13px 11px;
     margin: 10px 0 35px 0;
@@ -51,10 +51,10 @@
 
 .loginBtn{
     border-radius: 25px;
-    width: 60%;
-    height: 8%;
-    line-height: 40px;
-    margin: 8% auto 10% auto;
+    width: 30vh;
+    height: 5vh;
+    line-height: 5vh;
+    margin: 3vh auto 0 auto;
 }
 
 .shortcut{
@@ -62,5 +62,5 @@
     font-size: 15px;
     color: rgb(60, 60, 60);
     cursor: pointer;
-    margin: 2% auto 6% auto;
+    margin: 3vh auto 11vh auto;
 }
