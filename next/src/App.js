@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import Main from './pages/Main';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Notice from './pages/Notice';
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
         <Route path="/main" element={<Main />}/>
         <Route path="/login" element={<Login />}/>
         <Route path="/signup" element={<Signup />}/>
-        <Route path="/notice" element={<div>공지게시판페이지</div>}/>
+        <Route path="/notice" element={<Notice />}/>
         <Route path="/question" element={<div>질문게시판페이지</div>}/>
         <Route path="/free" element={<div>자유게시판페이지</div>}/>
         <Route path="/introduce" element={<div>스터디소개페이지</div>}/>

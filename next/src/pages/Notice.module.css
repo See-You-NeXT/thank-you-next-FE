@@ -1,0 +1,40 @@
+.textArea{
+    margin: 5% 0% 5% 17%;
+}
+
+.noticeTitle{
+    text-align: left;
+    font-size: 27px;
+    font-weight: 800;
+    color: rgb(50, 50, 50);
+}
+
+.noticeContent{
+    text-align: left;
+    font-size: 17px;
+    color: rgb(120, 120, 120);
+}
+
+.userFuncArea{
+    height: 80px;
+}
+
+.searchBar{
+    float: left;
+    margin-left: 17%;
+}
+
+.writingBtn{
+    float: right;
+    background-color: #ffd0bf;
+    width: 80px;
+    height: 37px;
+    line-height: 37px;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(50, 50, 50);
+    cursor: pointer;
+    margin-right: 17%;
+}
