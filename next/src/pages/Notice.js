@@ -1,17 +1,13 @@
 import styles from './Notice.module.css';
 import { useState } from "react";
-import Pagination from "react-js-pagination";
+import Paging from '../components/Paging';
 
 import data from '../data'; 
 
-function Notice(props){
+function Notice(){
 
     let [list] = useState(data);
-    const [page, setPage] = useState(1);
-    const handlePageChange = (page) => {
-        setPage(page);
-      };
-
+    console.log(list.length);
     return(
         <div className={styles.notice}>
             <div className={styles.textArea}>
@@ -47,6 +43,9 @@ function Notice(props){
                     })
                 }
             </div>
+
+            <Paging />
+            
         </div>
     );
 }
