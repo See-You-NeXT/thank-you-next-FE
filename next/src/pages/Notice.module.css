@@ -76,18 +76,23 @@
 
 .listContent{
     width: 120vh;
-    height: 5vh;
+    height: 6vh;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgb(160, 160, 160);
+    cursor: pointer;
+}
+
+.listContent:hover{
+    font-weight: 500;
 }
 
 .listContentItems{
     align-self: center;
-    height: 5vh;
-    line-height: 5vh;
+    height: 6vh;
+    line-height: 6vh;
     font-size: 16px;
 }
 
