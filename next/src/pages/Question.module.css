@@ -1,0 +1,123 @@
+.textArea{
+    margin: 10vh 0 10vh 30vh;
+}
+
+.questionTitle{
+    text-align: left;
+    font-size: 27px;
+    font-weight: 800;
+    color: rgb(50, 50, 50);
+    margin-bottom: 1vh;
+}
+
+.questionContent{
+    text-align: left;
+    font-size: 17px;
+    color: rgb(120, 120, 120);
+}
+
+
+.userFuncArea{
+    height: 80px;
+}
+
+.searchBar{
+    float: left;
+    margin-left: 30vh;
+}
+
+.writingBtn{
+    float: right;
+    background-color: #ffd0bf;
+    width: 80px;
+    height: 37px;
+    line-height: 37px;
+    border: 1px solid rgb(130, 130, 130);
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(50, 50, 50);
+    cursor: pointer;
+    margin-right: 30vh;
+}
+
+.totalQuestion{
+    text-align: left;
+    margin: 0 0 3vh 30vh;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.questionListArea{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    width: 120vh;
+    margin: 0 auto 5vh auto;
+}
+
+.listTitle{
+    border-bottom: 2px solid black;
+    width: 120vh;
+    height: 6vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.listTitleItems{
+    flex-basis: 100px;
+    align-self: center;
+    height: 6vh;
+    line-height: 6vh;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.listTitleItems:nth-child(1){
+    margin-left: 10vh;
+}
+
+.listTitleItems:nth-child(3){
+    margin-right: 10vh;
+}
+
+.listContent{
+    width: 120vh;
+    height: 6vh;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(160, 160, 160);
+    cursor: pointer;
+}
+
+.listContent:hover{
+    font-weight: 500;
+}
+
+.listContentItems{
+    align-self: center;
+    height: 6vh;
+    line-height: 6vh;
+    font-size: 16px;
+}
+
+.listContentItems:nth-child(1){
+    flex-basis: 80px;
+    margin-left: 11vh;
+
+}
+
+.listContentItems:nth-child(2){
+    flex-basis: 450px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.listContentItems:nth-child(3){
+    flex-basis: 80px;
+    margin-right: 11vh;
+}
