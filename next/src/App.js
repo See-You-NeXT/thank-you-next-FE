@@ -10,6 +10,7 @@ import Main from './pages/Main';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Notice from './pages/Notice';
+import Free from './pages/Free';
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
         <Route path="/signup" element={<Signup />}/>
         <Route path="/notice" element={<Notice />}/>
         <Route path="/question" element={<div>질문게시판페이지</div>}/>
-        <Route path="/free" element={<div>자유게시판페이지</div>}/>
+        <Route path="/free" element={<Free />}/>
         <Route path="/introduce" element={<div>스터디소개페이지</div>}/>
         <Route path="/gallery" element={<div>갤러리페이지</div>}/>
         <Route path="/mypage" element={<div>마이페이지</div>}/>
