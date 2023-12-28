@@ -1,5 +1,5 @@
 import styles from './Notice.module.css';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Paging from '../components/Paging';
 
 import data from '../data'; 
@@ -7,7 +7,7 @@ import data from '../data';
 function Notice(){
 
     let [list] = useState(data);
-    console.log(list.length);
+
     return(
         <div className={styles.notice}>
             <div className={styles.textArea}>
@@ -27,6 +27,8 @@ function Notice(){
                     글쓰기
                 </div>
             </div>
+
+            <div className={styles.totalNotice}>TOTAL {list.length}</div>
 
             <div className={styles.noticeListArea}>
                 <div className={styles.listTitle}>
