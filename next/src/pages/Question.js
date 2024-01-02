@@ -6,9 +6,6 @@ import HashTag from '../components/Hashtag';
 import data from '../data'; 
 
 function Question(){
-
-    
-
     let [list] = useState(data);
 
     return(

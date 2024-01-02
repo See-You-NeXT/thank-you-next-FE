@@ -1,10 +1,11 @@
 .hashtag{
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 5vh;
     margin-left: 30vh;
 }
 
-.btn{
+.hashItems{
     border: 1px solid grey;
     border-radius: 20px;
     height: 4vh;
@@ -12,4 +13,17 @@
     font-size: 15px;
     padding: 0 14px 0 14px;
     margin-right: 1vh;
+    cursor: pointer;
+}
+
+.clickHashItems{
+    border: 1px solid grey;
+    border-radius: 20px;
+    height: 4vh;
+    line-height: 4vh;
+    font-size: 15px;
+    padding: 0 14px 0 14px;
+    margin-right: 1vh;
+    cursor: pointer;
+    background-color: #ffefe9;
 }
