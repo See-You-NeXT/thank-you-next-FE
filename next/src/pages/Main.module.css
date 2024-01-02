@@ -13,11 +13,10 @@
 }
 
 .imgslideArea img{
-    width: 220px;
+    width: 25vh;
     height: auto;
     float: left;
-    margin-top: 5vh;
-    margin-left: 20vh;
+    margin: 5vh 0 5vh 20vh;
 }
 
 .pageIcons{
@@ -31,15 +30,15 @@
 }
 
 .slideName{
-    width: 16vh;
     height: 30px;
     border: 1px solid rgb(40, 40, 40);
     border-radius: 40px;
+    padding: 0 3vh 0 3vh;
     text-align: center;
     line-height: 30px;
     background-color: white;
     float: right;
-    margin: 10vh 20vh 0 0;
+    margin: 9vh 20vh 0 0;
 }
 
 .slideTitle{
@@ -52,12 +51,19 @@
 }
 
 .slideInfo{
-    white-space: pre-line;
     float: right;
     font-size: 17px;
-    width: 40vh;
+    width: 50vh;
     text-align: right;
-    margin: 4vh 20vh 0 0;
+    margin: 3vh 20vh 0 0;
+}
+
+.slideSubInfo{
+    float: right;
+    font-size: 17px;
+    width: 50vh;
+    text-align: right;
+    margin: 1vh 20vh 0 0;
 }
 
 .contentArea{

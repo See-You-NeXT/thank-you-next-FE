@@ -6,7 +6,6 @@ import './Hashtag.css';
 function Hashtag(){
     let [hash] = useState(hashData);  
     
-    
     return(
         <div className="hashtag">
             {
@@ -22,7 +21,6 @@ function Hashtag(){
 
 function HashItems(props){
     let [click, setClick] = useState(false);
-    console.log(click);
 
     return(
         <div className={`${click ? 'clickHashItems' : 'hashItems'}`}

@@ -1,24 +1,23 @@
 import styles from './Main.module.css';
+import { useState } from "react";
 import { GoDot } from "react-icons/go";
 import { GoDotFill } from "react-icons/go";
 
+import imgslideData from '../imgslideData';
+
 function Main(){
+    let [imgslide] = useState(imgslideData);
+
     return(
         <div className={styles.main}>
-            <div className={styles.imgslideArea}>
-                <img src='/ysm.png' />
-                
-                <div className={styles.imgslideContent}>
-                    <div className={styles.slideName}>양승민 선배님</div>
-                    <div className={styles.slideTitle}>양승민의 코딩콘서트</div>
-                    <div className={styles.slideInfo}>C, C++, Java 없는게 없다!<br/>백준 플레티넘 선배님과 함께 하는 코딩 공부</div>
-                </div>
-            </div>
+            <Imgslide imgslide={imgslide[0]} />
+            
             <div className={styles.pageIcons}>
                 <GoDotFill size={20}/>
                 <GoDot size={20}/>
                 <GoDot size={20}/>
             </div>
+
             <div className={styles.contentArea}>
                 <div className={styles.videoArea}>
                     <div className={styles.videoTitle}>THIS IS NeXT 🔥</div>
@@ -54,6 +53,21 @@ function Main(){
             </div>
         </div>
     );
+}
+
+function Imgslide(props){
+    return(
+        <div className={styles.imgslideArea}>
+            <img src={props.imgslide.img} />
+            <div className={styles.imgslideContent}>
+                <div className={styles.slideName}>{props.imgslide.name}</div>
+                <div className={styles.slideTitle}>{props.imgslide.title}</div>
+                <div className={styles.slideInfo}>{props.imgslide.info}</div>
+                <div className={styles.slideSubInfo}>{props.imgslide.subInfo}</div>
+            </div>
+        </div>
+        
+    )
 }
 
 export default Main;
