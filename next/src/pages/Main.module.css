@@ -10,21 +10,40 @@
     margin-top: 7vh;
     border-radius: 20px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
 }
 
-.imgslideArea img{
+.imgArea{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50vh;
+    height: 40vh;
+}
+
+.imgArea img{
     width: 25vh;
     height: auto;
-    float: left;
-    margin: 5vh 0 5vh 20vh;
+    align-self: center;
+    margin-left: 20vh;
+}
+
+.pageIconsArea{
+    margin: 2vh 0 2vh 0;
+    display: flex;
+    justify-content: center;
 }
 
 .pageIcons{
-    margin: 2vh 0 2vh 0;
+    cursor: pointer;
 }
 
 .imgslideContent{
-    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
     width: 50vh;
     height: auto;
 }
@@ -37,12 +56,10 @@
     text-align: center;
     line-height: 30px;
     background-color: white;
-    float: right;
-    margin: 9vh 20vh 0 0;
+    margin-right: 20vh;
 }
 
 .slideTitle{
-    float: right;
     font-size: 24px;
     width: 40vh;
     text-align: right;
@@ -51,7 +68,6 @@
 }
 
 .slideInfo{
-    float: right;
     font-size: 17px;
     width: 50vh;
     text-align: right;
@@ -59,7 +75,6 @@
 }
 
 .slideSubInfo{
-    float: right;
     font-size: 17px;
     width: 50vh;
     text-align: right;
