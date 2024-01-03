@@ -1,0 +1,58 @@
+.imgslideArea{
+    margin: auto;
+    margin-top: 7vh;
+    position: relative;
+}
+
+.imgslideArea img{
+    width: 80%;
+    height: auto;
+    margin-left: 20vh;
+    cursor: pointer;
+}
+
+.imgslideContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 50vh;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+}
+
+.slideName{
+    height: 30px;
+    border: 1px solid rgb(40, 40, 40);
+    border-radius: 40px;
+    padding: 0 3vh 0 3vh;
+    text-align: center;
+    line-height: 30px;
+    background-color: white;
+    margin-right: 20vh;
+}
+
+.slideTitle{
+    font-size: 24px;
+    width: 40vh;
+    text-align: right;
+    font-weight: 800;
+    margin: 5vh 20vh 0 0;
+}
+
+.slideInfo{
+    font-size: 18px;
+    width: 50vh;
+    text-align: right;
+    margin: 3vh 20vh 0 0;
+}
+
+.slideSubInfo{
+    font-size: 18px;
+    width: 50vh;
+    text-align: right;
+    margin: 1vh 20vh 0 0;
+}

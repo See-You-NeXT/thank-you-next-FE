@@ -1,7 +1,7 @@
 let imgslideData = [
     {   
         id : 0,
-        img : '/ysm.png',
+        img : '/imgYSM.png',
         name : "재학생 양승민",
         title : "양승민의 코딩콘서트",
         info : "C, C++, Java 없는게 없다!",
@@ -10,7 +10,7 @@ let imgslideData = [
 
     {
         id : 1,
-        img : '/kcs.png',
+        img : '/imgKCS.png',
         name : "회장 김창식",
         title : "김창식의 이렐리아 강의",
         info : "1997은 잊어라.",
@@ -19,7 +19,7 @@ let imgslideData = [
 
     {
         id : 2,
-        img : '/csh.png',
+        img : '/imgCSH.png',
         name : "졸업생 최선학",
         title : "최선학의 전역 늦게 하는 법",
         info : "모두가 전역하고 싶어할 때 남들과는 다른 길을 가라"
