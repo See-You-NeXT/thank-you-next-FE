@@ -1,9 +1,4 @@
 import styles from './Main.module.css';
-import { useEffect, useState } from "react";
-import { GoDot } from "react-icons/go";
-import { GoDotFill } from "react-icons/go";
-
-import imgslideData from '../imgslideData';
 import ImgSlide from '../components/ImgSlide';
 
 function Main(){
@@ -29,15 +24,22 @@ function Main(){
                     <div className={styles.board}>
                         <ul className={styles.boardUl}>
                             <li className={styles.boardLi}>
-                                17일 지소영 슨배님 졸업식 참여자 수요...
+                                <div className={styles.content}>
+                                    17일 지소영 슨배님 졸업식 참여자 수요조사가 있습니다.sss
+                                </div>
+                                <span>12.XX</span>
+                            </li>
+                            
+                            <li className={styles.boardLi}>
+                                <div className={styles.content}>
+                                    개강파티 수요조사를 시작합니다!
+                                </div>
                                 <span>12.XX</span>
                             </li>
                             <li className={styles.boardLi}>
-                                개강파티 수요조사를 시작합니다!
-                                <span>12.XX</span>
-                            </li>
-                            <li className={styles.boardLi}>
-                                이번주 세미나는 없습니다.
+                                <div className={styles.content}>
+                                    이번주 세미나는 없습니다.
+                                </div>
                                 <span>12.XX</span>
                             </li>
                         </ul>
