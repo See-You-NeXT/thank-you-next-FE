@@ -30,36 +30,10 @@ function Notice(){
 
             <div className={styles.totalNotice}>TOTAL {list.length}</div>
 
-            <div className={styles.noticeListArea}>
-                <div className={styles.listTitle}>
-                    <div className={styles.listTitleItems}>작성자</div>
-                    <div className={styles.listTitleItems}>제목</div>
-                    <div className={styles.listTitleItems}>날짜</div>
-                </div>
-                 {/* 데이터 역순으로 보내주세용 */}
-                {
-                    list.map((a,i)=>{
-                        return(
-                            <ListContent list={list[i]}/>
-                        )
-                    })
-                }
-            </div>
-
             <Paging />
             
         </div>
     );
-}
-
-function ListContent(props){
-    return(
-        <div className={styles.listContent}>
-            <div className={styles.listContentItems}>{props.list.name}</div>
-            <div className={styles.listContentItems}>{props.list.title}</div>
-            <div className={styles.listContentItems}>{props.list.date}</div>
-        </div>
-    )
 }
 
 export default Notice;
