@@ -47,7 +47,7 @@
     font-weight: 600;
 }
 
-.questionListArea{
+/* .questionListArea{
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     width: 120vh;
@@ -119,4 +119,4 @@
 .listContentItems:nth-child(3){
     flex-basis: 80px;
     margin-right: 11vh;
-}
+} */

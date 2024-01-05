@@ -38,7 +38,7 @@ function Notice(){
                 </div>
                  {/* 데이터 역순으로 보내주세용 */}
                 {
-                    list.reverse().map((a,i)=>{
+                    list.map((a,i)=>{
                         return(
                             <ListContent list={list[i]}/>
                         )
