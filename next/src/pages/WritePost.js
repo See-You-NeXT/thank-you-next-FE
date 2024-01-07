@@ -10,6 +10,24 @@ function WritePost() {
     let [checkbox2, setCheckbox2] = useState(false);
     let [checkbox3, setCheckbox3] = useState(false);
 
+    const handleCheckbox1Click = () => {
+        setCheckbox1(!checkbox1);
+        setCheckbox2(false);
+        setCheckbox3(false);
+    };
+
+    const handleCheckbox2Click = () => {
+        setCheckbox1(false);
+        setCheckbox2(!checkbox2);
+        setCheckbox3(false);
+    };
+
+    const handleCheckbox3Click = () => {
+        setCheckbox1(false);
+        setCheckbox2(false);
+        setCheckbox3(!checkbox3);
+    };
+
     return (
         <div className={styles.writePostArea}>
             <div className={styles.writePostWrap}>
@@ -18,7 +36,7 @@ function WritePost() {
                 </div>
 
                 <ul className={styles.selectBoard}>
-                    <li className={styles.boardList} onClick={()=>{setCheckbox1(!checkbox1)}}>
+                    <li className={styles.boardList} onClick={handleCheckbox1Click}>
                         <div className={styles.checkboxIcon}>
                             {
                                 checkbox1 ? <MdOutlineCheckBox size={25}/> : <MdOutlineCheckBoxOutlineBlank size={25}/>
@@ -29,7 +47,7 @@ function WritePost() {
                         </div>
                         
                     </li>
-                    <li className={styles.boardList} onClick={()=>{setCheckbox2(!checkbox2)}}>
+                    <li className={styles.boardList} onClick={handleCheckbox2Click}>
                         <div className={styles.checkboxIcon}>
                             {
                                 checkbox2 ? <MdOutlineCheckBox size={25}/> : <MdOutlineCheckBoxOutlineBlank size={25}/>
@@ -39,7 +57,7 @@ function WritePost() {
                             질문게시판 
                         </div>
                     </li>
-                    <li className={styles.boardList} onClick={()=>{setCheckbox3(!checkbox3)}}>
+                    <li className={styles.boardList} onClick={handleCheckbox3Click}>
                         <div className={styles.checkboxIcon}>
                             {
                                 checkbox3 ? <MdOutlineCheckBox size={25} /> : <MdOutlineCheckBoxOutlineBlank size={25}/>
