@@ -1,0 +1,94 @@
+.writePostArea{
+    background-color: rgb(245, 245, 245);
+}
+
+.writePostWrap{
+    background-color: white;
+    margin-left: 20vh;
+    margin-right: 20vh;
+}
+
+.writePostTitle{
+    text-align: left;
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(50, 50, 50);
+    margin: 0vh 15vh 0vh 15vh;
+    padding: 8vh 0 1.5vh 3vh;
+    border-bottom: 4px solid rgb(200, 200, 200);
+}
+
+.selectBoard{
+    display: flex;
+    justify-content: center;
+}
+
+.boardList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25vh;
+    height: 8vh;
+    text-align: center;
+    margin-top: 3vh;
+    cursor: pointer;
+}
+
+.boardList:not(:nth-child(3)){
+    margin-right: 6vh;
+}
+
+.checkboxIcon{
+    margin-right: 10px;
+    color: rgb(100, 100, 100);
+    
+}
+
+.boardListText{
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(50, 50, 50);
+}
+
+.titleArea{
+    margin: 6vh 20vh 0 20vh;
+}
+
+.inputText{
+    text-align: left;
+    font-size: 19px;
+    color: rgb(70, 70, 70);
+    font-weight: 500;
+    margin: 0 0 1vh 4vh;
+}
+
+.inputBox{
+    width: 90vh;
+    height: 5vh;
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+.contentArea{
+    margin: 10vh 20vh 0 20vh;
+}
+
+.textareaText{
+    text-align: left;
+    font-size: 19px;
+    color: rgb(70, 70, 70);
+    font-weight: 500;
+    margin: 0 0 1vh 4vh;
+}
+
+.textareaBox{
+    resize: none;
+    width: 90vh;
+    height: 30vh;
+    padding: 10px 0 0 12px;
+    font-size: 15px;
+}
+
+.uploadPic{
+    width: 100vh;
+}

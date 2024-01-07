@@ -12,6 +12,7 @@ import Signup from './pages/Signup';
 import Notice from './pages/Notice';
 import Question from './pages/Question';
 import Free from './pages/Free';
+import WritePost from './pages/WritePost';
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/notice" element={<Notice />}/>
         <Route path="/question" element={<Question />}/>
         <Route path="/free" element={<Free />}/>
+        <Route path="/writePost" element={<WritePost />} />
         <Route path="/introduce" element={<div>스터디소개페이지</div>}/>
         <Route path="/gallery" element={<div>갤러리페이지</div>}/>
         <Route path="/mypage" element={<div>마이페이지</div>}/>

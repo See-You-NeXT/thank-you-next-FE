@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import Pagination from "react-js-pagination";
 import "./Paging.css";
 import { PiNotePencil } from "react-icons/pi";
@@ -8,6 +9,8 @@ import SearchBar from "./SearchBar";
 import data from '../data'; 
 
 function Paging(){
+    let navigate = useNavigate();
+
     //검색창
     const [filteredData, setFilteredData] = useState(data);
 
@@ -41,7 +44,7 @@ function Paging(){
             <SearchBar onSearch={handleSearch} />
             <div className="userFuncArea">
                 <div className="total">TOTAL {filteredData.length}</div>
-                <div className="writingBtn">
+                <div className="writingBtn" onClick={()=>{ navigate('/writePost') }}>
                     <PiNotePencil size={35}/>
                 </div>
             </div>
