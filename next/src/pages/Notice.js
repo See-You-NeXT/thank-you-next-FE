@@ -1,13 +1,7 @@
 import styles from './Notice.module.css';
-import { useState, useEffect } from "react";
 import Paging from '../components/Paging';
-import { PiNotePencil } from "react-icons/pi";
-
-import data from '../data'; 
 
 function Notice(){
-
-    let [list] = useState(data);
 
     return(
         <div className={styles.notice}>
@@ -19,17 +13,6 @@ function Notice(){
                     📢 NeXT의 중요 공지사항은 다 이 곳에서!
                 </div>
             </div>
-
-            <div className={styles.userFuncArea}>
-                <div className={styles.searchBar}>
-                    검색창
-                </div>
-                <div className={styles.writingBtn}>
-                <PiNotePencil size={35}/>
-                </div>
-            </div>
-
-            <div className={styles.totalNotice}>TOTAL {list.length}</div>
 
             <Paging />
             

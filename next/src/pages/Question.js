@@ -1,14 +1,8 @@
 import styles from './Question.module.css';
-import { useState } from "react";
 import Paging from '../components/Paging';
 import Hashtag from '../components/Hashtag';
-import Search from '../components/SearchBar';
-
-
-import data from '../data'; 
 
 function Question(){
-    let [list] = useState(data);
 
     return(
         <div className={styles.question}>
