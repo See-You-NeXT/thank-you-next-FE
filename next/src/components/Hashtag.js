@@ -4,27 +4,37 @@ import hashData from "../hashData";
 import './Hashtag.css';
 
 function Hashtag(){
-    let [hash] = useState(hashData);  
+    let [hash, setHash] = useState(hashData.map(hash => ({ ...hash, click: false })));  
     
+    const handleHashClick = (index) => {
+        setHash(prevHash => {
+            const newHash = [...prevHash];
+            newHash[index].click = !newHash[index].click;
+            return newHash;
+        });    
+    };
+
     return(
         <div className="hashtag">
-            {
-                hash.map((a,i)=>{
-                    return(
-                        <HashItems hash={hash[i]} />
-                    )
-                })
-            }
+            {hash.map((a, i) => {
+                return (
+                    <HashItems
+                        key={i}
+                        hash={hash[i]}
+                        onClick={() => handleHashClick(i)}
+                    />
+                );
+            })}
         </div>
     );
 }
 
 function HashItems(props){
-    let [click, setClick] = useState(false);
-
     return(
-        <div className={`${click ? 'clickHashItems' : 'hashItems'}`}
-            onClick={()=>setClick(!click)}>
+        <div
+            className={`${props.hash.click ? 'clickHashItems' : 'hashItems'}`}
+            onClick={props.onClick}
+        >
             {props.hash.name}
         </div>
     )
