@@ -17,6 +17,7 @@ function Paging(){
             item.title.toLowerCase().includes(search.toLowerCase())
         );
         setFilteredData(filteredResults);
+        setPage(1);
     };
 
     //페이지네이션
