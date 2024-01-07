@@ -19,14 +19,13 @@
 
 .navUl{
     display: flex;
-    /* flex-wrap: wrap; */
     justify-content: space-evenly;
     align-items: center;
-    width: 80vh;
+    width: 60vh;
 }
 
 .navLi{
-    flex-basis: 120px;
+    flex-basis: 140px;
     align-self: center;
     font-size: 18px;
     list-style: none;

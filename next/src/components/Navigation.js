@@ -1,4 +1,4 @@
-import { Link, useNavigate, Outlet } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './Navigation.module.css';
 import Dropdown from './Dropdown';
 import { useState } from 'react';

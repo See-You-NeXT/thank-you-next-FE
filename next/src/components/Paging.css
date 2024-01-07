@@ -15,7 +15,8 @@
 
 .writingBtn{
     float: right;
-    background-color: #ffdfd3;
+    background-color: #ffd0bf;
+    color: rgb(60, 60, 60);
     width: 60px;
     height: 60px;
     border-radius: 30px;
@@ -30,6 +31,8 @@
 .writingBtn svg{
     margin: 12.5px 0 0 1px;
 }
+
+
 
 .questionListArea{
     border-top: 2px solid black;
