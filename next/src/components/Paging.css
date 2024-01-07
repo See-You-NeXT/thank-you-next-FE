@@ -1,38 +1,37 @@
-.pagination {
+.userFuncArea{
+    height: 80px;
     display: flex;
-    justify-content: center;
-    margin-bottom: 15vh;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  ul.pagination li {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    font-size: 12px;
-  }
+    align-content: center;
+}
 
-  ul.pagination li a {
-    text-decoration: none;
-    color: #474747;
-    font-size: 1rem;
-  }
-  
-  ul.pagination li.active a {
-    color: #e86539;
-    font-weight: 500;
-  }
+.total{
+    text-align: left;
+    margin: 3vh 0 0 30vh;
+    font-size: 18px;
+    font-weight: 600;
+}
 
-  
+.writingBtn{
+    float: right;
+    background-color: #ffdfd3;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 0 30vh 2vh 0;
+}
 
-  .questionListArea{
+.writingBtn:hover{
+    background-color: #ffd0bf;
+}
+
+.writingBtn svg{
+    margin: 12.5px 0 0 1px;
+}
+
+.questionListArea{
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     width: 120vh;
@@ -47,6 +46,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    align-content: center;
 }
 
 .listTitleItems{
@@ -104,4 +104,36 @@
 .listContentItems:nth-child(3){
     flex-basis: 80px;
     margin-right: 11vh;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15vh;
+}
+  
+ul {
+    list-style: none;
+    padding: 0;
+}
+  
+ul.pagination li {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+ul.pagination li a {
+    text-decoration: none;
+    color: #474747;
+    font-size: 1rem;
+}
+  
+ul.pagination li.active a {
+    color: #e86539;
+    font-weight: 500;
 }

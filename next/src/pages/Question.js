@@ -1,8 +1,9 @@
 import styles from './Question.module.css';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Paging from '../components/Paging';
 import Hashtag from '../components/Hashtag';
-import { PiNotePencil } from "react-icons/pi";
+import Search from '../components/SearchBar';
+
 
 import data from '../data'; 
 
@@ -21,18 +22,6 @@ function Question(){
             </div>
 
             <Hashtag />
-
-            <div className={styles.userFuncArea}>
-                <div className={styles.searchBar}>
-                    검색창
-                </div>
-                
-                <div className={styles.writingBtn}>
-                <PiNotePencil size={35}/>
-                </div>
-            </div>
-
-            <div className={styles.totalQuestion}>TOTAL {list.length}</div>
 
             <Paging />
             
