@@ -2,6 +2,7 @@ import styles from './Question.module.css';
 import { useState, useEffect } from "react";
 import Paging from '../components/Paging';
 import Hashtag from '../components/Hashtag';
+import { PiNotePencil } from "react-icons/pi";
 
 import data from '../data'; 
 
@@ -25,8 +26,9 @@ function Question(){
                 <div className={styles.searchBar}>
                     검색창
                 </div>
+                
                 <div className={styles.writingBtn}>
-                    글쓰기
+                <PiNotePencil size={35}/>
                 </div>
             </div>
 

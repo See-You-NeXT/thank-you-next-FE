@@ -1,6 +1,7 @@
 import styles from './Free.module.css';
 import { useState, useEffect } from "react";
 import Paging from '../components/Paging';
+import { PiNotePencil } from "react-icons/pi";
 
 import data from '../data'; 
 
@@ -23,8 +24,9 @@ function Free(){
                 <div className={styles.searchBar}>
                     검색창
                 </div>
+                
                 <div className={styles.writingBtn}>
-                    글쓰기
+                <PiNotePencil size={35}/>
                 </div>
             </div>
 
