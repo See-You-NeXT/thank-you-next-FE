@@ -4,8 +4,8 @@
 
 .writePostWrap{
     background-color: white;
-    margin-left: 20vh;
-    margin-right: 20vh;
+    margin-left: 150px;
+    margin-right: 150px;
 }
 
 .writePostTitle{
@@ -13,7 +13,7 @@
     font-size: 24px;
     font-weight: 700;
     color: rgb(50, 50, 50);
-    margin: 0vh 20vh 0vh 20vh;
+    margin: 0 150px 0 150px;
     padding: 8vh 0 1.5vh 3vh;
     border-bottom: 4px solid rgb(200, 200, 200);
 }
@@ -27,15 +27,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25vh;
-    height: 8vh;
+    height: 50px;
     text-align: center;
     margin-top: 3vh;
     cursor: pointer;
 }
 
 .boardList:not(:nth-child(3)){
-    margin-right: 6vh;
+    margin-right: 15vh;
 }
 
 .checkboxIcon{
@@ -58,12 +57,12 @@
     text-align: left;
     font-size: 19px;
     color: rgb(70, 70, 70);
-    font-weight: 500;
-    margin: 0 0 1vh 4vh;
+    font-weight: 600;
+    margin: 0 0 1vh 5vh;
 }
 
 .inputBox{
-    width: 90vh;
+    width: 86vh;
     height: 5vh;
     padding-left: 10px;
     font-size: 15px;
@@ -77,18 +76,97 @@
     text-align: left;
     font-size: 19px;
     color: rgb(70, 70, 70);
-    font-weight: 500;
-    margin: 0 0 1vh 4vh;
+    font-weight: 600;
+    margin: 0 0 1vh 5vh;
 }
 
 .textareaBox{
     resize: none;
-    width: 90vh;
+    width: 86vh;
     height: 30vh;
-    padding: 10px 0 0 12px;
+    padding: 12px 0 0 12px;
     font-size: 15px;
 }
 
-.uploadPic{
-    width: 100vh;
+.uploadPicArea{
+    margin: 6vh 19vh 0 19vh;
+}  
+
+.uploadPicTitle{
+    text-align: left;
+    font-size: 19px;
+    color: rgb(70, 70, 70);
+    font-weight: 600;
+    margin: 0 0 0.6vh 5vh;
+}
+
+.uploadPicContent{
+    text-align: left;
+    font-size: 15px;
+    color: rgb(120, 120, 120);
+    margin: 0 0 1vh 5.1vh;
+}
+
+.selectPicArea{
+    display: flex;
+}
+
+.selectingPicBox{
+    background-color: rgb(220, 220, 220);
+    width: 140px;
+    height: 140px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4vh 2vh 0 5vh;
+}
+
+.selectingPicBox svg{
+    color: rgb(100, 100, 100);
+}
+
+.selectedPicArea{
+    display: flex;
+    margin-top: 4vh;
+}
+
+.selectedPicBox{
+    width: 140px;
+    height: 140px;
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.selectedPicBox:not(:nth-child(4)){
+    margin-right: 10px;
+}
+
+.leftArrow{
+    color: rgb(100, 100, 100);
+    align-self: center;
+}
+
+.rightArrow{
+    color: rgb(100, 100, 100);
+    align-self: center;
+}
+
+.hashtagArea{
+    margin: 6vh 20vh 0 20vh;
+}
+
+.hashtagTitle{
+    text-align: left;
+    font-size: 19px;
+    color: rgb(70, 70, 70);
+    font-weight: 600;
+    margin: 0 0 0.6vh 5vh;
+}
+
+.hashtag{
+    margin: 3vh 0 0 5vh;
+
 }

@@ -11,8 +11,8 @@
     height: 40px;
     border-radius: 20px;
     border: 2px solid #7b7b7b;
-    margin: 1vh 0 0 30vh;
-    padding-left: 3vh;
+    margin: 8px 0 0 235px;
+    padding-left: 23px;
     font-size: 15px;
 }
 
@@ -28,7 +28,7 @@
     color: white;
     background-color: #e3a18b;
     border: 2px solid #7b7b7b;
-    top: 1vh;
-    left: 74vh;
+    top: 8px;
+    left: 570px;
     cursor: pointer;
 }

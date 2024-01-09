@@ -15,7 +15,10 @@ function Question(){
                 </div>
             </div>
 
-            <Hashtag />
+            <div className={styles.hashtagArea}>
+               <Hashtag /> 
+            </div>
+            
 
             <Paging />
             

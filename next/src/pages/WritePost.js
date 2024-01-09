@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import styles from './WritePost.module.css';
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import { MdOutlineCheckBox } from "react-icons/md";
+import { GoPlusCircle } from "react-icons/go";
+import { FaAngleLeft } from "react-icons/fa6";
+import { FaAngleRight } from "react-icons/fa6";
 
 import Hashtag from '../components/Hashtag';
 
@@ -91,29 +94,35 @@ function WritePost() {
                     />
                 </div>
 
-                <div className={styles.uploadPic}>
+                <div className={styles.uploadPicArea}>
                     <div className={styles.uploadPicTitle}>사진 업로드</div>
                     <div className={styles.uploadPicContent}>
                         사진 업로드는 최대 10개까지 가능합니다.
                     </div>
                     <div className={styles.selectPicArea}>
                         <div className={styles.selectingPicBox}>
-                            plus
+                            <GoPlusCircle size={30}/>
                         </div>
-                        <div className={styles.leftArrow}>
-                            left
-                        </div>
-                        <div className={styles.selectedPicBox}>1</div>
-                        <div className={styles.selectedPicBox}>2</div>
-                        <div className={styles.selectedPicBox}>3</div>
-                        <div className={styles.rightArrow}>
-                            right
+                        <div className={styles.selectedPicArea}>
+                            <div className={styles.leftArrow}>
+                                <FaAngleLeft size={35}/>
+                            </div>
+                            <div className={styles.selectedPicBox}>1</div>
+                            <div className={styles.selectedPicBox}>2</div>
+                            <div className={styles.selectedPicBox}>3</div>
+                            <div className={styles.rightArrow}>
+                                <FaAngleRight size={35}/>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div className={styles.hashtagArea}>
-                    <Hashtag />
+                    <div className={styles.hashtagTitle}>해시태그</div>
+                    <div className={styles.hashtag}>
+                        <Hashtag />
+                    </div>
+                    
                 </div>
 
                 <div className={styles.btnArea}>
