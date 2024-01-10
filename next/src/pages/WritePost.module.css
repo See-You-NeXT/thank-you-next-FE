@@ -120,7 +120,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 4vh 2vh 0 5vh;
+    margin: 4vh 3vh 0 5vh;
 }
 
 .selectingPicBox svg{
@@ -147,15 +147,17 @@
 .leftArrow{
     color: rgb(100, 100, 100);
     align-self: center;
+    margin-right: 1vh;
 }
 
 .rightArrow{
     color: rgb(100, 100, 100);
     align-self: center;
+    margin-left: 1vh;
 }
 
 .hashtagArea{
-    margin: 6vh 20vh 0 20vh;
+    margin: 6vh 20vh 7vh 20vh;
 }
 
 .hashtagTitle{
@@ -169,4 +171,31 @@
 .hashtag{
     margin: 3vh 0 0 5vh;
 
+}
+
+.btnArea{
+    margin: 6vh 20vh 0vh 20vh;
+    padding-bottom: 10vh;
+    display: flex;
+    justify-content: end;
+}
+
+.cancelBtn{
+    background-color: rgb(210, 210, 210);
+    width: 80px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.uploadBtn{
+    background-color: #ffa384;
+    width: 80px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5vh;
 }
