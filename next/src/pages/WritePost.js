@@ -71,6 +71,17 @@ function WritePost() {
         return selectedFiles.slice(startIndex, endIndex);
     };
 
+    const deletePic = (index) => {
+        const confirmDelete = window.confirm("이미지를 삭제하시겠습니까?");
+        if (confirmDelete) {
+            setSelectedFiles((prevFiles) => {
+                const newFiles = [...prevFiles];
+                newFiles.splice(selectedPageIndex * 3 + index, 1);
+                return newFiles;
+            });
+        }
+    }
+
     console.log('selectedPageIndex'+selectedPageIndex);
 
     return (
@@ -164,7 +175,7 @@ function WritePost() {
                             </div>
                             <div className={styles.selectedPicBoxContainer}>
                                 {getPageFiles().map((file, index) => (
-                                    <div className={styles.selectedPicBox} key={index}>
+                                    <div className={styles.selectedPicBox} key={index} onClick={() => deletePic(index)}>
                                     <img
                                         src={URL.createObjectURL(file)}
                                         alt={`Selected ${index + 1}`}
