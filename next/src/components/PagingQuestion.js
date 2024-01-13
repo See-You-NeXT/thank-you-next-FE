@@ -1,22 +1,22 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import Pagination from "react-js-pagination";
-import "./Paging.css";
+import "./PagingQuestion.css";
 import { PiNotePencil } from "react-icons/pi";
 
 import SearchBar from "./SearchBar";
 
-import data from '../data'; 
+import dataQuestion from '../dataQuestion'; 
 
 function Paging(){
     let navigate = useNavigate();
 
     //검색창
-    const [filteredData, setFilteredData] = useState(data);
+    const [filteredData, setFilteredData] = useState(dataQuestion);
 
     const handleSearch = (search) => {
         // 검색어에 따라 데이터 필터링
-        const filteredResults = data.filter((item) =>
+        const filteredResults = dataQuestion.filter((item) =>
             item.title.toLowerCase().includes(search.toLowerCase())
         );
         setFilteredData(filteredResults);
@@ -24,7 +24,7 @@ function Paging(){
     };
 
     //페이지네이션
-    let [list] = useState(data);
+    let [list] = useState(dataQuestion);
     const [page, setPage] = useState(1);
     const itemsPerPage = 10;
 
@@ -49,11 +49,12 @@ function Paging(){
                 </div>
             </div>
             
-            <div className="listArea">
-                <div className="listTitle">
-                    <div className="listTitleItems">작성자</div>
-                    <div className="listTitleItems">제목</div>
-                    <div className="listTitleItems">날짜</div>
+            <div className="questionListArea">
+                <div className="questionListTitle">
+                    <div className="questionListTitleItems">작성자</div>
+                    <div className="questionListTitleItems">제목</div>
+                    <div className="questionListTitleItems">날짜</div>
+                    <div className="questionListTitleItems">진행</div>
                 </div>
                  {/* 데이터 역순으로 보내주세용 */}
                 {
@@ -80,10 +81,11 @@ function Paging(){
 
 function ListContent(props){
     return(
-        <div className="listContent">
-            <div className="listContentItems">{props.list.name}</div>
-            <div className="listContentItems">{props.list.title}</div>
-            <div className="listContentItems">{props.list.date}</div>
+        <div className="questionListContent">
+            <div className="questionListContentItems">{props.list.name}</div>
+            <div className="questionListContentItems">{props.list.title}</div>
+            <div className="questionListContentItems">{props.list.date}</div>
+            <div className="questionListContentItems">{props.list.solve}</div>
         </div>
     )
 }

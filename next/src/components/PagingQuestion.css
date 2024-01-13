@@ -34,42 +34,45 @@
 
 
 
-.listArea{
+.questionListArea{
     border-top: 2px solid black;
     border-bottom: 2px solid black;
     width: 120vh;
     margin: 0 auto 5vh auto;
 }
 
-.listTitle{
+.questionListTitle{
     border-bottom: 2px solid black;
     width: 120vh;
     height: 6vh;
-    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
 }
 
-.listTitleItems{
+.questionListTitleItems{
     flex-basis: 100px;
-    align-self: center;
     height: 6vh;
     line-height: 6vh;
     font-size: 18px;
     font-weight: 700;
 }
 
-.listTitleItems:nth-child(1){
-    margin-left: 10vh;
+.questionListTitleItems:nth-child(1){
+    margin-left: 7vh;
 }
 
-.listTitleItems:nth-child(3){
-    margin-right: 10vh;
+.questionListTitleItems:nth-child(2){
+    flex-basis: 450px;
+    margin-left: 4vh;
 }
 
-.listContent{
+.questionListTitleItems:nth-child(4){
+    margin-right: 7vh;
+}
+
+.questionListContent{
     width: 120vh;
     height: 6vh;
     margin: auto;
@@ -80,34 +83,36 @@
     cursor: pointer;
 }
 
-.listContent:hover{
+.questionListContent:hover{
     font-weight: 500;
 }
 
-.listContentItems{
+.questionListContentItems{
     align-self: center;
     height: 6vh;
     line-height: 6vh;
     font-size: 16px;
 }
 
-.listContentItems:nth-child(1){
+.questionListContentItems:nth-child(1){
     flex-basis: 80px;
-    margin-left: 11vh;
+    margin-left: 8vh;
 
 }
 
-.listContentItems:nth-child(2){
+.questionListContentItems:nth-child(2){
     flex-basis: 450px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.listContentItems:nth-child(3){
+.questionListContentItems:nth-child(4){
     flex-basis: 80px;
-    margin-right: 11vh;
+    margin-right: 8vh;
+    color: rgb(0, 137, 34);
 }
+
 
 .pagination {
     display: flex;

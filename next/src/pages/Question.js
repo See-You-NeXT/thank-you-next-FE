@@ -1,5 +1,5 @@
 import styles from './Question.module.css';
-import Paging from '../components/Paging';
+import PagingQuestion from '../components/PagingQuestion';
 import Hashtag from '../components/Hashtag';
 
 function Question(){
@@ -20,7 +20,7 @@ function Question(){
             </div>
             
 
-            <Paging />
+            <PagingQuestion />
             
         </div>
     );
