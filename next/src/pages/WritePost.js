@@ -82,8 +82,6 @@ function WritePost() {
         }
     }
 
-    console.log('selectedPageIndex'+selectedPageIndex);
-
     return (
         <div className={styles.writePostArea}>
             <div className={styles.writePostWrap}>

@@ -4,17 +4,17 @@
 
 .writePostWrap{
     background-color: white;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 10vw;
+    margin-right: 10vw;
 }
 
 .writePostTitle{
     text-align: left;
-    font-size: 24px;
+    font-size: 28px;
     font-weight: 700;
     color: rgb(50, 50, 50);
-    margin: 0 150px 0 150px;
-    padding: 8vh 0 1.5vh 3vh;
+    margin: 0 13vw 0 13vw;
+    padding: 8vh 0 1.5vh 2vw;
     border-bottom: 4px solid rgb(200, 200, 200);
 }
 
@@ -34,77 +34,76 @@
 }
 
 .boardList:not(:nth-child(3)){
-    margin-right: 15vh;
+    margin-right: 10vw;
 }
 
 .checkboxIcon{
     margin-right: 10px;
     color: rgb(100, 100, 100);
-    
 }
 
 .boardListText{
-    font-size: 18px;
+    font-size: 23px;
     font-weight: 500;
     color: rgb(50, 50, 50);
 }
 
 .titleArea{
-    margin: 6vh 20vh 0 20vh;
+    margin: 6vh 13vw 0 13vw;
 }
 
 .inputText{
     text-align: left;
-    font-size: 19px;
+    font-size: 21px;
     color: rgb(70, 70, 70);
     font-weight: 600;
-    margin: 0 0 1vh 5vh;
+    margin: 0 0 1vh 3vw;
 }
 
 .inputBox{
-    width: 86vh;
+    width: 47vw;
     height: 5vh;
     padding-left: 10px;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 .contentArea{
-    margin: 10vh 20vh 0 20vh;
+    margin: 10vh 13vw 0 13vw;
 }
 
 .textareaText{
     text-align: left;
-    font-size: 19px;
+    font-size: 21px;
     color: rgb(70, 70, 70);
     font-weight: 600;
-    margin: 0 0 1vh 5vh;
+    margin: 0 0 1vh 3vw;
 }
 
 .textareaBox{
     resize: none;
-    width: 86vh;
+    width: 47vw;
     height: 30vh;
-    padding: 12px 0 0 12px;
-    font-size: 15px;
+    padding: 14px 0 0 14px;
+    font-size: 17px;
 }
 
 .uploadPicArea{
-    margin: 6vh 19vh 0 19vh;
+    margin: 6vh 13vw 0 13vw;
 }  
 
 .uploadPicTitle{
     text-align: left;
-    font-size: 19px;
+    font-size: 21px;
     color: rgb(70, 70, 70);
     font-weight: 600;
-    margin: 0 0 0.6vh 5vh;
+    margin: 0 0 0.6vh 3vw;
 }
 
 .uploadPicContent{
     text-align: left;
-    font-size: 15px;
+    font-size: 17px;
     color: rgb(120, 120, 120);
-    margin: 0 0 1vh 5.1vh;
+    margin: 0 0 1vh 3vw;
 }
 
 .selectPicArea{
@@ -113,14 +112,14 @@
 
 .selectingPicBox{
     background-color: rgb(220, 220, 220);
-    width: 140px;
-    height: 140px;
+    width: 10vw;
+    height: 10vw;
     border-radius: 15px;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 4vh 3vh 0 5vh;
+    margin: 4vh 3vw 0 3vw;
 }
 
 .selectingPicBox svg{
@@ -137,11 +136,10 @@
 }
 
 .selectedPicBox{
-    width: 140px;
-    height: 140px;
+    width: 10vw;
+    height: 10vw;
     border: 1px solid rgb(160, 160, 160);
     border-radius: 15px;
-    /* margin-right: 10px; */
 }
 
 .selectedPicBox:not(:nth-child(3)){
@@ -149,42 +147,42 @@
 }
 
 .selectedPicBox img{
-    width: 140px;
-    height: 140px;
+    width: 10vw;
+    height: 10vw;
     border-radius: 15px;
 }
 
 .leftArrow{
     color: rgb(100, 100, 100);
     align-self: center;
-    margin-right: 1vh;
+    margin-right: 1vw;
 }
 
 .rightArrow{
     color: rgb(100, 100, 100);
     align-self: center;
-    margin-left: 1vh;
+    margin-left: 1vw;
 }
 
 .hashtagArea{
-    margin: 6vh 20vh 7vh 20vh;
+    margin: 6vh 13vw 7vh 13vw;
 }
 
 .hashtagTitle{
     text-align: left;
-    font-size: 19px;
+    font-size: 21px;
     color: rgb(70, 70, 70);
     font-weight: 600;
-    margin: 0 0 0.6vh 5vh;
+    margin: 0 0 0.6vh 3vw;
 }
 
 .hashtag{
-    margin: 3vh 0 0 5vh;
+    margin: 3vh 0 0 3vw;
 
 }
 
 .btnArea{
-    margin: 6vh 20vh 0vh 20vh;
+    margin: 6vh 13vw 0vh 13vw;
     padding-bottom: 10vh;
     display: flex;
     justify-content: end;
@@ -208,4 +206,31 @@
     border-radius: 5px;
     cursor: pointer;
     margin-right: 5vh;
+}
+
+@media (max-width:1600px){
+    .writePostTitle{
+        font-size: 24px;
+    }
+
+    .boardList:not(:nth-child(3)){
+        margin-right: 7vw;
+    }
+
+    .boardListText{
+        font-size: 19px;
+    }
+
+    .inputText, .textareaText, .uploadPicTitle, .hashtagTitle{
+        font-size: 18px;
+    }
+
+    .uploadPicContent{
+        font-size: 16px;
+    }
+
+    .selectedPicBox, .selectingPicBox, .selectedPicBox img{
+        width: 9vw;
+        height: 9vw;
+    }
 }
