@@ -14,7 +14,7 @@
     margin-right: 1vh;
     margin-bottom: 1vh;
     cursor: pointer;
-    
+    font-size: 17px;
 }
 
 .clickHashItems{
@@ -28,4 +28,11 @@
     margin-bottom: 1vh;
     cursor: pointer;
     background-color: #ffefe9;
+    font-size: 17px;
+}
+
+@media (max-width:1600px){
+    .hashItems, .clickHashItems{
+        font-size: 16px;
+    }
 }

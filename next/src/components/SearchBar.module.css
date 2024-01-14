@@ -7,9 +7,7 @@
 .searchInput{
     position :relative;
     float: left;
-    width: 25vw;
-    min-width: 150px;
-    max-width: 400px;
+    width: 21vw;
     height: 40px;
     border-radius: 20px;
     border: 2px solid #7b7b7b;
@@ -21,7 +19,7 @@
 .searchButton{
     z-index: 1;
     position: absolute;
-    width: 6vw;
+    width: 5vw;
     min-width: 70px;
     max-width: 90px;
     height: 45.63px;
@@ -33,6 +31,20 @@
     background-color: #e3a18b;
     border: 2px solid #7b7b7b;
     top: 1vh;
-    left: 40vw;
+    left: 38vw;
     cursor: pointer;
+}
+
+@media (max-width:1600px){
+    .searchInput{
+        width: 25vw;
+    }
+
+    .searchButton{
+        width: 6vw;
+    }
+
+    .searchButton{
+        left: 40vw;
+    }
 }

@@ -37,13 +37,13 @@
 .questionListArea{
     border-top: 2px solid black;
     border-bottom: 2px solid black;
-    width: 68vw;
+    width: 66vw;
     margin: 0 auto 5vh auto;
 }
 
 .questionListTitle{
     border-bottom: 2px solid black;
-    width: 68vw;
+    width: 66vw;
     height: 6vh;
     display: flex;
     justify-content: space-between;
@@ -55,7 +55,7 @@
     flex-basis: 100px;
     height: 6vh;
     line-height: 6vh;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
 }
 
@@ -73,7 +73,8 @@
 }
 
 .questionListContent{
-    width: 68vw;
+    font-size: 18px;
+    width: 66vw;
     height: 6vh;
     margin: auto;
     display: flex;
@@ -143,4 +144,18 @@ ul.pagination li a {
 ul.pagination li.active a {
     color: #e86539;
     font-weight: 500;
+}
+
+@media (max-width:1600px){
+    .questionListTitleItems{
+        font-size: 18px;
+    }
+
+    .questionListContent{
+        font-size: 16px;
+    }
+
+    .questionListArea, .questionListTitle, .questionListContent{
+        width: 68vw;
+    }
 }

@@ -32,7 +32,7 @@
     margin-left: 15px;
 }
 
-.emailArea{
+.emailArea, .pwArea, .confirmPwArea, .nameArea, .classNumArea{
     height: 6vh;
 }
 
@@ -61,22 +61,6 @@
     font-size: 15px;
     margin-right: 6vw;
     cursor: pointer;
-}
-
-.pwArea{
-    height: 6vh;
-}
-
-.confirmPwArea{
-    height: 6vh;
-}
-
-.nameArea{
-    height: 6vh;
-}
-
-.classNumArea{
-    height: 6vh;
 }
 
 .inputText{
@@ -135,28 +119,12 @@
         font-size: 25px;
     }
 
-    .emailArea{
+    .emailArea, .pwArea, .confirmPwArea, .nameArea, .classNumArea{
         height: 6.5vh;
     }
 
     .emailContent{
         width: 27.5vw;
-    }
-
-    .pwArea{
-        height: 6.5vh;
-    }
-
-    .confirmPwArea{
-        height: 6.5vh;
-    }
-
-    .nameArea{
-        height: 6.5vh;
-    }
-
-    .classNumArea{
-        height: 6.5vh;
     }
 
     .inputText{

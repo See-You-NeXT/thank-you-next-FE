@@ -4,7 +4,7 @@
 
 .noticeTitle{
     text-align: left;
-    font-size: 27px;
+    font-size: 30px;
     font-weight: 800;
     color: rgb(50, 50, 50);
     margin-bottom: 1vh;
@@ -12,6 +12,16 @@
 
 .noticeContent{
     text-align: left;
-    font-size: 17px;
+    font-size: 20px;
     color: rgb(120, 120, 120);
+}
+
+@media (max-width:1600px){
+    .noticeTitle{
+        font-size: 27px;
+    }
+
+    .noticeContent{
+        font-size: 17px;
+    }
 }
