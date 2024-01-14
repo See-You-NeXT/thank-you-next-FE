@@ -1,5 +1,6 @@
 import styles from './Main.module.css';
 import ImgSlide from '../components/ImgSlide';
+import { FiPlus } from "react-icons/fi";
 
 function Main(){
 
@@ -25,7 +26,7 @@ function Main(){
                         <ul className={styles.boardUl}>
                             <li className={styles.boardLi}>
                                 <div className={styles.content}>
-                                    17일 지소영 슨배님 졸업식 참여자 수요조사가 있습니다.sss
+                                    17일 지소영 슨배님 졸업식 참여자 수요조사가 있습니다.
                                 </div>
                                 <span>12.XX</span>
                             </li>
@@ -42,9 +43,14 @@ function Main(){
                                 </div>
                                 <span>12.XX</span>
                             </li>
+                            <li className={styles.plusBtnArea}>
+                                {/* <div className={styles.plusBtn}>
+                                    +
+                                </div> */}
+                                <FiPlus />
+                            </li>
                         </ul>
                     </div>
-                    <div className={styles.plusBtn}>더보기</div>
                 </div>
             </div>
         </div>

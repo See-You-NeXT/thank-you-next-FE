@@ -35,9 +35,9 @@ ul,li {margin:0; padding:0;}
 }
 
 .shortcut:nth-child(1){
-  margin-left: 55vh;
+  margin-left: 33vw;
 }
 
 .shortcut:nth-child(2){
-  margin-right: 55vh;
+  margin-right: 33vw;
 }
