@@ -1,53 +1,53 @@
 .signupArea{
     background-color: #ffefe9;
     border-radius: 20px;
-    width: 90vh;
-    height: 90vh;
+    width: 45vw;
+    height: 87vh;
     margin: 13vh auto 13vh auto;
 }
 
 .textArea{
     text-align: left;
-    padding: 9vh 0 9vh 11vh;
+    padding: 9vh 0 9vh 6vw;
 }
 
 .signupInKo{
     display: inline-block;
-    font-size: 28px;
+    font-size: 30px;
     color: rgb(70, 70, 70);
     font-weight: 800;
 }
 
 .signupInEng{
     display: inline-block;
-    font-size: 20px;
+    font-size: 22px;
     color: rgb(120, 120, 120);
     margin-left: 5px;
 }
 
 .vertical{
     display: inline-block;
-    font-size: 25px;
+    font-size: 27px;
     color: rgb(140, 140, 140);
     margin-left: 15px;
 }
 
 .emailArea{
-    height: 6.5vh;
+    height: 6vh;
 }
 
 .emailContent{
     float: right;
+    width: 26.3vw;
 }
 
 .emailInputBox{
     float: left;
     border-radius: 7px;
     border: none;
-    width: 200px;
-    font-size: 15px;
+    width: 12vw;
+    font-size: 17px;
     padding: 13px 11px 13px 11px;
-    margin-right: 3vh;
 }
 
 .dupBtn{
@@ -59,45 +59,45 @@
     border: 1px solid rgb(180, 180, 180);
     border-radius: 10px;
     font-size: 15px;
-    margin-right: 11vh;
+    margin-right: 6vw;
     cursor: pointer;
 }
 
 .pwArea{
-    height: 6.5vh;
+    height: 6vh;
 }
 
 .confirmPwArea{
-    height: 6.5vh;
+    height: 6vh;
 }
 
 .nameArea{
-    height: 6.5vh;
+    height: 6vh;
 }
 
 .classNumArea{
-    height: 6.5vh;
+    height: 6vh;
 }
 
 .inputText{
     float: left;
-    width: 15vh;
+    width: 10vw;
     text-align: left;
-    font-size: 19px;
+    font-size: 21px;
     color: rgb(70, 70, 70);
     font-weight: 500;
     line-height: 40px;
-    margin-left: 11vh;
+    margin-left: 6vw;
 }
 
 .inputBox{
     float: right;
     border-radius: 7px;
     border: none;
-    width: 320px;
-    font-size: 15px;
+    width: 19vw;
+    font-size: 17px;
     padding: 13px 11px 13px 11px;
-    margin-right: 11vh;
+    margin-right: 6vw;
     
 }
 
@@ -106,13 +106,69 @@
     height: 4vh;
     color: rgb(182, 0, 0);
     font-size: 14px;
-    margin-left: 39vh;
+    margin-left: 19.5vw;
 }
 
 .signupBtn{
     border-radius: 25px;
-    width: 40vh;
+    width: 20vw;
     height: 5vh;
     line-height: 5vh;
     margin: 4vh auto 0 auto;
+}
+
+@media (max-width:1600px){
+    .signupArea{
+        width: 48vw;
+        height: 90vh;
+    }
+
+    .signupInKo{
+        font-size: 28px;
+    }
+
+    .signupInEng{
+        font-size: 20px;
+    }
+
+    .vertical{
+        font-size: 25px;
+    }
+
+    .emailArea{
+        height: 6.5vh;
+    }
+
+    .emailContent{
+        width: 27.5vw;
+    }
+
+    .pwArea{
+        height: 6.5vh;
+    }
+
+    .confirmPwArea{
+        height: 6.5vh;
+    }
+
+    .nameArea{
+        height: 6.5vh;
+    }
+
+    .classNumArea{
+        height: 6.5vh;
+    }
+
+    .inputText{
+        font-size: 19px;
+    }
+
+    .inputBox{
+        font-size: 15px;
+        width: 20vw;
+    }
+
+    .errorMessage{
+        margin-left: 21vw;
+    }
 }

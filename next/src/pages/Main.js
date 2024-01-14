@@ -44,9 +44,6 @@ function Main(){
                                 <span>12.XX</span>
                             </li>
                             <li className={styles.plusBtnArea}>
-                                {/* <div className={styles.plusBtn}>
-                                    +
-                                </div> */}
                                 <FiPlus />
                             </li>
                         </ul>
