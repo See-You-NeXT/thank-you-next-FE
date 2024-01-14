@@ -1,5 +1,5 @@
 .textArea{
-    margin: 10vh 0 10vh 30vh;
+    margin: 10vh 0 10vh 18vw;
 }
 
 .noticeTitle{
@@ -14,38 +14,4 @@
     text-align: left;
     font-size: 17px;
     color: rgb(120, 120, 120);
-}
-
-.userFuncArea{
-    height: 80px;
-}
-
-.searchBar{
-    float: left;
-    margin-left: 30vh;
-}
-
-.writingBtn{
-    float: right;
-    background-color: #ffdfd3;
-    width: 60px;
-    height: 60px;
-    border-radius: 30px;
-    cursor: pointer;
-    margin-right: 30vh;
-}
-
-.writingBtn:hover{
-    background-color: #ffd0bf;
-}
-
-.writingBtn svg{
-    margin: 12.5px 0 0 1px;
-}
-
-.totalNotice{
-    text-align: left;
-    margin: 0 0 3vh 30vh;
-    font-size: 18px;
-    font-weight: 600;
 }

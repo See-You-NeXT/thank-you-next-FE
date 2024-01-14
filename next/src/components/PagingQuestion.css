@@ -8,7 +8,7 @@
 
 .total{
     text-align: left;
-    margin: 3vh 0 0 30vh;
+    margin: 3vh 0 0 18vw;
     font-size: 18px;
     font-weight: 600;
 }
@@ -21,7 +21,7 @@
     height: 60px;
     border-radius: 30px;
     cursor: pointer;
-    margin: 0 30vh 2vh 0;
+    margin: 0 18vw 2vh 0;
 }
 
 .writingBtn:hover{
@@ -37,13 +37,13 @@
 .questionListArea{
     border-top: 2px solid black;
     border-bottom: 2px solid black;
-    width: 120vh;
+    width: 68vw;
     margin: 0 auto 5vh auto;
 }
 
 .questionListTitle{
     border-bottom: 2px solid black;
-    width: 120vh;
+    width: 68vw;
     height: 6vh;
     display: flex;
     justify-content: space-between;
@@ -60,20 +60,20 @@
 }
 
 .questionListTitleItems:nth-child(1){
-    margin-left: 7vh;
+    margin-left: 4vw;
 }
 
 .questionListTitleItems:nth-child(2){
     flex-basis: 450px;
-    margin-left: 4vh;
+    margin-left: 2vw;
 }
 
 .questionListTitleItems:nth-child(4){
-    margin-right: 7vh;
+    margin-right: 4vw;
 }
 
 .questionListContent{
-    width: 120vh;
+    width: 68vw;
     height: 6vh;
     margin: auto;
     display: flex;
@@ -91,12 +91,11 @@
     align-self: center;
     height: 6vh;
     line-height: 6vh;
-    font-size: 16px;
 }
 
 .questionListContentItems:nth-child(1){
     flex-basis: 80px;
-    margin-left: 8vh;
+    margin-left: 4.6vw;
 
 }
 
@@ -109,7 +108,7 @@
 
 .questionListContentItems:nth-child(4){
     flex-basis: 80px;
-    margin-right: 8vh;
+    margin-right: 4.7vw;
     color: rgb(0, 137, 34);
 }
 
