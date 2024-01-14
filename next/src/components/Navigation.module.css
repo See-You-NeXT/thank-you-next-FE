@@ -1,81 +1,84 @@
 .navbar{
     display: flex;
     border-bottom: 1px solid rgb(210, 210, 210);
-    height: 60px;
+    height: 65px;
 }
 
 .imgArea{
-    width: 50vh;
-    padding-right: 9vh;
+    width: 25vw;
+    padding-right: 5vw;
 }
 
 .navbar img{
     flex-basis: 50px;
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
     margin: 15px 0 14px 0;
     cursor: pointer;
 }
 
 .navUl{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: start;
     align-items: center;
-    width: 60vh;
+    width: 50vw;
 }
 
 .navLi{
     flex-basis: 140px;
     align-self: center;
-    font-size: 18px;
+    font-size: 20px;
     list-style: none;
     font-weight: 600;
     color: rgb(60, 60, 60);
     cursor: pointer;
-    height: 60px;
-    line-height: 60px;
+    height: 65px;
+    line-height: 65px;
+}
+
+.navLi:nth-child(1){
+    margin-left: 8vw;
 }
 
 .navLi:not(:last-of-type):hover{
-    height: 53px;
+    height: 58px;
     border-bottom: 7px solid #ed754c;
     cursor: default;
 }
 
 .dropdownUl{
     position: absolute;
-    display: inline-block;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
     background-color: #ead7d2;
-    width: 70vh;
-    height: 45px;
-    margin-left: -35vh;
+    width: 40vw;
+    height: 50px;
+    margin-left: 30vw;
     padding: 0;
     z-index: 1;
 }
 
 .dropdownLi{
-    font-size: 16px;
+    width: 9vw;
+    justify-content: center;
+    align-self: center;
+    font-size: 18px;
     list-style: none;
-    line-height: 45px;
+    line-height: 50px;
     color: rgb(60, 60, 60);
     cursor: pointer;
-    float: left;
-    text-align: center;
-    cursor: pointer;
+    display: flex;
+    margin-right: 0px;
 }
 
 .dropdownLi:nth-child(1){
-    margin-left: 7vh;
-    width: 18vh;
-}
-
-.dropdownLi:nth-child(2){
-    width: 18vh;
+    margin-left: 4vw;
 }
 
 .dropdownLi:nth-child(3){
-    margin-right: 7vh;
-    width: 18vh;
+    margin-right: 4vw;
     
 }
 
@@ -85,16 +88,52 @@
     justify-content: flex-end;
     align-items: center;
     align-content: space-evenly;
-    width: 40vh;
-    margin-right: 10vh;
-
+    width: 25vw;
 }
 
 .loginItem{
     flex-basis: 80px;
     align-self: center;
-    font-size: 15px;
+    font-size: 17px;
     list-style: none;
     color: rgb(95, 95, 95);
     cursor: pointer;
 }
+
+.loginItem:nth-child(2){
+    margin-right: 7vw;
+}
+
+@media (max-width:1600px){
+    .navbar{
+        height: 55px;
+    }
+  
+    .navbar img{
+        height: 30px;
+        width: 30px;
+        margin-top: 13px;
+    }
+
+    .navLi{
+        flex-basis: 120px;
+        font-size: 18px;
+        height: 55px;
+        line-height: 55px;
+    }
+    
+    .navLi:not(:last-of-type):hover{
+        height: 48px;
+    }
+
+    .dropdownUl{
+        margin-left: 29vw;
+    }
+    .dropdownLi{
+        font-size: 16px;
+    }
+
+    .loginItem{
+        font-size: 16px;
+    }
+  }
