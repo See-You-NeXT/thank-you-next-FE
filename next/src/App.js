@@ -13,6 +13,7 @@ import Notice from './pages/Notice';
 import Question from './pages/Question';
 import Free from './pages/Free';
 import WritePost from './pages/WritePost';
+import Gallery from './pages/Gallery';
 
 function App() {
 
@@ -32,7 +33,7 @@ function App() {
         <Route path="/free" element={<Free />}/>
         <Route path="/writePost" element={<WritePost />} />
         <Route path="/introduce" element={<div>스터디소개페이지</div>}/>
-        <Route path="/gallery" element={<div>갤러리페이지</div>}/>
+        <Route path="/gallery" element={<Gallery />}/>
         <Route path="/mypage" element={<div>마이페이지</div>}/>
 
         <Route path="*" element={<h2>404 Not Found</h2>}/>

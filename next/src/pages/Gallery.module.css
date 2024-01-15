@@ -1,0 +1,76 @@
+.galleryTitle{
+    font-size: 32px;
+    font-weight: 700;
+    color: rgb(50, 50, 50);
+    margin: 0 41vw 9vh 41vw;
+    padding: 8vh 0 1.5vh 0;
+    border-bottom: 4px solid rgb(200, 200, 200);
+}
+
+.funcArea{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.uploadBtn{
+    align-self: center;
+    background-color: #ffd0bf;
+    color: rgb(70, 70, 70);
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 0 18.5vw 2vh 0;
+}
+
+.uploadBtn svg{
+    margin: 12px 0 0 1px;
+}
+
+.galleryPicArea{
+    margin: 5vh 0 5vh 0;
+}
+
+.galleryPicRow {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5vh;
+}
+
+.galleryPicBox {
+    width: 23vw;
+    box-sizing: border-box;
+}
+
+.galleryPicImg img{
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 10px;
+    width: 16vw;
+    height: 12vw;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.galleryPicTitle{
+    width: 16vw;
+    font-size: 23px;
+    font-weight: 600;
+    padding: 1vh 0 1vh 0;
+    margin: 0 3.5vw 0 3.5vw;
+    color: rgb(50, 50, 50);
+    white-space : nowrap;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+@media (max-width:1600px){
+    .galleryTitle{
+        font-size: 29px;
+    }
+
+    .galleryPicTitle{
+        font-size: 19px;
+    }
+}

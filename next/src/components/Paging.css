@@ -8,7 +8,7 @@
 
 .total{
     text-align: left;
-    margin: 3vh 0 0 18vw;
+    margin: 3vh 0 0 18.5vw;
     font-size: 18px;
     font-weight: 600;
 }
@@ -21,11 +21,7 @@
     height: 60px;
     border-radius: 30px;
     cursor: pointer;
-    margin: 0 18vw 2vh 0;
-}
-
-.writingBtn:hover{
-    background-color: #ffd0bf;
+    margin: 0 18.5vw 2vh 0;
 }
 
 .writingBtn svg{
@@ -111,7 +107,7 @@
 .pagination {
     display: flex;
     justify-content: center;
-    margin-bottom: 15vh;
+    margin-bottom: 10vh;
 }
   
 ul {
