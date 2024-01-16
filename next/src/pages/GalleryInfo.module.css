@@ -3,7 +3,7 @@
     justify-content: center;
     align-content: center;
     align-items: center;
-    margin-top: 10vh;
+    margin: 10vh 0 4vh 0;
 }
 
 .galleryFilesImg{
@@ -27,3 +27,48 @@
     margin-left: 5vw;
 }
 
+.galleryFilesInfoArea{
+    display: flex;
+    justify-content: space-around;
+}
+
+.galleryInfoContent{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin : 0 0 10vh 14vw;
+}
+
+.galleryInfoTitle{
+    font-size: 32px;
+    font-weight: 700;
+    color: rgb(60, 60, 60);
+    margin-bottom: 1vh;
+}
+
+.galleryInfoSub{
+    display: flex;
+}
+
+.galleryInfoName, .galleryInfoDot, .galleryInfoDate{
+    font-size: 22px;
+    color: rgb(100, 100, 100);
+    margin-right: 0.5vw;
+}
+
+.galleryInfoDot svg{
+    margin-top: 0.5vh;
+}
+
+.galleryInfoLike{
+    margin-right: 15vw;
+}
+
+.likeBtn{
+    color: rgb(60, 60, 60);
+}
+
+.likeNum{
+    color: rgb(60, 60, 60);
+    font-weight: 500;
+}
