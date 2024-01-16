@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import styles from './WritePost.module.css';
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import { MdOutlineCheckBox } from "react-icons/md";
 import { GoPlusCircle } from "react-icons/go";
-import { FaAngleLeft } from "react-icons/fa6";
-import { FaAngleRight } from "react-icons/fa6";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+
+import styles from './WritePost.module.css';
 
 import Hashtag from '../components/Hashtag';
 

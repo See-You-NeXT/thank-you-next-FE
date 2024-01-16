@@ -1,0 +1,29 @@
+.galleryFilesImgArea{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-top: 10vh;
+}
+
+.galleryFilesImg{
+    border: 5px solid rgb(190, 190, 190);
+    border-radius: 10px;
+    width: 50vw;
+    height: 30vw;
+}
+
+.galleryFilesImg img{
+    width: 50vw;
+    height: 30vw;
+    object-fit: contain;
+}
+
+.leftArrow{
+    margin-right: 5vw;
+}
+
+.rightArrow{
+    margin-left: 5vw;
+}
+
