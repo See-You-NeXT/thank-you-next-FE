@@ -66,9 +66,36 @@
 
 .likeBtn{
     color: rgb(60, 60, 60);
+    cursor: pointer;
 }
 
 .likeNum{
     color: rgb(60, 60, 60);
     font-weight: 500;
+}
+
+@media (max-width:1600px){
+    .galleryInfoContent{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin : 0 0 10vh 15vw;
+    }
+    
+    .galleryInfoTitle{
+        font-size: 28px;
+        font-weight: 700;
+        color: rgb(60, 60, 60);
+        margin-bottom: 1vh;
+    }
+
+    .galleryInfoName, .galleryInfoDot, .galleryInfoDate{
+        font-size: 19px;
+        color: rgb(100, 100, 100);
+        margin-right: 0.5vw;
+    }
+
+    .galleryInfoLike{
+        margin-right: 16vw;
+    }
 }

@@ -51,7 +51,7 @@ function GalleryInfo() {
             <div className={styles.galleryFilesArea}>
                 <div className={styles.galleryFilesImgArea}>
                     <div className={styles.leftArrow} onClick={handleLeftArrowClick}>
-                        <FaAngleLeft size={50} style={{ cursor: currentIndex === 0 ? 'default' : 'pointer', color: currentIndex === 0 ? disabledColor : 'black' }} />
+                        <FaAngleLeft size={50} style={{ cursor: currentIndex === 0 ? 'default' : 'pointer', color: currentIndex === 0 ? disabledColor : 'rgb(80, 80, 80)' }} />
                     </div>
 
                     <div className={styles.galleryFilesImg}>
@@ -59,7 +59,7 @@ function GalleryInfo() {
                     </div>
 
                     <div className={styles.rightArrow} onClick={handleRightArrowClick}>
-                        <FaAngleRight size={50} style={{ cursor: currentIndex === dataGalleryInfo[0].images.length - 1 ? 'default' : 'pointer', color: currentIndex === dataGalleryInfo[0].images.length - 1 ? disabledColor : 'black' }} />
+                        <FaAngleRight size={50} style={{ cursor: currentIndex === dataGalleryInfo[0].images.length - 1 ? 'default' : 'pointer', color: currentIndex === dataGalleryInfo[0].images.length - 1 ? disabledColor : 'rgb(80, 80, 80)' }} />
                     </div>
                 </div>
 
