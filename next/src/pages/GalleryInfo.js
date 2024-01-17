@@ -3,10 +3,13 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import { LuDot } from "react-icons/lu";
 import { FaRegHeart } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
+import { FaRegCommentDots } from "react-icons/fa";
+import { HiOutlinePaperAirplane } from "react-icons/hi2";
 
 import styles from './GalleryInfo.module.css';
 
 import dataGalleryInfo from '../dataGalleryInfo';
+import dataGalleryInfoComment from '../dataGalleryInfoComment';
 
 function GalleryInfo() {
 
@@ -46,6 +49,24 @@ function GalleryInfo() {
         like ? setLikeNum(likeNum - 1) : setLikeNum(likeNum + 1);
     }
 
+    //댓글 작성 기능
+    // let [comment] = useState(dataGalleryInfoComment);
+    const [textAreaValue, setTextAreaValue] = useState('');
+    const [comment, setComment] = useState(dataGalleryInfoComment);
+
+    const handleWriteComment = () => {
+        const newComment = {
+            id: comment.length + 1,
+            name: '사용자', // 사용자 이름 또는 로그인 정보에서 가져와야 할 것입니다.
+            date: '현재 날짜 및 시간', // 현재 날짜 및 시간을 얻어와야 할 것입니다.
+            content: textAreaValue,
+            img: '/default-profile-image.png', // 사용자 프로필 이미지 URL 또는 기본 이미지 경로
+        };
+
+        setComment([...comment, newComment]); // 기존 댓글 배열에 새로운 댓글 추가
+        setTextAreaValue(''); // textArea 비우기
+    };
+
     return (
         <div className={styles.galleryInfoArea}>
             <div className={styles.galleryFilesArea}>
@@ -81,9 +102,79 @@ function GalleryInfo() {
                         <div className={styles.likeNum}>
                             {likeNum}
                         </div>
-                    
                     </div>
                 </div>
+
+                <div className={styles.galleryCommentArea}>
+                    <div className={styles.galleryCommentWrap}>
+                        <div className={styles.galleryCommentTitleArea}>
+                            <div className={styles.commentIcon}>
+                                <FaRegCommentDots size={30}/>
+                            </div>
+                            <div className={styles.galleryCommentTitle}>
+                                댓글
+                            </div>
+                            <div className={styles.galleryCommentNum}>
+                                1
+                            </div>
+                        </div>
+
+                        <div className={styles.writeGalleryCommentArea}>
+                            <div className={styles.galleryCommentMyProfile}>
+                                <img src='/developerImg/kcs.png' />
+                            </div>
+                            <div className={styles.galleryCommentBoxArea}>
+                                <textarea 
+                                    placeholder='댓글을 입력하세요'
+                                    id='comment'
+                                    className={styles.galleryCommentBox} 
+                                    value={textAreaValue}
+                                    onChange={(e) => setTextAreaValue(e.target.value)}
+                                />
+                            </div>
+                            <div className={styles.writeGalleryCommentBtn} onClick={handleWriteComment}>
+                                <HiOutlinePaperAirplane size={35}/>
+                            </div>
+                        </div>
+                           
+                        
+                        {
+                            comment.map((item,i)=>{
+                                return(
+                                    <div className={styles.galleryWrittenCommentArea}>
+                                        <WrittenComment key={item.id} comment={item}/>
+                                    </div>
+                                )
+                            })    
+                        }
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function WrittenComment(props){
+    return(
+        <div className={styles.galleryWrittenComment}>
+            <div className={styles.galleryWrittenCommentInfoArea}>
+                <div className={styles.galleryWrittenCommentProfile}>
+                    <img src={props.comment.img}/>
+                </div>
+                <div className={styles.galleryWrittenCommentName}>
+                    {props.comment.name}
+                </div>
+                <div className={styles.galleryWrittenCommentTime}>
+                    {props.comment.date}
+                </div>
+                <div className={styles.galleryWrittenCommenComOfCom}>
+                    답글
+                </div>
+            </div>
+            <div className={styles.galleryWrittenCommentContent}>
+                {props.comment.content}
             </div>
         </div>
     );
