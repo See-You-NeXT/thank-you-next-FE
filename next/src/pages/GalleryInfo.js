@@ -159,7 +159,7 @@ function GalleryInfo() {
 function WrittenComment(props){
     return(
         <div className={styles.galleryWrittenComment}>
-            <div className={styles.galleryWrittenCommentInfoArea}>
+            <div className={styles.galleryWrittenCommentUserInfoArea}>
                 <div className={styles.galleryWrittenCommentProfile}>
                     <img src={props.comment.img}/>
                 </div>

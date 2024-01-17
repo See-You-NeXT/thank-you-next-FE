@@ -163,7 +163,7 @@
     padding: 15px 8px 15px 8px;
 }
 
-.galleryWrittenCommentInfoArea{
+.galleryWrittenCommentUserInfoArea{
     display: flex;
     flex-wrap: wrap;
     margin-left: 1vw;
@@ -183,7 +183,7 @@
     object-fit: cover;
 }
 
-.galleryWrittenCommentName {
+.galleryWrittenCommentName{
     margin-left: 0.5vw;
     margin-top: 5px;
     font-weight: 600;
@@ -234,5 +234,35 @@
 
     .galleryInfoLike{
         margin-right: 16vw;
+    }
+
+    .commentIcon svg{
+        margin-top: 0.1vh;
+    }
+    
+    .galleryCommentTitle{
+        font-size: 25px;
+    }
+    
+    .galleryCommentNum{
+        font-size: 25px;
+    }
+
+    .galleryWrittenCommentName{
+        margin-left: 0.7vw;
+        font-size: 17px;
+    }
+
+    .galleryWrittenCommentTime{
+        margin-top: 5.5px;
+        font-size: 15px;
+    }
+    
+    .galleryWrittenCommenComOfCom{
+        font-size: 15px;
+    }
+
+    .galleryWrittenCommentContent{
+        font-size: 17px;
     }
 }
