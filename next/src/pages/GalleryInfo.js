@@ -50,21 +50,29 @@ function GalleryInfo() {
     }
 
     //댓글 작성 기능
-    // let [comment] = useState(dataGalleryInfoComment);
     const [textAreaValue, setTextAreaValue] = useState('');
     const [comment, setComment] = useState(dataGalleryInfoComment);
 
     const handleWriteComment = () => {
-        const newComment = {
-            id: comment.length + 1,
-            name: '사용자', // 사용자 이름 또는 로그인 정보에서 가져와야 할 것입니다.
-            date: '현재 날짜 및 시간', // 현재 날짜 및 시간을 얻어와야 할 것입니다.
-            content: textAreaValue,
-            img: '/default-profile-image.png', // 사용자 프로필 이미지 URL 또는 기본 이미지 경로
-        };
+        if (textAreaValue.trim() === '') {
+            alert('댓글 내용을 입력하세요.');
+            return;
+        }
 
-        setComment([...comment, newComment]); // 기존 댓글 배열에 새로운 댓글 추가
-        setTextAreaValue(''); // textArea 비우기
+        const userConfirmation = window.confirm('댓글을 등록하시겠습니까?');
+
+        if (userConfirmation) {
+            const newComment = {
+                id: comment.length + 1,
+                name: '사용자',
+                date: '현재 날짜 및 시간',
+                content: textAreaValue,
+                img: '/default-profile-image.png',
+            };
+    
+            setComment([...comment, newComment]);
+            setTextAreaValue('');
+        }
     };
 
     return (
@@ -132,7 +140,8 @@ function GalleryInfo() {
                                     onChange={(e) => setTextAreaValue(e.target.value)}
                                 />
                             </div>
-                            <div className={styles.writeGalleryCommentBtn} onClick={handleWriteComment}>
+                            <div className={styles.writeGalleryCommentBtn} onClick={handleWriteComment}
+                                style={{ cursor: textAreaValue.trim() === '' ? 'default' : 'pointer', color: textAreaValue.trim() === '' ? 'rgb(160, 160, 160)' : 'rgb(80, 80, 80)' }}>
                                 <HiOutlinePaperAirplane size={35}/>
                             </div>
                         </div>

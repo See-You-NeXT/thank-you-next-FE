@@ -140,9 +140,7 @@
 }
 
 .writeGalleryCommentBtn svg{
-    color: rgb(60, 60, 60);
     margin-top: 1vh;
-    cursor: pointer;
 }
 
 .galleryWrittenCommentArea{
