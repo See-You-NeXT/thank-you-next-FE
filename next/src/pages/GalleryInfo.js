@@ -123,7 +123,7 @@ function GalleryInfo() {
                                 댓글
                             </div>
                             <div className={styles.galleryCommentNum}>
-                                1
+                                {comment.length}
                             </div>
                         </div>
 
