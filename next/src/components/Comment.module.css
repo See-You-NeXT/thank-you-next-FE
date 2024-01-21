@@ -1,0 +1,123 @@
+.writeCommentArea{
+    margin: 4vh 4vw 6vh 4vw;
+    display: flex;
+    justify-content: start;
+}
+
+.commentProfile{
+    width: 4vw;
+    height: 4vw;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 50%;
+    margin-right: 1vw;
+    background-color: white;
+}
+
+.commentProfile img{
+    width: 4vw;
+    height: 4vw;
+    object-fit: cover;
+}
+
+.commentBox{
+    resize: none;
+    width: 40vw;
+    height: 8vh;
+    padding: 14px 0 0 18px;
+    font-size: 17px;
+    border-radius: 15px;
+    border: 1px solid rgb(140, 140, 140);
+    margin-right: 1.5vw;
+}
+
+.writeCommentBtn svg{
+    margin-top: 1vh;
+}
+
+.writtenCommentArea{
+    padding: 0vh 0 3vh 0;
+}
+
+.writtenCommentArea:last-child{
+    padding-bottom: 5vh;
+}
+
+.writtenComment{
+    border: 1px solid rgb(140, 140, 140);
+    border-radius: 15px;
+    background-color: white;
+    width: 45vw;
+    height: auto;
+    margin: 0 auto;
+    padding: 15px 8px 15px 8px;
+}
+
+.writtenCommentUserInfoArea{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 1vw;
+}
+
+.writtenCommentProfile{
+    width: 2vw;
+    height: 2vw;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: 50%;
+    background-color: white;
+    overflow: hidden;
+}
+
+.writtenCommentProfile img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.writtenCommentName{
+    margin-left: 1vw;
+    margin-top: 5px;
+    font-weight: 600;
+    font-size: 19px;
+}
+
+.writtenCommentTime{
+    margin-left: 0.5vw;
+    margin-top: 5px;
+    color: rgb(130, 130, 130);
+    font-size: 17px;
+}
+
+.writtenCommentReplyBtn{
+    margin-left: auto;
+    margin-right: 1vw;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.writtenCommentContent{
+    font-size: 19px;
+    text-align: left;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    padding: 5px 0 3px 0;
+}
+
+@media (max-width:1600px){
+    .writtenCommentName{
+        margin-left: 0.8vw;
+        font-size: 17px;
+    }
+
+    .writtenCommentTime{
+        margin-top: 5.5px;
+        font-size: 15px;
+    }
+    
+    .writtenCommentReplyBtn{
+        font-size: 15px;
+    }
+
+    .writtenCommentContent{
+        font-size: 17px;
+    }
+}
