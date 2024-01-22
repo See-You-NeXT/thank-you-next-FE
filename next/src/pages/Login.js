@@ -68,7 +68,7 @@ function Login(){
 
                 <div className={styles.loginBtn} 
                     style={{ backgroundColor: emailnValid && pwValid ? "#ecc6b7" : "#ecddd7", 
-                        cursor: emailnValid && pwValid ? "pointer" : "auto"}}>
+                        cursor: emailnValid && pwValid ? "pointer" : "default"}}>
                     로그인
                 </div>
 
