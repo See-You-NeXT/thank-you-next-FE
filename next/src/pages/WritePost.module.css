@@ -87,24 +87,9 @@
     font-size: 17px;
 }
 
-.uploadPicArea{
+.uploadFileArea{
     margin: 6vh 13vw 0 13vw;
 }  
-
-.uploadPicTitle{
-    text-align: left;
-    font-size: 21px;
-    color: rgb(70, 70, 70);
-    font-weight: 600;
-    margin: 0 0 0.6vh 3vw;
-}
-
-.uploadPicContent{
-    text-align: left;
-    font-size: 17px;
-    color: rgb(120, 120, 120);
-    margin: 0 0 1vh 3vw;
-}
 
 .hashtagArea{
     margin: 6vh 13vw 7vh 13vw;

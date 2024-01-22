@@ -1,3 +1,18 @@
+.uploadFileTitle{
+    text-align: left;
+    font-size: 21px;
+    color: rgb(70, 70, 70);
+    font-weight: 600;
+    margin: 0 0 0.6vh 3vw;
+}
+
+.uploadFileContent{
+    text-align: left;
+    font-size: 17px;
+    color: rgb(120, 120, 120);
+    margin: 0 0 1vh 3vw;
+}
+
 .uploadImgArea{
     display: flex;
 }
@@ -59,6 +74,14 @@
 
 
 @media (max-width:1600px){
+    .uploadFileTitle{
+        font-size: 18px;
+    }
+
+    .uploadFileContent{
+        font-size: 16px;
+    }
+    
     .selectedPicBox, .selectingPicBox, .selectedPicBox img{
         width: 9vw;
         height: 9vw;

@@ -24,10 +24,6 @@ function GalleryUpload() {
             </div>
 
             <div className={styles.uploadFileArea}>
-                <div className={styles.uploadFileTitle}>사진/동영상 업로드</div>
-                <div className={styles.uploadFileContent}>
-                    사진/동영상 업로드는 최대 10개까지 가능합니다.
-                </div>
                 <UploadImg />
             </div>
 

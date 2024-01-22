@@ -94,11 +94,7 @@ function WritePost() {
                     />
                 </div>
 
-                <div className={styles.uploadPicArea}>
-                    <div className={styles.uploadPicTitle}>사진 업로드</div>
-                    <div className={styles.uploadPicContent}>
-                        사진 업로드는 최대 10개까지 가능합니다.
-                    </div>
+                <div className={styles.uploadFileArea}>
                     <UploadImg />
                 </div>    
 
