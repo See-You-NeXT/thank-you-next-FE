@@ -1,14 +1,14 @@
-.writePostArea{
+.galleryUploadArea{
     background-color: rgb(245, 245, 245);
 }
 
-.writePostWrap{
+.galleryUploadWrap{
     background-color: white;
     margin-left: 10vw;
     margin-right: 10vw;
 }
 
-.writePostTitle{
+.galleryUploadTitle{
     text-align: left;
     font-size: 28px;
     font-weight: 700;
@@ -16,36 +16,6 @@
     margin: 0 13vw 0 13vw;
     padding: 8vh 0 1.5vh 2vw;
     border-bottom: 4px solid rgb(200, 200, 200);
-}
-
-.selectBoard{
-    display: flex;
-    justify-content: center;
-}
-
-.boardList{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    text-align: center;
-    margin-top: 3vh;
-    cursor: pointer;
-}
-
-.boardList:not(:nth-child(3)){
-    margin-right: 10vw;
-}
-
-.checkboxIcon{
-    margin-right: 10px;
-    color: rgb(100, 100, 100);
-}
-
-.boardListText{
-    font-size: 23px;
-    font-weight: 500;
-    color: rgb(50, 50, 50);
 }
 
 .titleArea{
@@ -67,31 +37,11 @@
     font-size: 17px;
 }
 
-.contentArea{
-    margin: 10vh 13vw 0 13vw;
-}
-
-.textareaText{
-    text-align: left;
-    font-size: 21px;
-    color: rgb(70, 70, 70);
-    font-weight: 600;
-    margin: 0 0 1vh 3vw;
-}
-
-.textareaBox{
-    resize: none;
-    width: 47vw;
-    height: 30vh;
-    padding: 14px 0 0 14px;
-    font-size: 17px;
-}
-
-.uploadPicArea{
+.uploadFileArea{
     margin: 6vh 13vw 0 13vw;
 }  
 
-.uploadPicTitle{
+.uploadFileTitle{
     text-align: left;
     font-size: 21px;
     color: rgb(70, 70, 70);
@@ -99,28 +49,11 @@
     margin: 0 0 0.6vh 3vw;
 }
 
-.uploadPicContent{
+.uploadFileContent{
     text-align: left;
     font-size: 17px;
     color: rgb(120, 120, 120);
     margin: 0 0 1vh 3vw;
-}
-
-.hashtagArea{
-    margin: 6vh 13vw 7vh 13vw;
-}
-
-.hashtagTitle{
-    text-align: left;
-    font-size: 21px;
-    color: rgb(70, 70, 70);
-    font-weight: 600;
-    margin: 0 0 0.6vh 3vw;
-}
-
-.hashtag{
-    margin: 3vh 0 0 3vw;
-
 }
 
 .btnArea{
@@ -151,23 +84,15 @@
 }
 
 @media (max-width:1600px){
-    .writePostTitle{
+    .galleryUploadTitle{
         font-size: 24px;
     }
 
-    .boardList:not(:nth-child(3)){
-        margin-right: 7vw;
-    }
-
-    .boardListText{
-        font-size: 19px;
-    }
-
-    .inputText, .textareaText, .uploadPicTitle, .hashtagTitle{
+    .inputText, .uploadFileTitle{
         font-size: 18px;
     }
 
-    .uploadPicContent{
+    .uploadFileContent{
         font-size: 16px;
     }
 }
