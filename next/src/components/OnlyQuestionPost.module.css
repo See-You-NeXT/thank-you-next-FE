@@ -1,0 +1,57 @@
+.selectedHashTag{
+    color: rgb(0, 140, 255);
+    display: flex;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+    margin: 0 23vw 5vh 23vw;
+}
+
+.selectedHashTagItem{
+    margin-right: 1vw;
+    cursor: pointer;
+}
+
+.stateUpdateBar{
+    
+}
+
+.UpdateToS, .UpdateToUS{
+    background-color: rgb(224, 244, 224);
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid gray;
+    border-radius: 15px;
+    width: 57vw;
+    height: 6vh;
+    line-height: 6vh;
+    margin: 0 auto 5vh auto;
+    cursor: pointer;
+}
+
+.UpdateToUS{
+    background-color: rgb(249, 226, 225);
+}
+
+.stateUpdateContent{
+    text-align: left;
+    width: 44vw;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 3vw;
+    color: rgb(80,80,80);
+}
+
+.stateUpdateIcon{
+    color: rgb(80, 80, 80);
+}
+
+.stateUpdateIcon svg{
+    margin-top: 1.6vh;
+}
+
+.stateUpdateText{
+    font-size: 23px;
+    font-weight: 600;
+    margin-right: 3vw;
+}

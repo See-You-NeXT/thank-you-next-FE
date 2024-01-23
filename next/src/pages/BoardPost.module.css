@@ -1,26 +1,5 @@
-.noticePostTitleArea{
-    background-color: rgb(235, 235, 235);
-    width: 60vw;
-    margin: 8vh auto 5vh auto;
-    display: flex;
-    padding: 1.5vh 0 1.5vh 0;
-}
-
-.arrowToBack{
-    margin: 0 3vh 0 5vw;
-    cursor: pointer;
-}
-
-.arrowToBack svg{
-    margin-top: 0.1vh;
-}
-
-.noticePostTitle{
-    font-size: 26px;
-    font-weight: 500;
-}
-
 .postCommentArea{
+    padding-top: 5vh;
     margin-bottom: 8vh;
 }
 
@@ -57,19 +36,6 @@
 }
 
 @media (max-width:1600px){
-    .noticePostTitleArea{
-        padding: 1vh 0 1vh 0;
-    }
-
-    .arrowToBack{
-        margin: 0 2vh 0 4vw;
-    }
-    
-    .noticePostTitle{
-        font-size: 23px;
-        line-height: 30px;
-    }
-
     .postCommentTitle{
         font-size: 25px;
     }

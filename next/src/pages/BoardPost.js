@@ -1,26 +1,16 @@
 import React, { useState } from 'react';
-import { FaAngleLeft } from "react-icons/fa6";
 import { FaRegCommentDots } from "react-icons/fa";
 
-import styles from './NoticePost.module.css';
+import styles from './BoardPost.module.css';
 import Post from '../components/Post';
 import Comment from '../components/Comment';
 
 import dataGalleryInfoComment from '../dataGalleryInfoComment';
 
-function NoticePost() {
+function BoardPost() {
     const [comment, setComment] = useState(dataGalleryInfoComment);
   return (
-    <div className={styles.noticePostArea}>
-        <div className={styles.noticePostTitleArea}>
-            <div className={styles.arrowToBack}>
-                <FaAngleLeft size={30}/>
-            </div>
-            <div className={styles.noticePostTitle}>
-                공지게시판
-            </div>
-        </div>
-
+    <div className={styles.boardPostArea}>
         <Post />
 
         <div className={styles.postCommentArea}>
@@ -46,4 +36,4 @@ function NoticePost() {
   );
 }
 
-export default NoticePost;
+export default BoardPost;
