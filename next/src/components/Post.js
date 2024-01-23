@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaAngleLeft } from "react-icons/fa6";
 
 import styles from './Post.module.css';
@@ -9,13 +9,19 @@ import OnlyQuestionPost from './OnlyQuestionPost';
 function Post() {
     const post = dataPost[1];
 
+    const [presentState, setPresentState] = useState(false);
+
+    const handleSolveStateChange = (newSolveState) => {
+        setPresentState(newSolveState);
+    };
+
     return (
         <div className={styles.post}>
-            <div className={styles.noticePostTitleArea}>
+            <div className={styles.boardTitleArea}>
                 <div className={styles.arrowToBack}>
                     <FaAngleLeft size={30}/>
                 </div>
-                <div className={styles.noticePostTitle}>
+                <div className={styles.boardTitle}>
                     {post.board}
                 </div>
             </div>
@@ -30,6 +36,9 @@ function Post() {
                 <div className={styles.postDate}>
                     {post.date}
                 </div>
+                {
+                    post.board =="질문게시판" ? <PresentState presentState={presentState}/> : <div></div>
+                }
             </div>
             
             <div className={styles.postContent}>
@@ -37,7 +46,19 @@ function Post() {
             </div>
 
             {
-                post.board =="질문게시판" ? <OnlyQuestionPost /> : <div></div>
+                post.board =="질문게시판" ? <OnlyQuestionPost onSolveStateChange={handleSolveStateChange}/> : <div></div>
+            }
+
+        </div>
+    );
+}
+
+function PresentState({ presentState }){
+    return(
+        <div className={styles.presentState}>
+            {
+                presentState ? 
+                <div className={styles.solveText}>해결</div> : <div className={styles.unsolveText}>미해결</div>
             }
         </div>
     );

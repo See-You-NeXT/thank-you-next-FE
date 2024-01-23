@@ -1,4 +1,4 @@
-.noticePostTitleArea{
+.boardTitleArea{
     background-color: rgb(235, 235, 235);
     width: 60vw;
     margin: 8vh auto 5vh auto;
@@ -15,14 +15,14 @@
     margin-top: 0.1vh;
 }
 
-.noticePostTitle{
+.boardTitle{
     font-size: 26px;
     font-weight: 500;
 }
 
 .postTitle{
     width: 45vw;
-    font-size: 35px;
+    font-size: 33px;
     font-weight: 500;
     text-align: left;
     margin-left: 23vw;
@@ -32,7 +32,7 @@
 .postInfo{
     display: flex;
     width: 60vw;
-    font-size: 24px;
+    font-size: 22px;
     margin: 3vh auto 0vh auto;
     padding-bottom: 5vh;
     border-bottom: 1px solid rgb(170, 170, 170);
@@ -44,9 +44,23 @@
     margin-right: 1vw;
 }
 
+.presentState{
+    margin-left: 4vw;
+}
+
+.solveText{
+    color: rgb(101, 175, 98);
+    font-weight: 600;
+}
+
+.unsolveText{
+    color: rgb(182, 92, 92);
+    font-weight: 600;
+}
+
 .postContent{
     width: 54vw;
-    font-size: 24px;
+    font-size: 22px;
     text-align: left;
     margin: 0 auto 5vh auto;
     padding: 3vh 3vw 3vh 3vw;
@@ -56,7 +70,7 @@
 }
 
 @media (max-width:1600px){
-    .noticePostTitleArea{
+    .boardTitleArea{
         padding: 1vh 0 1vh 0;
     }
 
@@ -64,8 +78,8 @@
         margin: 0 2vh 0 4vw;
     }
     
-    .noticePostTitle{
-        font-size: 23px;
+    .boardTitle{
+        font-size: 21px;
         line-height: 30px;
     }
 
@@ -74,11 +88,11 @@
     }
 
     .postInfo{
-        font-size: 20px;
+        font-size: 18px;
         padding-bottom: 4vh;
     }
 
     .postContent{
-        font-size: 21px;
+        font-size: 19px;
     }
 }

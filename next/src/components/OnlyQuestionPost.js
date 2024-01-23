@@ -4,11 +4,15 @@ import { FaRegCircleXmark } from "react-icons/fa6";
 
 import styles from './OnlyQuestionPost.module.css';
 
-function OnlyQuestionPost() {
+function OnlyQuestionPost({ onSolveStateChange }) {
     let [solveState, setSolveState] = useState(false);
 
     const handleSolveState = () => {
         setSolveState(!solveState);
+
+        if (onSolveStateChange) {
+            onSolveStateChange(!solveState);
+        }
     };
 
     return (
@@ -38,7 +42,7 @@ function UpdateToSolve(){
                 질문이 해결되었다면 체크바를 눌러 진행 상황을 업데이트하세요!
             </div>
             <div className={styles.stateUpdateIcon}>
-                <FaRegCircleCheck size={27}/>
+                <FaRegCircleCheck size={26}/>
             </div>
             <div className={styles.stateUpdateText}>
                 해결
