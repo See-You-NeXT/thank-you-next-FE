@@ -13,7 +13,7 @@
     font-size: 24px;
     margin: 3vh auto 0vh auto;
     padding-bottom: 5vh;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgb(170, 170, 170);
     color: rgb(80, 80, 80);
 }
 
@@ -28,7 +28,22 @@
     text-align: left;
     margin: 0 auto 10vh auto;
     padding: 3vh 3vw 3vh 3vw;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid rgb(170, 170, 170);
     color: rgb(60, 60, 60);
     line-height: 2;
+}
+
+@media (max-width:1600px){
+    .postTitle{
+        font-size: 30px;
+    }
+
+    .postInfo{
+        font-size: 20px;
+        padding-bottom: 4vh;
+    }
+
+    .postContent{
+        font-size: 21px;
+    }
 }
