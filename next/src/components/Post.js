@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaAngleLeft } from "react-icons/fa6";
 
 import styles from './Post.module.css';
@@ -8,6 +9,7 @@ import OnlyQuestionPost from './OnlyQuestionPost';
 
 function Post() {
     const post = dataPost[1];
+    const navigate = useNavigate();
 
     const [presentState, setPresentState] = useState(false);
 
@@ -19,7 +21,7 @@ function Post() {
         <div className={styles.post}>
             <div className={styles.boardTitleArea}>
                 <div className={styles.arrowToBack}>
-                    <FaAngleLeft size={30}/>
+                    <FaAngleLeft size={30} onClick={()=>{navigate(-1)}}/>
                 </div>
                 <div className={styles.boardTitle}>
                     {post.board}
