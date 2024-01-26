@@ -9,7 +9,6 @@ function Comment({ commentData }) {
 
     const handleWriteComment = () => {
         if (textAreaValue.trim() === '') {
-            alert('댓글 내용을 입력하세요.');
             return;
         }
 
