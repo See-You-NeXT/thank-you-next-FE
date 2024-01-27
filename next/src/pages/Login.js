@@ -9,7 +9,7 @@ function Login(){
     let [email, setEmail] = useState('');
     let [password, setPassword] = useState('');
 
-    const [emailnValid,setEmailValid] = useState(false);
+    const [emailValid,setEmailValid] = useState(false);
     const [pwValid,setPwValid] = useState(false);
 
     const checkValid = () =>{
@@ -67,8 +67,8 @@ function Login(){
                 </div>
 
                 <div className={styles.loginBtn} 
-                    style={{ backgroundColor: emailnValid && pwValid ? "#ecc6b7" : "#ecddd7", 
-                        cursor: emailnValid && pwValid ? "pointer" : "default"}}>
+                    style={{ backgroundColor: emailValid && pwValid ? "#ecc6b7" : "#ecddd7", 
+                        cursor: emailValid && pwValid ? "pointer" : "default"}}>
                     로그인
                 </div>
 

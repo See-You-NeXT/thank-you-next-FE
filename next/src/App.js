@@ -19,6 +19,7 @@ import Introduce from './pages/Introduce';
 import Gallery from './pages/Gallery';
 import GalleryInfo from './pages/GalleryInfo';
 import GalleryUpload from './pages/GalleryUpload';
+import MyPage from './pages/MyPage';
 
 function App() {
 
@@ -42,7 +43,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />}/>
         <Route path="/galleryInfo" element={<GalleryInfo />}/>
         <Route path="/galleryUpload" element={<GalleryUpload />}/>
-        <Route path="/mypage" element={<div>마이페이지</div>}/>
+        <Route path="/mypage" element={<MyPage />}/>
 
         <Route path="*" element={
           <div className='notFoundPage'>
