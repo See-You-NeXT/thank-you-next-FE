@@ -8,7 +8,7 @@ import dataPost from '../dataPost';
 import OnlyQuestionPost from './OnlyQuestionPost';
 
 function Post() {
-    const post = dataPost[0];
+    const post = dataPost[1];
     const navigate = useNavigate();
 
     const [presentState, setPresentState] = useState(false);
@@ -20,9 +20,7 @@ function Post() {
     return (
         <div className={styles.post}>
             <div className={styles.boardTitleArea}>
-                <div className={styles.arrowToBack}>
-                    <FaAngleLeft size={30} onClick={()=>{navigate(-1)}}/>
-                </div>
+                <FaAngleLeft className={styles.arrowToBackIcon} onClick={()=>{navigate(-1)}}/>
                 <div className={styles.boardTitle}>
                     {post.board}
                 </div>

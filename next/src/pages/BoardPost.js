@@ -16,9 +16,8 @@ function BoardPost() {
         <div className={styles.postCommentArea}>
             <div className={styles.postCommentWrap}>
                 <div className={styles.postCommentTitleArea}>
-                    <div className={styles.commentIcon}>
-                        <FaRegCommentDots size={30}/>
-                    </div>
+                    <FaRegCommentDots className={styles.commentIcon}/>
+
                     <div className={styles.postCommentTitle}>
                         댓글
                     </div>

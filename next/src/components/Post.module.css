@@ -6,12 +6,10 @@
     padding: 1.5vh 0 1.5vh 0;
 }
 
-.arrowToBack{
+.arrowToBackIcon{
     margin: 0 3vh 0 5vw;
     cursor: pointer;
-}
-
-.arrowToBack svg{
+    font-size: 30px;
     margin-top: 0.1vh;
 }
 
@@ -74,8 +72,10 @@
         padding: 1vh 0 1vh 0;
     }
 
-    .arrowToBack{
+    .arrowToBackIcon{
         margin: 0 2vh 0 4vw;
+        font-size: 24px;
+        margin-top: 0.3vh;
     }
     
     .boardTitle{

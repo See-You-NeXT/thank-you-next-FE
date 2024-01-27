@@ -9,7 +9,7 @@
 .total{
     text-align: left;
     margin: 3vh 0 0 18.5vw;
-    font-size: 18px;
+    font-size: 23px;
     font-weight: 600;
 }
 
@@ -137,6 +137,10 @@ ul.pagination li.active a {
 }
 
 @media (max-width:1600px){
+    .total{
+        font-size: 20px;
+    }
+    
     .listTitleItems{
         font-size: 18px;
     }

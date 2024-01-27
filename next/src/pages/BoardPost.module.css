@@ -18,9 +18,7 @@
 .commentIcon{
     color: rgb(60, 60, 60);
     margin-right: 1vw;
-}
-
-.commentIcon svg{
+    font-size: 32px;
     margin-top: 0.3vh;
 }
 
@@ -42,5 +40,9 @@
     
     .postCommentNum{
         font-size: 25px;
+    }
+
+    .commentIcon{
+        font-size: 28px;
     }
 }
