@@ -1,0 +1,89 @@
+.uploadFileTitle{
+    text-align: left;
+    font-size: 21px;
+    color: rgb(70, 70, 70);
+    font-weight: 600;
+    margin: 0 0 0.6vh 3vw;
+}
+
+.uploadFileContent{
+    text-align: left;
+    font-size: 17px;
+    color: rgb(120, 120, 120);
+    margin: 0 0 1vh 3vw;
+}
+
+.uploadImgArea{
+    display: flex;
+}
+
+.selectingPicBox{
+    background-color: rgb(220, 220, 220);
+    width: 10vw;
+    height: 10vw;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4vh 3vw 0 3vw;
+}
+
+.selectingPicBox svg{
+    color: rgb(100, 100, 100);
+}
+
+.selectedPicArea{
+    display: flex;
+    margin-top: 4vh;
+}
+
+.selectedPicBoxContainer{
+    display: flex;
+}
+
+.selectedPicBox{
+    width: 10vw;
+    height: 10vw;
+    border: 1px solid rgb(160, 160, 160);
+    border-radius: 15px;
+}
+
+.selectedPicBox:not(:nth-child(3)){
+    margin-right: 10px;
+}
+
+.selectedPicBox img{
+    width: 10vw;
+    height: 10vw;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.leftArrow{
+    color: rgb(100, 100, 100);
+    align-self: center;
+    margin-right: 1vw;
+}
+
+.rightArrow{
+    color: rgb(100, 100, 100);
+    align-self: center;
+    margin-left: 1vw;
+}
+
+
+@media (max-width:1600px){
+    .uploadFileTitle{
+        font-size: 18px;
+    }
+
+    .uploadFileContent{
+        font-size: 16px;
+    }
+    
+    .selectedPicBox, .selectingPicBox, .selectedPicBox img{
+        width: 9vw;
+        height: 9vw;
+    }
+}

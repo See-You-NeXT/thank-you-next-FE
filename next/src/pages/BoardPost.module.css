@@ -1,0 +1,48 @@
+.postCommentArea{
+    padding-top: 5vh;
+    margin-bottom: 8vh;
+}
+
+.postCommentWrap{
+    background-color: #fcf2ee;
+    border-radius: 20px;
+    width: 60vw;
+    margin: auto;
+}
+
+.postCommentTitleArea{
+    display: flex;
+    padding: 4vh 0 0 4vw;
+}
+
+.commentIcon{
+    color: rgb(60, 60, 60);
+    margin-right: 1vw;
+    font-size: 32px;
+    margin-top: 0.3vh;
+}
+
+.postCommentTitle{
+    font-size: 28px;
+    font-weight: 700;
+    margin-right: 0.5vw;
+}
+
+.postCommentNum{
+    font-size: 28px;
+    font-weight: 700;
+}
+
+@media (max-width:1600px){
+    .postCommentTitle{
+        font-size: 25px;
+    }
+    
+    .postCommentNum{
+        font-size: 25px;
+    }
+
+    .commentIcon{
+        font-size: 28px;
+    }
+}

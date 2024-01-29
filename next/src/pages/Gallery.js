@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './Gallery.module.css';
 import { FiUpload } from "react-icons/fi";
 
@@ -8,6 +9,7 @@ import Pagination from 'react-js-pagination';
 import dataGallery from '../dataGallery';
 
 function Gallery() {
+  let navigate = useNavigate();
 
   //검색창
   const [filteredData, setFilteredData] = useState(dataGallery);
@@ -53,7 +55,7 @@ function Gallery() {
         <div className={styles.searchBarArea}>
           <SearchBar onSearch={handleSearch}/>
         </div>
-        <div className={styles.uploadBtn}>
+        <div className={styles.uploadBtn} onClick={()=>{ navigate('/galleryUpload') }}>
           <FiUpload size={35}/>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
+import { RiEmotionSadLine } from "react-icons/ri";
 
 //component
 import Navigation from './components/Navigation';
@@ -13,8 +14,12 @@ import Notice from './pages/Notice';
 import Question from './pages/Question';
 import Free from './pages/Free';
 import WritePost from './pages/WritePost';
+import BoardPost from './pages/BoardPost';
+import Introduce from './pages/Introduce';
 import Gallery from './pages/Gallery';
 import GalleryInfo from './pages/GalleryInfo';
+import GalleryUpload from './pages/GalleryUpload';
+import MyPage from './pages/MyPage';
 
 function App() {
 
@@ -33,12 +38,23 @@ function App() {
         <Route path="/question" element={<Question />}/>
         <Route path="/free" element={<Free />}/>
         <Route path="/writePost" element={<WritePost />} />
-        <Route path="/introduce" element={<div>스터디소개페이지</div>}/>
+        <Route path="/boardPost" element={<BoardPost />} />
+        <Route path="/introduce" element={<Introduce />}/>
         <Route path="/gallery" element={<Gallery />}/>
         <Route path="/galleryInfo" element={<GalleryInfo />}/>
-        <Route path="/mypage" element={<div>마이페이지</div>}/>
+        <Route path="/galleryUpload" element={<GalleryUpload />}/>
+        <Route path="/mypage" element={<MyPage />}/>
 
-        <Route path="*" element={<h2>404 Not Found</h2>}/>
+        <Route path="*" element={
+          <div className='notFoundPage'>
+            <div className="sad">
+              <RiEmotionSadLine size={60}/>
+            </div>
+            <div className='notFoundText'>
+              404 Not Found
+            </div>
+          </div>}
+        />
       </Routes>
       <Footer />
     </div>

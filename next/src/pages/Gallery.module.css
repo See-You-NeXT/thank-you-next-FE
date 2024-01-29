@@ -19,7 +19,7 @@
     color: rgb(70, 70, 70);
     width: 60px;
     height: 60px;
-    border-radius: 30px;
+    border-radius: 50%;
     cursor: pointer;
     margin: 0 18.5vw 2vh 0;
 }
