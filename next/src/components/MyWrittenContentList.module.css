@@ -1,0 +1,80 @@
+.selectBoardArea{
+    display: flex;
+    margin-left: 20vw;
+}
+
+.selectNoticeBoard, .selectQuestionBoard, .selectFreeBoard{
+    border: 3px solid rgb(200, 200, 200);
+    border-bottom: none;
+    width: 7vw;
+    height: 6vh;
+    line-height: 6vh;
+    font-size: 23px;
+    font-weight: 600;
+    color: rgb(80, 80, 80);
+    cursor: pointer;
+}
+
+.selectNoticeBoard, .selectQuestionBoard{
+    border-right: none;
+}
+
+.selectNoticeBoard{
+    border-top-left-radius: 10px;
+}
+
+.selectFreeBoard{
+    border-top-right-radius: 10px;
+}
+
+.writtenContentListArea{
+    border: 2px solid rgb(200, 200, 200);
+    border-radius: 10px;
+    width: 62vw;
+    margin: 0 auto 10vh auto;
+}
+
+.writtenContentList{
+    border-bottom: 2px solid rgb(200, 200, 200);
+}
+
+.writtenContentList:last-child{
+    border-bottom: none;
+}
+
+.topArea{
+    display: flex;
+    justify-content: space-between;
+    width: 56vw;
+    margin: 2vh auto 1vh auto;
+}
+
+.timeToWrite{
+    font-size: 20px;
+    color: #EE551E;
+}
+
+.controlBtnArea{
+    display: flex;
+    color: rgb(90, 90, 90);
+}
+
+.editBtn, .deleteBtn{
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.editBtn{
+    margin-right: 0.6vw;
+}
+
+.writtenContentItem{
+    width: 56vw;
+    font-size: 25px;
+    text-align: left;
+    margin: 1.5vh auto 2vh auto;
+    color: rgb(60, 60, 60);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
