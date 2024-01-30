@@ -10,6 +10,7 @@ function MyWrittenContentList() {
     const [selectedBoard, setSelectedBoard] = useState('공지');
 
     const handleBoardClick = (board) => {
+        setPage(1);
         setSelectedBoard(board);
     };
 
@@ -28,13 +29,16 @@ function MyWrittenContentList() {
     return (
         <div className={styles.myWrittenContentList}>
             <div className={styles.selectBoardArea}>
-                <div className={styles.selectNoticeBoard} onClick={() => handleBoardClick('공지')}>
+                <div className={styles.selectNoticeBoard} style={{backgroundColor:selectedBoard == "공지" ? '#ffe6dd' : ''}}
+                    onClick={() => handleBoardClick('공지')}>
                     공지
                 </div>
-                <div className={styles.selectQuestionBoard} onClick={() => handleBoardClick('질문')}>
+                <div className={styles.selectQuestionBoard} style={{backgroundColor:selectedBoard == "질문" ? '#ffe6dd' : ''}}
+                    onClick={() => handleBoardClick('질문')}>
                     질문
                 </div>
-                <div className={styles.selectFreeBoard} onClick={() => handleBoardClick('자유')}>
+                <div className={styles.selectFreeBoard} style={{backgroundColor:selectedBoard == "자유" ? '#ffe6dd' : ''}}
+                    onClick={() => handleBoardClick('자유')}>
                     자유
                 </div>
             </div>
