@@ -36,7 +36,7 @@ function Navigation(){
                     <li className={styles.navLi} onMouseOver={handleMouseOverSecond} onMouseOut={handleMouseOutSecond}>
                         게시판
                     </li>
-                    <li className={styles.navLi} onClick={()=>{ navigate('/mypage') }}>마이페이지</li>
+                    <li className={styles.navLi} onClick={()=>{ navigate('/myPage') }}>마이페이지</li>
                 </ul>
                 <div className={styles.loginArea}>
                     <div className={styles.loginItem} onClick={()=>{ navigate('/login') }}>로그인</div>

@@ -20,6 +20,10 @@ import Gallery from './pages/Gallery';
 import GalleryInfo from './pages/GalleryInfo';
 import GalleryUpload from './pages/GalleryUpload';
 import MyPage from './pages/MyPage';
+import MyPost from './pages/MyPost';
+import MyComment from './pages/MyComment';
+import MyProfile from './pages/MyProfile';
+import MyInfoPage from './pages/MyInfoPage';
 
 function App() {
 
@@ -43,7 +47,12 @@ function App() {
         <Route path="/gallery" element={<Gallery />}/>
         <Route path="/galleryInfo" element={<GalleryInfo />}/>
         <Route path="/galleryUpload" element={<GalleryUpload />}/>
-        <Route path="/mypage" element={<MyPage />}/>
+        <Route path="/myPage" element={<MyPage />}/>
+        <Route path="/myPost" element={<MyPost />}/>
+        <Route path="/myComment" element={<MyComment />}/>
+        <Route path="/myProfile" element={<MyProfile />}/>
+        <Route path="/myInfoPage" element={<MyInfoPage />}/>
+
 
         <Route path="*" element={
           <div className='notFoundPage'>
