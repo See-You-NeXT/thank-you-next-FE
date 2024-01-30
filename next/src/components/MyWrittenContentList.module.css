@@ -31,7 +31,7 @@
     border: 2px solid rgb(200, 200, 200);
     border-radius: 10px;
     width: 62vw;
-    margin: 0 auto 10vh auto;
+    margin: 0 auto 6vh auto;
 }
 
 .writtenContentList{
@@ -44,13 +44,13 @@
 
 .topArea{
     display: flex;
+    font-size: 20px;
     justify-content: space-between;
     width: 56vw;
     margin: 2vh auto 1vh auto;
 }
 
 .timeToWrite{
-    font-size: 20px;
     color: #EE551E;
 }
 
@@ -60,7 +60,6 @@
 }
 
 .editBtn, .deleteBtn{
-    font-size: 20px;
     cursor: pointer;
 }
 
@@ -77,4 +76,19 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+@media (max-width:1600px){
+    .selectNoticeBoard, .selectQuestionBoard, .selectFreeBoard{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .topArea{
+        font-size: 17px;
+    }
+
+    .writtenContentItem{
+        font-size: 22px;
+    }
 }

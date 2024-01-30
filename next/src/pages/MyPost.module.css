@@ -15,3 +15,14 @@
     color: rgb(80,80,80);
     line-height: 45px;
 }
+
+@media (max-width:1600px){
+    .icon{
+        font-size: 38px;
+    }
+
+    .myPostTitle{
+        font-size: 28px;
+        line-height: 38px;
+    }
+}
