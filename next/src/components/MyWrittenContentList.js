@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Pagination from "react-js-pagination";
 
 import styles from './MyWrittenContentList.module.css';
 
@@ -6,50 +7,52 @@ import dataMyPost from '../dataMyPost';
 
 function MyWrittenContentList() {
     //게시판 선택 기능
-    let [notice, setNotice] = useState(true);
-    let [question, setQuestion] = useState(false);
-    let [free, setFree] = useState(false);
+    const [selectedBoard, setSelectedBoard] = useState('공지');
 
-    const handleNoticeClick = () => {
-        notice ? setNotice(notice) : setNotice(!notice);
-        setQuestion(false);
-        setFree(false);
+    const handleBoardClick = (board) => {
+        setSelectedBoard(board);
     };
 
-    const handleQuestionClick = () => {
-        setNotice(false);
-        question ? setQuestion(question) : setQuestion(!question);
-        setFree(false);
+    const filteredData = dataMyPost.filter(item => item.board === selectedBoard);
+
+    //페이지네이션
+    const [page, setPage] = useState(1);
+    const itemsPerPage = 5;
+
+    const handlePageChange = (pageNumber) => {
+        setPage(pageNumber);
     };
 
-    const handleFreeClick = () => {
-        setNotice(false);
-        setQuestion(false);
-        free ? setFree(free) : setFree(!free);
-    };
+    const totalItemsCount = filteredData.length;
 
     return (
         <div className={styles.myWrittenContentList}>
             <div className={styles.selectBoardArea}>
-                <div className={styles.selectNoticeBoard} onClick={handleNoticeClick}>
+                <div className={styles.selectNoticeBoard} onClick={() => handleBoardClick('공지')}>
                     공지
                 </div>
-                <div className={styles.selectQuestionBoard} onClick={handleQuestionClick}>
+                <div className={styles.selectQuestionBoard} onClick={() => handleBoardClick('질문')}>
                     질문
                 </div>
-                <div className={styles.selectFreeBoard} onClick={handleFreeClick}>
+                <div className={styles.selectFreeBoard} onClick={() => handleBoardClick('자유')}>
                     자유
                 </div>
             </div>
             <div className={styles.writtenContentListArea}>
-            {
-                dataMyPost.map((item,i)=>{
-                    return(
-                        <WrittenContentList key={item.id} list={item} />
-                    )
-                })
-            }
+                {filteredData.slice((page - 1) * itemsPerPage, page * itemsPerPage).map((item, i) => (
+                    <WrittenContentList key={item.id} list={item} />
+                ))}
             </div>
+
+            <Pagination
+                activePage={page}
+                itemsCountPerPage={itemsPerPage}
+                totalItemsCount={totalItemsCount}
+                pageRangeDisplayed={5}
+                prevPageText={"‹"}
+                nextPageText={"›"}
+                onChange={handlePageChange}
+            />
         </div>
     );
 }
