@@ -18,7 +18,7 @@ function MyWrittenContentList() {
 
     //페이지네이션
     const [page, setPage] = useState(1);
-    const itemsPerPage = 5;
+    const itemsPerPage = 4;
 
     const handlePageChange = (pageNumber) => {
         setPage(pageNumber);

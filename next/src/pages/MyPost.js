@@ -7,7 +7,6 @@ import MyWrittenContentList from '../components/MyWrittenContentList';
 function MyPost() {
     return (
         <div className={styles.myPostArea}>
-            
             <div className={styles.myPostTitleArea}>
                 <PiNotepadBold className={styles.icon} />
                 <div className={styles.myPostTitle}>
