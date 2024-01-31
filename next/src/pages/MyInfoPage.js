@@ -26,43 +26,33 @@ function MyInfoPage() {
         setLink(myInfoData.link);
     }, []);
 
-    // useEffect(() => {
-    //     const handleClickEditInfoWrap = (event) => {
-    //         if (editInfoAreaRef.current && editInfoAreaRef.current.contains(event.target)) {
-    //             handleShowPassword();
-    //         }
-    //     };
-
-    //     document.addEventListener('mousedown', handleClickEditInfoWrap);
-
-    //     return () => {
-    //         document.removeEventListener('mousedown', handleClickEditInfoWrap);
-    //     };
-    // }, [editInfoAreaRef]);
-
     const handleSave = () => {
-        const shouldSave = window.confirm("변경된 내용을 저장하시겠습니까?");
-        if (!shouldSave) {
-            return;
+        if(isPasswordCorrect){
+            const shouldSave = window.confirm("변경된 내용을 저장하시겠습니까?");
+            if (!shouldSave) {
+                return;
+            }
+
+            const updatedData = {
+                name: "김창식",
+                classNum: "6019XXXX",
+                email: "abc@mju.ac.kr",
+                pw: password,
+                birth: birth,
+                selfIntro: selfIntro,
+                github: github,
+                link: link,
+            };
+
+            dataMyInfo[0] = updatedData;
+
+            // 여기에서 수정된 데이터를 서버에 보내거나 로컬 스토리지에 저장하는 등의 로직을 추가
+            console.log("저장되었습니다.", updatedData);
+
+            setIsPasswordCorrect(false);
+            setShowPassword(false);
         }
-
-        const updatedData = {
-            name: "김창식",
-            classNum: "6019XXXX",
-            email: "abc@mju.ac.kr",
-            pw: password,
-            birth: birth,
-            selfIntro: selfIntro,
-            github: github,
-            link: link,
-        };
-
-        dataMyInfo[0] = updatedData;
-
-        // 여기에서 수정된 데이터를 서버에 보내거나 로컬 스토리지에 저장하는 등의 로직을 추가
-        console.log("저장되었습니다.", updatedData);
-
-        setIsPasswordCorrect(false);
+        
     };
 
     const handleShowPassword = () => {
@@ -228,7 +218,11 @@ function MyInfoPage() {
             </div>
             </div>
 
-            <div className={styles.saveBtn} onClick={handleSave}>
+            <div className={styles.saveBtn} onClick={handleSave}
+                style={{cursor:isPasswordCorrect ? 'pointer' : 'default', 
+                    backgroundColor:isPasswordCorrect ? '#ffd0bf' : '#e4e4e4',
+                    color:isPasswordCorrect ? 'rgb(80,80,80)' : 'rgb(110,110,110)'
+            }}>
                 저장
             </div>
         </div>
