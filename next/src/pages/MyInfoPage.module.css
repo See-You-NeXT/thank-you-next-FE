@@ -1,0 +1,56 @@
+.basicInfoArea{
+    width: 50vw;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 20px;
+    margin: 10vh auto 5vh auto;
+    padding: 4vh 10vw 4vh 10vw;
+    display: flex;
+}
+
+.editProfileImg{
+    border-right: 1px solid rgb(200, 200, 200);
+    padding: 3vh 8vw 3vh 0;
+}
+
+.editProfileImg Img{
+    border-radius: 50%;
+    border: 2px solid rgb(210, 210, 210);
+    width: 12vw;
+    height: 12vw;
+    object-fit: contain;
+}
+
+.basicInfo{
+    padding-left: 8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nameArea, .classNumArea, .emailArea{
+    display: flex;
+}
+
+.nameArea, .classNumArea{
+    margin-bottom: 4vh;
+}
+
+.basicInfoItemsText{
+    font-size: 25px;
+    font-weight: 700;
+    text-align: left;
+    width: 10vw;
+    color: rgb(80,80,80);
+}
+
+.basicInfoItemsContent{
+    font-size: 23px;
+    text-align: left;
+    width: 13vw;
+    color: rgb(80,80,80);
+    overflow-wrap: break-word;
+}
+
+@media(max-width:1600px){
+    
+}
