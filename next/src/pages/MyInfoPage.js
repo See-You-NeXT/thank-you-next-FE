@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styles from './MyInfoPage.module.css';
 
 function MyInfoPage() {
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [birth, setBirth] = useState('');
+    const [selfIntro, setSelfIntro] = useState('');
+    const [github, setGithub] = useState('');
+    const [link, setLink] = useState('');
+
     return (
         <div className={styles.myInfoPageArea}>
             <div className={styles.basicInfoArea}>
@@ -39,34 +46,88 @@ function MyInfoPage() {
             </div>
 
             <div className={styles.editInfoArea}>
-                <div className={styles.pwArea}>
+                <div className={styles.editPwArea}>
                     <div className={styles.editInfoItemsText}>
                         비밀번호
                     </div>
+                    <div className={styles.editInfoItemsContent}>
+                        <input
+                            type="password"
+                            placeholder="새 비밀번호 입력"
+                            value={password}
+                            className={styles.editPwBox}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
                 </div>
-                <div className={styles.confirmPwArea}>
+                <div className={styles.editConfirmPwArea}>
                     <div className={styles.editInfoItemsText}>
                         비밀번호 확인
                     </div>
+                    <div className={styles.editInfoItemsContent}>
+                        <input
+                            type="password"
+                            placeholder="비밀번호 확인"
+                            value={confirmPassword}
+                            className={styles.editConfirmPwBox}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                        />
+                    </div>
                 </div>
-                <div className={styles.birthArea}>
+                <div className={styles.editBirthArea}>
                     <div className={styles.editInfoItemsText}>
                         생년월일
                     </div>
+                    <div className={styles.editInfoItemsContent}>
+                        <input
+                            type="text"
+                            placeholder="YYYY-MM-DD"
+                            value={birth}
+                            className={styles.editBirthBox}
+                            onChange={(e) => setBirth(e.target.value)}
+                        />
+                    </div>
                 </div>
-                <div className={styles.selfIntroArea}>
+                <div className={styles.editSelfIntroArea}>
                     <div className={styles.editInfoItemsText}>
                         자기소개
                     </div>
+                    <div className={styles.editInfoItemsContent}>
+                        <textarea
+                            type="text"
+                            placeholder="자기소개 입력"
+                            value={selfIntro}
+                            className={styles.editSelfIntroBox}
+                            onChange={(e) => setSelfIntro(e.target.value)}
+                        />
+                    </div>
                 </div>
-                <div className={styles.githubArea}>
+                <div className={styles.editGithubArea}>
                     <div className={styles.editInfoItemsText}>
                         Github
                     </div>
+                    <div className={styles.editInfoItemsContent}>
+                        <input
+                            type="text"
+                            placeholder="Github 주소 입력"
+                            value={github}
+                            className={styles.editGithubBox}
+                            onChange={(e) => setGithub(e.target.value)}
+                        />
+                    </div>
                 </div>
-                <div className={styles.linkArea}>
+                <div className={styles.editLinkArea}>
                     <div className={styles.editInfoItemsText}>
                         Link
+                    </div>
+                    <div className={styles.editInfoItemsContent}>
+                        <input
+                            type="text"
+                            placeholder="추가 링크 입력"
+                            value={link}
+                            className={styles.editLinkBox}
+                            onChange={(e) => setLink(e.target.value)}
+                        />
                     </div>
                 </div>
             </div>
