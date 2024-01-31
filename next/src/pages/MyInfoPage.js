@@ -26,19 +26,19 @@ function MyInfoPage() {
         setLink(myInfoData.link);
     }, []);
 
-    useEffect(() => {
-        const handleClickEditInfoWrap = (event) => {
-            if (editInfoAreaRef.current && editInfoAreaRef.current.contains(event.target)) {
-                handleShowPassword();
-            }
-        };
+    // useEffect(() => {
+    //     const handleClickEditInfoWrap = (event) => {
+    //         if (editInfoAreaRef.current && editInfoAreaRef.current.contains(event.target)) {
+    //             handleShowPassword();
+    //         }
+    //     };
 
-        document.addEventListener('mousedown', handleClickEditInfoWrap);
+    //     document.addEventListener('mousedown', handleClickEditInfoWrap);
 
-        return () => {
-            document.removeEventListener('mousedown', handleClickEditInfoWrap);
-        };
-    }, [editInfoAreaRef]);
+    //     return () => {
+    //         document.removeEventListener('mousedown', handleClickEditInfoWrap);
+    //     };
+    // }, [editInfoAreaRef]);
 
     const handleSave = () => {
         const shouldSave = window.confirm("변경된 내용을 저장하시겠습니까?");
@@ -72,7 +72,7 @@ function MyInfoPage() {
             setShowPassword(true);
         } else {
             const enteredPassword = prompt("본인 확인을 위해 비밀번호를 입력하세요:");
-            if (enteredPassword !== null && enteredPassword == password) {
+            if (enteredPassword !== null && enteredPassword === password) {
                 setIsPasswordCorrect(true);
                 setShowPassword(true);
             } else {
