@@ -90,6 +90,7 @@
     border-radius: 10px;
     padding: 0.8vh 1vw;
     font-size: 22px;
+    color: rgb(80,80,80);
 }
 
 .editSelfIntroBox{
@@ -100,6 +101,7 @@
     border-radius: 10px;
     padding: 1.8vh 1vw;
     font-size: 22px;
+    color: rgb(80,80,80);
 }
 
 .editGithubBox, .editLinkBox{
@@ -109,6 +111,7 @@
     border-radius: 10px;
     padding: 0.8vh 1vw;
     font-size: 22px;
+    color: rgb(80,80,80);
 }
 
 .saveBtn{
@@ -123,5 +126,44 @@
 }
 
 @media(max-width:1600px){
+    .editProfileImg{
+        padding: 2vh 8vw 2vh 1vw;
+    }
 
+    .editProfileImg Img{
+        width: 11vw;
+        height: 11vw;
+    }
+
+    .basicInfoItemsText{
+        font-size: 23px;
+    }
+
+    .basicInfoItemsContent{
+        font-size: 20px;
+    }
+
+    .editInfoItemsText{
+        font-size: 23px;
+    }
+
+    .editPwBox, .editConfirmPwBox, .editBirthBox{
+        font-size: 19px;
+        height: 3.2vh;
+        margin-top: 0.3vh;
+    }
+    
+    .editSelfIntroBox{
+        font-size: 19px;
+    }
+    
+    .editGithubBox, .editLinkBox{
+        font-size: 19px;
+        height: 3.2vh;
+        margin-top: 0.3vh;
+    }
+
+    .saveBtn{
+        margin: 0 0 10vh 73vw;
+    }
 }

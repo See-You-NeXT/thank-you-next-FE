@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import styles from './MyInfoPage.module.css';
+import dataMyInfo from '../dataMyInfo';
 
 function MyInfoPage() {
     const [password, setPassword] = useState('');
@@ -9,6 +10,38 @@ function MyInfoPage() {
     const [selfIntro, setSelfIntro] = useState('');
     const [github, setGithub] = useState('');
     const [link, setLink] = useState('');
+
+    useEffect(() => {
+        const myInfoData = dataMyInfo[0];
+        setPassword(myInfoData.pw);
+        setConfirmPassword(myInfoData.pw);
+        setBirth(myInfoData.birth);
+        setSelfIntro(myInfoData.selfIntro);
+        setGithub(myInfoData.github);
+        setLink(myInfoData.link);
+    }, []);
+
+    const handleSave = () => {
+        const shouldSave = window.confirm("변경된 내용을 저장하시겠습니까?");
+        if (!shouldSave) {
+            return;
+        }
+        
+        const updatedData = {
+            name: "김창식",
+            classNum: "6019XXXX",
+            email: "abc@mju.ac.kr",
+            pw: password,
+            birth: birth,
+            selfIntro: selfIntro,
+            github: github,
+            link: link,
+        };
+
+        dataMyInfo[0] = updatedData;
+
+        // 여기에서 수정된 데이터를 서버에 보내거나 로컬 스토리지에 저장하는 등의 로직을 추가
+    };
 
     return (
         <div className={styles.myInfoPageArea}>
@@ -23,7 +56,7 @@ function MyInfoPage() {
                             이름
                         </div>
                         <div className={styles.basicInfoItemsContent}>
-                            김명지
+                            {dataMyInfo[0].name}
                         </div>
                     </div>
                     <div className={styles.classNumArea}>
@@ -31,7 +64,7 @@ function MyInfoPage() {
                             학번
                         </div>
                         <div className={styles.basicInfoItemsContent}>
-                            6019XXXX
+                            {dataMyInfo[0].classNum}
                         </div>
                     </div>
                     <div className={styles.emailArea}>
@@ -39,7 +72,7 @@ function MyInfoPage() {
                             이메일
                         </div>
                         <div className={styles.basicInfoItemsContent}>
-                            abc@mju.ac.kr
+                            {dataMyInfo[0].email}
                         </div>
                     </div>
                 </div>
@@ -132,7 +165,7 @@ function MyInfoPage() {
                 </div>
             </div>
 
-            <div className={styles.saveBtn}>
+            <div className={styles.saveBtn} onClick={handleSave}>
                 저장
             </div>
         </div>
