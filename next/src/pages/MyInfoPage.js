@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { FaLock } from "react-icons/fa";
 
 import styles from './MyInfoPage.module.css';
 import dataMyInfo from '../dataMyInfo';
@@ -10,6 +11,10 @@ function MyInfoPage() {
     const [selfIntro, setSelfIntro] = useState('');
     const [github, setGithub] = useState('');
     const [link, setLink] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
+    const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
+
+    const editInfoAreaRef = useRef(null);
 
     useEffect(() => {
         const myInfoData = dataMyInfo[0];
@@ -21,12 +26,26 @@ function MyInfoPage() {
         setLink(myInfoData.link);
     }, []);
 
+    useEffect(() => {
+        const handleClickEditInfoWrap = (event) => {
+            if (editInfoAreaRef.current && editInfoAreaRef.current.contains(event.target)) {
+                handleShowPassword();
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickEditInfoWrap);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickEditInfoWrap);
+        };
+    }, [editInfoAreaRef]);
+
     const handleSave = () => {
         const shouldSave = window.confirm("변경된 내용을 저장하시겠습니까?");
         if (!shouldSave) {
             return;
         }
-        
+
         const updatedData = {
             name: "김창식",
             classNum: "6019XXXX",
@@ -41,7 +60,38 @@ function MyInfoPage() {
         dataMyInfo[0] = updatedData;
 
         // 여기에서 수정된 데이터를 서버에 보내거나 로컬 스토리지에 저장하는 등의 로직을 추가
+        console.log("저장되었습니다.", updatedData);
+
+        setIsPasswordCorrect(false);
     };
+
+    const handleShowPassword = () => {
+        const password = dataMyInfo[0].pw;
+  
+        if (isPasswordCorrect) {
+            setShowPassword(true);
+        } else {
+            const enteredPassword = prompt("본인 확인을 위해 비밀번호를 입력하세요:");
+            if (enteredPassword !== null && enteredPassword == password) {
+                setIsPasswordCorrect(true);
+                setShowPassword(true);
+            } else {
+                alert("비밀번호가 일치하지 않습니다.");
+            }
+        }
+    };
+
+    const handleOverlayClick = () => {
+        if (!isPasswordCorrect) {
+            handleShowPassword();
+        } else {
+            const inputElements = document.querySelectorAll('.editInfoItemsContent input, .editInfoItemsContent textarea');
+            inputElements.forEach((inputElement) => {
+                inputElement.removeAttribute('readOnly');
+            });
+        }
+    };
+    
 
     return (
         <div className={styles.myInfoPageArea}>
@@ -78,18 +128,25 @@ function MyInfoPage() {
                 </div>
             </div>
 
-            <div className={styles.editInfoArea}>
+
+            <div className={styles.editInfoAreaContainer}>
+            <div className={styles.overlay} onClick={handleOverlayClick} style={{ display: isPasswordCorrect ? 'none' : 'block' }}>
+                <FaLock className={styles.lockIcon}/>
+            </div>
+            
+            <div className={styles.editInfoArea} ref={editInfoAreaRef}>
                 <div className={styles.editPwArea}>
                     <div className={styles.editInfoItemsText}>
                         비밀번호
                     </div>
                     <div className={styles.editInfoItemsContent}>
                         <input
-                            type="password"
+                            type={showPassword ? "text" : "password"}
                             placeholder="새 비밀번호 입력"
                             value={password}
                             className={styles.editPwBox}
                             onChange={(e) => setPassword(e.target.value)}
+                            readOnly={!isPasswordCorrect}
                         />
                     </div>
                 </div>
@@ -99,11 +156,12 @@ function MyInfoPage() {
                     </div>
                     <div className={styles.editInfoItemsContent}>
                         <input
-                            type="password"
+                            type={showPassword ? "text" : "password"}
                             placeholder="비밀번호 확인"
                             value={confirmPassword}
                             className={styles.editConfirmPwBox}
                             onChange={(e) => setConfirmPassword(e.target.value)}
+                            readOnly={!isPasswordCorrect}
                         />
                     </div>
                 </div>
@@ -118,6 +176,7 @@ function MyInfoPage() {
                             value={birth}
                             className={styles.editBirthBox}
                             onChange={(e) => setBirth(e.target.value)}
+                            readOnly={!isPasswordCorrect}
                         />
                     </div>
                 </div>
@@ -132,6 +191,7 @@ function MyInfoPage() {
                             value={selfIntro}
                             className={styles.editSelfIntroBox}
                             onChange={(e) => setSelfIntro(e.target.value)}
+                            readOnly={!isPasswordCorrect}
                         />
                     </div>
                 </div>
@@ -146,6 +206,7 @@ function MyInfoPage() {
                             value={github}
                             className={styles.editGithubBox}
                             onChange={(e) => setGithub(e.target.value)}
+                            readOnly={!isPasswordCorrect}
                         />
                     </div>
                 </div>
@@ -160,9 +221,11 @@ function MyInfoPage() {
                             value={link}
                             className={styles.editLinkBox}
                             onChange={(e) => setLink(e.target.value)}
+                            readOnly={!isPasswordCorrect}
                         />
                     </div>
                 </div>
+            </div>
             </div>
 
             <div className={styles.saveBtn} onClick={handleSave}>
