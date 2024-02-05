@@ -14,7 +14,7 @@ function MyInfoPage() {
     const [showPassword, setShowPassword] = useState(false);
     const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
 
-    const editInfoAreaRef = useRef(null);
+    const editPwAreaRef = useRef(null);
 
     useEffect(() => {
         const myInfoData = dataMyInfo[0];
@@ -118,104 +118,46 @@ function MyInfoPage() {
                 </div>
             </div>
 
+            <div className={styles.editPwTitle}>비밀번호 변경</div>
 
-            <div className={styles.editInfoAreaContainer}>
-            <div className={styles.overlay} onClick={handleOverlayClick} style={{ display: isPasswordCorrect ? 'none' : 'block' }}>
-                <FaLock className={styles.lockIcon}/>
-            </div>
-            
-            <div className={styles.editInfoArea} ref={editInfoAreaRef}>
-                <div className={styles.editPwArea}>
-                    <div className={styles.editInfoItemsText}>
-                        비밀번호
+            <div className={styles.editPwAreaContainer}>
+
+                <div className={styles.overlay} onClick={handleOverlayClick} style={{ display: isPasswordCorrect ? 'none' : 'block' }}>
+                    <FaLock className={styles.lockIcon}/>
+                </div>
+      
+                <div className={styles.editPwArea} ref={editPwAreaRef}>
+                    <div className={styles.newPwArea}>
+                        <div className={styles.editPwText}>
+                            새 비밀번호
+                        </div>
+                        <div className={styles.editPwContent}>
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                placeholder="새 비밀번호 입력"
+                                value={password}
+                                className={styles.editPwBox}
+                                onChange={(e) => setPassword(e.target.value)}
+                                readOnly={!isPasswordCorrect}
+                            />
+                        </div>
                     </div>
-                    <div className={styles.editInfoItemsContent}>
-                        <input
-                            type={showPassword ? "text" : "password"}
-                            placeholder="새 비밀번호 입력"
-                            value={password}
-                            className={styles.editPwBox}
-                            onChange={(e) => setPassword(e.target.value)}
-                            readOnly={!isPasswordCorrect}
-                        />
+                    <div className={styles.confirmPwArea}>
+                        <div className={styles.editPwText}>
+                            비밀번호 확인
+                        </div>
+                        <div className={styles.editPwContent}>
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                placeholder="비밀번호 확인"
+                                value={confirmPassword}
+                                className={styles.editConfirmPwBox}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                                readOnly={!isPasswordCorrect}
+                            />
+                        </div>
                     </div>
                 </div>
-                <div className={styles.editConfirmPwArea}>
-                    <div className={styles.editInfoItemsText}>
-                        비밀번호 확인
-                    </div>
-                    <div className={styles.editInfoItemsContent}>
-                        <input
-                            type={showPassword ? "text" : "password"}
-                            placeholder="비밀번호 확인"
-                            value={confirmPassword}
-                            className={styles.editConfirmPwBox}
-                            onChange={(e) => setConfirmPassword(e.target.value)}
-                            readOnly={!isPasswordCorrect}
-                        />
-                    </div>
-                </div>
-                <div className={styles.editBirthArea}>
-                    <div className={styles.editInfoItemsText}>
-                        생년월일
-                    </div>
-                    <div className={styles.editInfoItemsContent}>
-                        <input
-                            type="text"
-                            placeholder="YYYY-MM-DD"
-                            value={birth}
-                            className={styles.editBirthBox}
-                            onChange={(e) => setBirth(e.target.value)}
-                            readOnly={!isPasswordCorrect}
-                        />
-                    </div>
-                </div>
-                <div className={styles.editSelfIntroArea}>
-                    <div className={styles.editInfoItemsText}>
-                        자기소개
-                    </div>
-                    <div className={styles.editInfoItemsContent}>
-                        <textarea
-                            type="text"
-                            placeholder="자기소개 입력"
-                            value={selfIntro}
-                            className={styles.editSelfIntroBox}
-                            onChange={(e) => setSelfIntro(e.target.value)}
-                            readOnly={!isPasswordCorrect}
-                        />
-                    </div>
-                </div>
-                <div className={styles.editGithubArea}>
-                    <div className={styles.editInfoItemsText}>
-                        Github
-                    </div>
-                    <div className={styles.editInfoItemsContent}>
-                        <input
-                            type="text"
-                            placeholder="Github 주소 입력"
-                            value={github}
-                            className={styles.editGithubBox}
-                            onChange={(e) => setGithub(e.target.value)}
-                            readOnly={!isPasswordCorrect}
-                        />
-                    </div>
-                </div>
-                <div className={styles.editLinkArea}>
-                    <div className={styles.editInfoItemsText}>
-                        Link
-                    </div>
-                    <div className={styles.editInfoItemsContent}>
-                        <input
-                            type="text"
-                            placeholder="추가 링크 입력"
-                            value={link}
-                            className={styles.editLinkBox}
-                            onChange={(e) => setLink(e.target.value)}
-                            readOnly={!isPasswordCorrect}
-                        />
-                    </div>
-                </div>
-            </div>
             </div>
 
             <div className={styles.saveBtn} onClick={handleSave}

@@ -51,10 +51,17 @@
     overflow-wrap: break-word;
 }
 
-.editInfoAreaContainer{
+.editPwTitle{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: left;
+    margin: 10vh 0 3vh 20vw;
+}
+
+.editPwAreaContainer{
     position: relative;
     width: 48vw;
-    height: 78vh;
+    height: 22vh;
     margin-bottom: 15vh;
 }
 
@@ -72,11 +79,12 @@
 }
 
 .lockIcon{
-    margin-top: 40%;
+    margin-top: 8%;
     font-size: 80px;
+    color: gray;
 }
 
-.editInfoArea{
+.editPwArea{
     position: absolute;
     left: 17.5vw; 
     width: 100%;
@@ -86,57 +94,36 @@
     padding: 4vh 8vw 4vh 8vw;
 }
 
-.editPwArea, .editConfirmPwArea, .editBirthArea, .editSelfIntroArea, .editGithubArea, .editLinkArea{
+.newPwArea, .confirmPwArea{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 4vh 0 5vh 0;
+    margin: 3vh 0 5vh 0;
 }
 
-.editInfoItemsText{
+.editPwText{
     height: 6vh;
     line-height: 6vh;
     font-size: 27px;
-    font-weight: 700;
+    font-weight: 600;
     text-align: left;
-    width: 15vw;
+    width: 18vw;
     color: rgb(80,80,80);
 }
 
-.editInfoItemsContent{
-    text-align: left;
+.editPwContent{
+    text-align: right;
     width: 30vw;
     color: rgb(80,80,80);
 }
 
-.editPwBox, .editConfirmPwBox, .editBirthBox{
-    width: 15vw;
+.editPwBox, .editConfirmPwBox{
+    width: 18vw;
     height: 3.5vh;
     border: 1px solid gray;
     border-radius: 10px;
     padding: 0.8vh 1vw;
-    font-size: 22px;
-    color: rgb(80,80,80);
-}
-
-.editSelfIntroBox{
-    resize: none;
-    width: 28vw;
-    height: 10vh;
-    border: 1px solid gray;
-    border-radius: 10px;
-    padding: 1.8vh 1vw;
-    font-size: 22px;
-    color: rgb(80,80,80);
-}
-
-.editGithubBox, .editLinkBox{
-    width: 23vw;
-    height: 3.5vh;
-    border: 1px solid gray;
-    border-radius: 10px;
-    padding: 0.8vh 1vw;
-    font-size: 22px;
+    font-size: 23px;
     color: rgb(80,80,80);
 }
 
@@ -168,24 +155,22 @@
         font-size: 20px;
     }
 
-    .editInfoItemsText{
+    .editPwTitle{
+        font-size: 26px;
+    }
+
+    .editPwText{
         font-size: 23px;
     }
 
-    .editPwBox, .editConfirmPwBox, .editBirthBox{
+    .editPwBox, .editConfirmPwBox{
         font-size: 19px;
         height: 3.2vh;
         margin-top: 0.3vh;
     }
-    
-    .editSelfIntroBox{
-        font-size: 19px;
-    }
-    
-    .editGithubBox, .editLinkBox{
-        font-size: 19px;
-        height: 3.2vh;
-        margin-top: 0.3vh;
+
+    .lockIcon{
+        font-size: 70px;
     }
 
     .saveBtn{
