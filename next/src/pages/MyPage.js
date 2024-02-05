@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { PiNotepadBold } from "react-icons/pi";
 import { FaRegCommentDots } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
-import { PiPencilLineBold } from "react-icons/pi";
+import { BsPersonVcard } from "react-icons/bs";
 
 import styles from './MyPage.module.css';
 
@@ -44,9 +44,9 @@ function MyPage() {
                     </div>
                 </div>
                 <div className={styles.myInfoEditArea}>
-                    <PiPencilLineBold className={styles.icon} onClick={()=>{ navigate('/myInfoPage') }}/>
+                    <BsPersonVcard className={styles.icon} onClick={()=>{ navigate('/myInfoPage') }}/>
                     <div className={styles.myInfoEditText} onClick={()=>{ navigate('/myInfoPage') }}>
-                        내 정보 수정
+                        내 개인 정보
                     </div>
                 </div>
             </div>
