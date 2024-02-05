@@ -1,14 +1,14 @@
 .backgroundWrap{
-    position: relative;
     background-color: #ffefe9;
-    height: 250px;
-    margin-bottom: 14vh;
+    height: 25vh;
+    margin-bottom: 9vw;
+    display: flex;
+    justify-content: space-between;
 }
 
 .profileImg{
-    position: absolute;
     padding-top: 13vh;
-    left: 15.5vw;
+    margin-left: 15.5vw;
 }
 
 .profileImg img{
@@ -21,9 +21,8 @@
 }
 
 .profileEdit{
-    position: absolute;
-    top: 18vh;
-    right: 15.5vw;
+    padding-top: 18vh;
+    margin-right: 15.5vw;
 }
 
 .profileEditBtn{
@@ -85,7 +84,7 @@
 }
 
 .gitLink, .instaLink{
-    margin-right: 1.5vw;
+    margin-right: 2vw;
 }
 
 .facebookLink img{
@@ -94,9 +93,9 @@
 
 
 .plusInfoArea{
-    border: 1px solid gray;
+    border: 1px solid rgb(170, 170, 170);
     border-radius: 20px;
-    width: 35vw;
+    width: 33vw;
     margin: 0 12vw 10vh 0;
 }
 
@@ -111,12 +110,13 @@
     color: rgb(80, 80, 80);
     width: 10vw;
     text-align: left;
+    margin-right: 1vw;
 }
 
 .birthContent, .mbtiContent, .dreamJobContent, .techStackContent{
-    font-size: 28px;
+    font-size: 25px;
     color: rgb(80, 80, 80);
-    width: 20vw;
+    width: 15vw;
 }
 
 .birthArea{
@@ -136,10 +136,50 @@
 }
 
 .skillsItems{
-    border: 1px solid gray;
+    border: 1px solid rgb(150, 150, 150);
     border-radius: 30px;
-    background-color: gray;
+    background-color: rgb(150, 150, 150);
     color: white;
     padding: 1vh 1vw 1vh 1vw;
     margin: 1vh 1vw 0 0;
+}
+
+@media (max-width:1600px){
+
+    .profileEditBtn{
+        font-size: 45px;
+    }
+
+    .basicInfoArea{
+        margin: 1vh 0 0 12vw;
+    }
+
+    .myName{
+        font-size: 31px;
+    }
+    
+    .myClassNum{
+        font-size: 25px;
+    }
+    
+    .introduction{
+        font-size: 24px;
+    }
+
+    .linkTitle{
+        font-size: 25px;
+    }
+
+    .gitLink img, .instaLink img, .facebookLink img{
+        width: 53px;
+    }
+
+    .birthText, .mbtiText, .dreamJobText, .techStackText{
+        font-size: 24px;
+    }
+
+    .birthContent, .mbtiContent, .dreamJobContent, .techStackContent{
+        font-size: 21px;
+    }
+
 }
