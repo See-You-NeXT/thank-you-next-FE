@@ -62,8 +62,8 @@
 .introduction{
     text-align: left;
     color: rgb(80, 80, 80);
-    font-size: 28px;
-    padding: 1vh 0 5vh 0;
+    font-size: 27px;
+    padding: 2vh 0 5vh 0;
     border-bottom: 1px solid rgb(200, 200, 200);
 }
 
@@ -87,8 +87,9 @@
     margin-right: 2vw;
 }
 
-.facebookLink img{
+.gitLink img, .instaLink img, .facebookLink img{
     width: 56px;
+    cursor: pointer;
 }
 
 
@@ -136,6 +137,7 @@
 }
 
 .skillsItems{
+    font-size: 23px;
     border: 1px solid rgb(150, 150, 150);
     border-radius: 30px;
     background-color: rgb(150, 150, 150);
@@ -163,7 +165,7 @@
     }
     
     .introduction{
-        font-size: 24px;
+        font-size: 23px;
     }
 
     .linkTitle{
@@ -182,4 +184,7 @@
         font-size: 21px;
     }
 
+    .skillsItems{
+        font-size: 19px;
+    }
 }

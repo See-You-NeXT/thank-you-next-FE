@@ -14,17 +14,26 @@ function MyInfoPage() {
     const [showPassword, setShowPassword] = useState(false);
     const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
 
+    const [passwordValid,setPasswordValid] = useState(false);
+    const [confirmPasswordValid,setConfirmPasswordValid] = useState(false);
+
     const editPwAreaRef = useRef(null);
 
     useEffect(() => {
         const myInfoData = dataMyInfo[0];
-        setPassword(myInfoData.pw);
-        setConfirmPassword(myInfoData.pw);
         setBirth(myInfoData.birth);
         setSelfIntro(myInfoData.selfIntro);
         setGithub(myInfoData.github);
         setLink(myInfoData.link);
     }, []);
+
+    const checkValid = () =>{
+        const regexPw = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+
+        regexPw.test(password) ? setPasswordValid(true) : setPasswordValid(false);
+        confirmPassword == password ? setConfirmPasswordValid(true) : setConfirmPasswordValid(false);
+
+    }
 
     const handleSave = () => {
         if(isPasswordCorrect){
@@ -32,6 +41,8 @@ function MyInfoPage() {
             if (!shouldSave) {
                 return;
             }
+
+            window.confirm("비밀번호가 변경되었습니다.");
 
             const updatedData = {
                 name: "김창식",
@@ -47,10 +58,12 @@ function MyInfoPage() {
             dataMyInfo[0] = updatedData;
 
             // 여기에서 수정된 데이터를 서버에 보내거나 로컬 스토리지에 저장하는 등의 로직을 추가
-            console.log("저장되었습니다.", updatedData);
 
             setIsPasswordCorrect(false);
             setShowPassword(false);
+
+            setPassword('');
+            setConfirmPassword('');
         }
         
     };
@@ -133,14 +146,23 @@ function MyInfoPage() {
                         </div>
                         <div className={styles.editPwContent}>
                             <input
-                                type={showPassword ? "text" : "password"}
-                                placeholder="새 비밀번호 입력"
+                                type="password"
+                                placeholder="새 비밀번호"
                                 value={password}
                                 className={styles.editPwBox}
+                                onKeyUp={checkValid}
                                 onChange={(e) => setPassword(e.target.value)}
                                 readOnly={!isPasswordCorrect}
                             />
+                            <div className={styles.errorMessage}>
+                                {
+                                    !passwordValid && password.length > 0 &&(
+                                        <div>비밀번호는 대소문자/숫자 포함 8자 이상 입력해주세요.</div>
+                                    )
+                                }
+                            </div>
                         </div>
+                        
                     </div>
                     <div className={styles.confirmPwArea}>
                         <div className={styles.editPwText}>
@@ -148,22 +170,31 @@ function MyInfoPage() {
                         </div>
                         <div className={styles.editPwContent}>
                             <input
-                                type={showPassword ? "text" : "password"}
-                                placeholder="비밀번호 확인"
+                                type="password"
+                                placeholder="새 비밀번호 확인"
                                 value={confirmPassword}
                                 className={styles.editConfirmPwBox}
+                                onKeyUp={checkValid}
                                 onChange={(e) => setConfirmPassword(e.target.value)}
                                 readOnly={!isPasswordCorrect}
                             />
+                            <div className={styles.errorMessage}>
+                                {
+                                    !confirmPasswordValid && confirmPassword.length > 0 &&(
+                                        <div>비밀번호가 일치하지 않습니다.</div>
+                                    )
+                                }
+                            </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
 
             <div className={styles.saveBtn} onClick={handleSave}
-                style={{cursor:isPasswordCorrect ? 'pointer' : 'default', 
-                    backgroundColor:isPasswordCorrect ? '#ffd0bf' : '#e4e4e4',
-                    color:isPasswordCorrect ? 'rgb(80,80,80)' : 'rgb(110,110,110)'
+                style={{cursor:passwordValid && confirmPasswordValid ? 'pointer' : 'default', 
+                    backgroundColor:passwordValid && confirmPasswordValid ? '#ffd0bf' : '#e4e4e4',
+                    color:passwordValid && confirmPasswordValid ? 'rgb(80,80,80)' : 'rgb(110,110,110)'
             }}>
                 저장
             </div>
