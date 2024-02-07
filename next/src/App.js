@@ -14,6 +14,7 @@ import Notice from './pages/Notice';
 import Question from './pages/Question';
 import Free from './pages/Free';
 import WritePost from './pages/WritePost';
+import EditPost from './pages/EditPost';
 import BoardPost from './pages/BoardPost';
 import Introduce from './pages/Introduce';
 import Gallery from './pages/Gallery';
@@ -42,6 +43,7 @@ function App() {
         <Route path="/question" element={<Question />}/>
         <Route path="/free" element={<Free />}/>
         <Route path="/writePost" element={<WritePost />} />
+        <Route path="/editPost" element={<EditPost />} />
         <Route path="/boardPost" element={<BoardPost />} />
         <Route path="/introduce" element={<Introduce />}/>
         <Route path="/gallery" element={<Gallery />}/>
