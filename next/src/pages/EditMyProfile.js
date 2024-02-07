@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { MdModeEdit } from "react-icons/md";
 import { HiOutlineMail } from "react-icons/hi";
 
-import styles from './MyProfile.module.css';
+import styles from './EditMyProfile.module.css';
 import dataMyInfo from '../dataMyInfo';
 
-function MyProfile() {
+function EditMyProfile() {
     const [name, setName] = useState(dataMyInfo[0].name);
     const [classNum, setClassNum] = useState(dataMyInfo[0].classNum);
     const [selfIntro, setSelfIntro] = useState(dataMyInfo[0].selfIntro);
@@ -20,13 +19,10 @@ function MyProfile() {
     const classNumPrefix = classNum.substring(2, 4);
 
     return (
-        <div className={styles.myProfileArea}>
+        <div className={styles.editMyProfileArea}>
             <div className={styles.backgroundWrap}>
                 <div className={styles.profileImg}>
                     <img src='/developerImg/kcs.png' />
-                </div>
-                <div className={styles.profileEdit}>
-                    <MdModeEdit className={styles.profileEditBtn}/>
                 </div>
             </div>
 
@@ -88,4 +84,4 @@ function MyProfile() {
     );
 }
 
-export default MyProfile
+export default EditMyProfile;

@@ -2,11 +2,10 @@
     background-color: #ffefe9;
     height: 25vh;
     margin-bottom: 9vw;
-    display: flex;
-    justify-content: space-between;
 }
 
 .profileImg{
+    float: left;
     padding-top: 13vh;
     margin-left: 15.5vw;
 }

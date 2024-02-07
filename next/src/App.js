@@ -24,6 +24,7 @@ import MyPage from './pages/MyPage';
 import MyPost from './pages/MyPost';
 import MyComment from './pages/MyComment';
 import MyProfile from './pages/MyProfile';
+import EditMyProfile from './pages/EditMyProfile';
 import MyInfoPage from './pages/MyInfoPage';
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
         <Route path="/myPost" element={<MyPost />}/>
         <Route path="/myComment" element={<MyComment />}/>
         <Route path="/myProfile" element={<MyProfile />}/>
+        <Route path="/editMyProfile" element={<EditMyProfile />}/>
         <Route path="/myInfoPage" element={<MyInfoPage />}/>
 
 
