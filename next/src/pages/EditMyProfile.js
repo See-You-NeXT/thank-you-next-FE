@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { HiOutlineMail } from "react-icons/hi";
+import { FaCirclePlus } from "react-icons/fa6";
 
 import styles from './EditMyProfile.module.css';
 import dataMyInfo from '../dataMyInfo';
@@ -15,8 +16,23 @@ function EditMyProfile() {
     const [mbti, setMbti] = useState(dataMyInfo[0].mbti);
     const [dreamJob, setDreamJob] = useState(dataMyInfo[0].dreamJob);
     const [techStack, setTechStack] = useState(dataMyInfo[0].techStack);
+    const [newTech, setNewTech] = useState('');
 
     const classNumPrefix = classNum.substring(2, 4);
+
+    const handleAddTech = () => {
+        if (newTech.trim() !== '') {
+            setTechStack(prevTechStack => [...prevTechStack, newTech.trim()]);
+            setNewTech('');
+        }
+    };
+
+    const handleDeleteTech = (index) => {
+        const confirmDelete = window.confirm("삭제하시겠습니까?");
+        if (confirmDelete) {
+            setTechStack(prevTechStack => prevTechStack.filter((_, i) => i !== index));
+        }
+    };
 
     return (
         <div className={styles.editMyProfileArea}>
@@ -109,11 +125,23 @@ function EditMyProfile() {
                             {
                                 techStack.map((item,i)=>{
                                     return(
-                                        <div key={i} className={styles.skillsItems}>{item}</div>
+                                        <div key={i} className={styles.skillsItems} onClick={() => handleDeleteTech(i)}>
+                                            {item}
+                                        </div>
                                     )
                                 })
                             }
                         </div>
+                        <div className={styles.plusTechStack}>
+                            <input
+                                placeholder='기술 스택 추가'
+                                className={styles.techInputBox} 
+                                value={newTech}
+                                onChange={(e) => setNewTech(e.target.value)}
+                            />
+                            <FaCirclePlus className={styles.plusTechBtn} onClick={handleAddTech} /> 
+                        </div>
+                        
                     </div>
                 </div>
             </div>
