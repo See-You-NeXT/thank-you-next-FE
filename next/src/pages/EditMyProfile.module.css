@@ -59,7 +59,7 @@
     height: 10vh;
     line-height: 3vh;
     padding: 12px 14px 0 12px;
-    font-size: 22px;
+    font-size: 19px;
     color: rgb(80, 80, 80);
     border-radius: 5px;
 }
@@ -85,7 +85,6 @@
 .gitLink img, .instaLink img, .emailImg{
     width: 56px;
     font-size: 58px;
-    cursor: pointer;
 }
 
 .linkInputBox{
@@ -213,11 +212,6 @@
 }
 
 @media (max-width:1600px){
-
-    .profileEditBtn{
-        font-size: 45px;
-    }
-
     .basicInfoArea{
         margin: 1vh 0 0 12vw;
     }
@@ -229,9 +223,9 @@
     .myClassNum{
         font-size: 25px;
     }
-    
-    .introduction{
-        font-size: 23px;
+
+    .textareaBox, .linkInputBox, .inputBox, .techInputBox{
+        font-size: 18px;
     }
 
     .linkTitle{
@@ -247,11 +241,7 @@
         font-size: 24px;
     }
 
-    .birthContent, .mbtiContent, .dreamJobContent, .techStackContent{
-        font-size: 21px;
-    }
-
     .skillsItems{
-        font-size: 19px;
+        font-size: 18px;
     }
 }

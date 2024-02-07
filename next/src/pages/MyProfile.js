@@ -86,7 +86,7 @@ function MyProfile() {
                         <div className={styles.dreamJobContent}>{dreamJob}</div>
                     </div>
                     <div className={styles.techStackArea}>
-                        <div className={styles.techStackText}>기술스택</div>
+                        <div className={styles.techStackText}>기술 스택</div>
                         <div className={styles.techStackContent}>
                             {
                                 techStack.map((item,i)=>{

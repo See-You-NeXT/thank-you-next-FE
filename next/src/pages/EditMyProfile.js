@@ -152,7 +152,7 @@ function EditMyProfile() {
                         />    
                     </div>
                     <div className={styles.techStackArea}>
-                        <div className={styles.techStackText}>기술스택</div>
+                        <div className={styles.techStackText}>기술 스택</div>
                         <div className={styles.techStackContent}>
                             {
                                 techStack.map((item,i)=>{
@@ -179,7 +179,7 @@ function EditMyProfile() {
             </div>
 
             <div className={styles.btnArea}>
-                <div className={styles.cancelBtn}>취소</div>
+                <div className={styles.cancelBtn} onClick={()=>navigate('/myProfile')}>취소</div>
                 <div className={styles.saveBtn} onClick={handleSave}>저장</div>
             </div>
             
