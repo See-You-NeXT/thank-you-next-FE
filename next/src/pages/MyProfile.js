@@ -22,6 +22,15 @@ function MyProfile() {
 
     const classNumPrefix = classNum.substring(2, 4);
 
+    const copyToClipboard = async (text) => {
+        try {
+            await navigator.clipboard.writeText(text);
+            alert("이메일 주소가 복사되었습니다.");
+        } catch (err) {
+            console.error('클립보드에 복사하는 동안 오류가 발생했습니다:', err);
+        }
+    };
+
     return (
         <div className={styles.myProfileArea}>
             <div className={styles.backgroundWrap}>
@@ -29,7 +38,8 @@ function MyProfile() {
                     <img src='/developerImg/kcs.png' />
                 </div>
                 <div className={styles.profileEdit}>
-                    <MdModeEdit className={styles.profileEditBtn} onClick={()=>navigate('/editMyProfile')}/>
+                    <MdModeEdit className={styles.profileEditBtn} 
+                        onClick={()=>navigate('/editMyProfile')}/>
                 </div>
             </div>
 
@@ -46,13 +56,16 @@ function MyProfile() {
                     <div className={styles.linkArea}>
                         <div className={styles.linkTitle}>Link 🔗</div>
                         <div className={styles.linkContent}>
-                            <div className={styles.gitLink}>
+                            <div className={styles.gitLink} 
+                                onClick={() => window.location.href = github}>
                                 <img src='/link/git.png' />
                             </div>
-                            <div className={styles.instaLink}>
+                            <div className={styles.instaLink}
+                                onClick={() => window.location.href = insta}>
                                 <img src='/link/insta.jpeg' />
                             </div>
-                            <div className={styles.emailLink}>
+                            <div className={styles.emailLink} 
+                                onClick={() => copyToClipboard(email)}>
                                 <HiOutlineMail className={styles.emailImg}/>
                             </div>
                         </div>
