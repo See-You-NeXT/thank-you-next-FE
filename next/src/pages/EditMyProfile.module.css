@@ -19,17 +19,6 @@
     object-fit: contain;
 }
 
-.profileEdit{
-    padding-top: 18vh;
-    margin-right: 16vw;
-}
-
-.profileEditBtn{
-    font-size: 50px;
-    color: rgb(80, 80, 80);
-    cursor: pointer;
-}
-
 .profileInfoArea{
     display: flex;
     justify-content: space-evenly;
@@ -60,10 +49,19 @@
 
 .introduction{
     text-align: left;
-    color: rgb(80, 80, 80);
-    font-size: 27px;
     padding: 2vh 0 5vh 0;
     border-bottom: 1px solid rgb(200, 200, 200);
+}
+
+.textareaBox{
+    resize: none;
+    width: 24vw;
+    height: 10vh;
+    line-height: 3vh;
+    padding: 12px 14px 0 12px;
+    font-size: 22px;
+    color: rgb(80, 80, 80);
+    border-radius: 5px;
 }
 
 .linkArea{
@@ -78,18 +76,27 @@
     margin-bottom: 2vh;
 }
 
-.linkContent{
+.gitLink, .instaLink, .emailLink{
     display: flex;
-}
-
-.gitLink, .instaLink{
-    margin-right: 2vw;
+    align-items: center;
+    margin-bottom: 2vh;
 }
 
 .gitLink img, .instaLink img, .emailImg{
     width: 56px;
     font-size: 58px;
     cursor: pointer;
+}
+
+.linkInputBox{
+    width: 15vw;
+    height: 4vh;
+    padding-left: 10px;
+    margin-left: 3vw;
+    font-size: 19px;
+    color: rgb(80, 80, 80);
+    border: 1px solid gray;
+    border-radius: 5px;
 }
 
 
@@ -100,8 +107,13 @@
     margin: 0 12vw 10vh 0;
 }
 
-.birthArea, .mbtiArea, .dreamJobArea, .techStackArea{
+.birthArea, .mbtiArea, .dreamJobArea{
     display: flex;
+    align-items: center;
+    margin: 2vh 0vw 3vh 4vw;
+}
+
+.techStackArea{
     margin: 2vh 0vw 4vh 4vw;
 }
 
@@ -111,13 +123,17 @@
     color: rgb(80, 80, 80);
     width: 10vw;
     text-align: left;
-    margin-right: 1vw;
+    margin-right: 2vw;
 }
 
-.birthContent, .mbtiContent, .dreamJobContent, .techStackContent{
-    font-size: 25px;
+.inputBox{
+    width: 12vw;
+    height: 4vh;
+    padding-left: 10px;
+    font-size: 19px;
     color: rgb(80, 80, 80);
-    width: 15vw;
+    border: 1px solid gray;
+    border-radius: 5px;
 }
 
 .birthArea{
@@ -132,13 +148,12 @@
 .techStackContent{
     display: flex;
     flex-wrap: wrap;
-    width: 28vw;
+    width: 25vw;
     margin-top: 1vh;
 }
 
 .skillsItems{
     font-size: 23px;
-    border: 1px solid rgb(150, 150, 150);
     border-radius: 30px;
     background-color: rgb(150, 150, 150);
     color: white;

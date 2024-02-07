@@ -33,7 +33,13 @@ function EditMyProfile() {
                         <div className={styles.myClassNum}>{classNumPrefix}학번</div>
                     </div>
                     <div className={styles.introduction}>
-                        {selfIntro}
+                        <textarea
+                            placeholder='한 줄 소개 쓰기'
+                            value={selfIntro}
+                            className={styles.textareaBox} 
+                            onChange={(e) => setSelfIntro(e.target.value)}
+                        
+                        />
                     </div>
 
                     <div className={styles.linkArea}>
@@ -41,12 +47,30 @@ function EditMyProfile() {
                         <div className={styles.linkContent}>
                             <div className={styles.gitLink}>
                                 <img src='/link/git.png' />
+                                <input
+                                    placeholder='GitHub Link'
+                                    value={github}
+                                    className={styles.linkInputBox} 
+                                    onChange={(e) => setGithub(e.target.value)}
+                                />
                             </div>
                             <div className={styles.instaLink}>
                                 <img src='/link/insta.jpeg' />
+                                <input
+                                    placeholder='Instagram Link'
+                                    value={insta}
+                                    className={styles.linkInputBox} 
+                                    onChange={(e) => setInsta(e.target.value)}
+                                />
                             </div>
                             <div className={styles.emailLink}>
                                 <HiOutlineMail className={styles.emailImg}/>
+                                <input
+                                    placeholder='GitHub Link'
+                                    value={email}
+                                    className={styles.linkInputBox} 
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
                             </div>
                         </div>
                     </div>
@@ -55,15 +79,29 @@ function EditMyProfile() {
                 <div className={styles.plusInfoArea}>
                     <div className={styles.birthArea}>
                         <div className={styles.birthText}>생일</div>
-                        <div className={styles.birthContent}>{birth}</div>
+                        <input
+                            placeholder='YYYY-MM-DD'
+                            value={birth}
+                            className={styles.inputBox} 
+                            onChange={(e) => setBirth(e.target.value)}
+                        />
                     </div>
                     <div className={styles.mbtiArea}>
                         <div className={styles.mbtiText}>MBTI</div>
-                        <div className={styles.mbtiContent}>{mbti}</div>
+                        <input
+                            value={mbti}
+                            className={styles.inputBox} 
+                            onChange={(e) => setMbti(e.target.value)}
+                        />
                     </div>
                     <div className={styles.dreamJobArea}>
                         <div className={styles.dreamJobText}>희망 직군</div>
-                        <div className={styles.dreamJobContent}>{dreamJob}</div>
+                        <input
+                            placeholder='ex) 프론트엔드 개발'
+                            value={dreamJob}
+                            className={styles.inputBox} 
+                            onChange={(e) => setDreamJob(e.target.value)}
+                        />    
                     </div>
                     <div className={styles.techStackArea}>
                         <div className={styles.techStackText}>기술스택</div>
