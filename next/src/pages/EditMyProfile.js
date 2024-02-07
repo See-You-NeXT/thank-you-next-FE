@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { HiOutlineMail } from "react-icons/hi";
 import { FaCirclePlus } from "react-icons/fa6";
 
@@ -6,6 +7,8 @@ import styles from './EditMyProfile.module.css';
 import dataMyInfo from '../dataMyInfo';
 
 function EditMyProfile() {
+    let navigate = useNavigate();
+
     const [name, setName] = useState(dataMyInfo[0].name);
     const [classNum, setClassNum] = useState(dataMyInfo[0].classNum);
     const [selfIntro, setSelfIntro] = useState(dataMyInfo[0].selfIntro);
@@ -29,9 +32,38 @@ function EditMyProfile() {
 
     const handleDeleteTech = (index) => {
         const confirmDelete = window.confirm("삭제하시겠습니까?");
-        if (confirmDelete) {
+        if(confirmDelete){
             setTechStack(prevTechStack => prevTechStack.filter((_, i) => i !== index));
         }
+    };
+
+    const handleSave = () => {
+        const confirmSave = window.confirm("저장하시겠습니까?");
+        if(!confirmSave){
+            return;
+        }
+
+        const updatedData = {
+            ...dataMyInfo[0],
+            name: name,
+            classNum: classNum,
+            selfIntro: selfIntro,
+            github: github,
+            insta: insta,
+            email: email,
+            birth: birth,
+            mbti: mbti,
+            dreamJob: dreamJob,
+            techStack: techStack,
+        };
+
+        dataMyInfo[0] = updatedData;
+
+        alert("저장되었습니다.");
+
+        setTimeout(() => {
+            navigate('/myProfile');
+        } );
     };
 
     return (
@@ -144,6 +176,11 @@ function EditMyProfile() {
                         
                     </div>
                 </div>
+            </div>
+
+            <div className={styles.btnArea}>
+                <div className={styles.cancelBtn}>취소</div>
+                <div className={styles.saveBtn} onClick={handleSave}>저장</div>
             </div>
             
         </div>

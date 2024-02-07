@@ -28,9 +28,6 @@ function EditPost() {
         };
 
         dataPost[0] = updatedData;
-
-        // 업데이트된 데이터 확인 (필요한 경우)
-        console.log("업데이트된 데이터:", updatedData);
     };
 
     return (

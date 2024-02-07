@@ -185,6 +185,33 @@
     cursor: pointer;
 }
 
+.btnArea{
+    margin: 0vh 15vw 0vh 15vw;
+    padding-bottom: 10vh;
+    display: flex;
+    justify-content: end;
+}
+
+.cancelBtn{
+    background-color: rgb(210, 210, 210);
+    width: 80px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.saveBtn{
+    background-color: #ffa384;
+    width: 80px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5vh;
+}
+
 @media (max-width:1600px){
 
     .profileEditBtn{
