@@ -64,6 +64,9 @@ function MyInfoPage() {
 
             setPassword('');
             setConfirmPassword('');
+
+            setPasswordValid(false);
+            setConfirmPasswordValid(false);
         }
         
     };
