@@ -98,12 +98,17 @@ function WritePost() {
                     <UploadImg />
                 </div>    
 
-                <div className={styles.hashtagArea}>
-                    <div className={styles.hashtagTitle}>해시태그</div>
-                    <div className={styles.hashtag}>
-                        <Hashtag />
-                    </div>  
-                </div>
+                {
+                    checkbox2 ?
+                        <div className={styles.hashtagArea}>
+                            <div className={styles.hashtagTitle}>해시태그</div>
+                            <div className={styles.hashtag}>
+                                <Hashtag />
+                            </div>  
+                        </div>
+                        :
+                        <div></div>
+                }
 
                 <div className={styles.btnArea}>
                     <div className={styles.cancelBtn}>취소</div>
