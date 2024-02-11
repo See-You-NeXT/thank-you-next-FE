@@ -43,7 +43,7 @@
 }
 
 .navLi:not(:last-of-type):hover{
-    height: 59px;
+    height: 58px;
     border-bottom: 7px solid #ed754c;
     cursor: default;
 }
