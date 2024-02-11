@@ -4,6 +4,7 @@ import styles from './Gallery.module.css';
 import { FiUpload } from "react-icons/fi";
 
 import SearchBar from '../components/SearchBar';
+import NeXTNav from '../components/NeXTNav';
 import Pagination from 'react-js-pagination';
 
 import dataGallery from '../dataGallery';
@@ -47,6 +48,7 @@ function Gallery() {
 
   return (
     <div className={styles.galleryArea}>
+      <NeXTNav currentPage={"갤러리"}/>
       <div className={styles.galleryTitle}>
         갤러리
       </div>

@@ -1,7 +1,7 @@
 import React from 'react';
-import NeXTNav from '../components/NeXTNav';
 
 import styles from './Introduce.module.css';
+import NeXTNav from '../components/NeXTNav';
 
 function Introduce() {
   return (
