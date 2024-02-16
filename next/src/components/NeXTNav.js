@@ -15,6 +15,21 @@ function NeXTNav({currentPage}) {
         setIsHovering(!isHovering);
     };
 
+    const handleIntroduce = () => {
+        setIsHovering(!isHovering);
+        navigate('/introduce');
+    }
+
+    // const handleActivity = () => {
+    //     setIsHovering(!isHovering);
+    //     navigate('/activity');
+    // }
+
+    const handleGallery = () => {
+        setIsHovering(!isHovering);
+        navigate('/gallery');
+    }
+
     return (
         <div className={styles.neXTNav}>
             <div className={styles.neXTNavTitle}>
@@ -35,9 +50,9 @@ function NeXTNav({currentPage}) {
 
             <Dropdown visibility={isHovering}>
                 <ul className={styles.dropdownUl}>
-                    <li className={styles.dropdownLi} onClick={()=>{window.location.reload()}}>스터디 소개</li>
+                    <li className={styles.dropdownLi} onClick={handleIntroduce}>스터디 소개</li>
                     <li className={styles.dropdownLi}>스터디 활동</li>
-                    <li className={styles.dropdownLi} onClick={()=>{ navigate('/gallery')}}>갤러리</li>
+                    <li className={styles.dropdownLi} onClick={handleGallery}>갤러리</li>
                     
                 </ul>
             </Dropdown>

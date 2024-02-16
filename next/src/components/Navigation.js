@@ -46,9 +46,9 @@ function Navigation(){
             </div>
             <Dropdown visibility={isHoveringFirst}>
                 <ul className={styles.dropdownUl} onMouseOver={handleMouseOverFirst} onMouseOut={handleMouseOutFirst}>
-                    <li className={styles.dropdownLi} onClick={()=>{ navigate('/introduce') }}>스터디소개</li>
+                    <li className={styles.dropdownLi} onClick={()=>{ navigate('/introduce') }}>스터디 소개</li>
+                    <li className={styles.dropdownLi}>스터디 활동</li>
                     <li className={styles.dropdownLi} onClick={()=>{ navigate('/gallery') }}>갤러리</li>
-                    <li className={styles.dropdownLi}>스터디일정</li>
                 </ul>
             </Dropdown>
             <Dropdown visibility={isHoveringSecond}>

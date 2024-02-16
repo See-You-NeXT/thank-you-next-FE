@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaLock } from "react-icons/fa";
 
-import styles from './MyInfoPage.module.css';
+import styles from './MyInfo.module.css';
 import dataMyInfo from '../dataMyInfo';
 
-function MyInfoPage() {
+function MyInfo() {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [birth, setBirth] = useState('');
@@ -205,4 +205,4 @@ function MyInfoPage() {
     );
 }
 
-export default MyInfoPage;
+export default MyInfo;
