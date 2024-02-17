@@ -2,7 +2,7 @@ import React from 'react';
 import { PiNotepadBold } from "react-icons/pi";
 
 import styles from './MyPost.module.css';
-import MyWrittenContentList from '../components/MyWrittenContentList';
+import MyWrittenPostList from '../components/MyWrittenPostList';
 
 function MyPost() {
     return (
@@ -14,7 +14,7 @@ function MyPost() {
                 </div>
             </div>
 
-            <MyWrittenContentList />
+            <MyWrittenPostList />
         </div>
     );
 }

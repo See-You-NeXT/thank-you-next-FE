@@ -2,7 +2,7 @@ import React from 'react';
 import { FaRegCommentDots } from "react-icons/fa";
 
 import styles from './MyComment.module.css';
-import MyWrittenContentList from '../components/MyWrittenContentList';
+import MyWrittenCommentList from '../components/MyWrittenCommentList';
 
 function MyComment() {
     return (
@@ -14,7 +14,7 @@ function MyComment() {
                 </div>
             </div>
 
-            <MyWrittenContentList />
+            <MyWrittenCommentList />
         </div>
     );
 }

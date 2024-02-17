@@ -1,0 +1,107 @@
+.selectBoardArea{
+    display: flex;
+    margin-left: 20vw;
+}
+
+.selectNoticeBoard, .selectQuestionBoard, .selectFreeBoard{
+    border: 2px solid rgb(200, 200, 200);
+    border-bottom: none;
+    width: 6vw;
+    height: 6vh;
+    line-height: 6vh;
+    font-size: 23px;
+    font-weight: 600;
+    color: rgb(80, 80, 80);
+    cursor: pointer;
+}
+
+.selectNoticeBoard, .selectQuestionBoard{
+    border-right: none;
+}
+
+.selectNoticeBoard{
+    border-top-left-radius: 10px;
+}
+
+.selectFreeBoard{
+    border-top-right-radius: 10px;
+}
+
+.noDataListArea{
+    border: 2px solid rgb(200, 200, 200);
+    border-radius: 10px;
+    width: 62vw;
+    margin: 0 auto 15vh auto;
+    font-size: 22px;
+    padding: 20vh 0 20vh 0 ;
+}
+
+.writtenCommentListArea{
+    border: 2px solid rgb(200, 200, 200);
+    border-radius: 10px;
+    width: 62vw;
+    margin: 0 auto 6vh auto;
+}
+
+.writtenCommentList{
+    border-bottom: 2px solid rgb(200, 200, 200);
+}
+
+.writtenCommentList:last-child{
+    border-bottom: none;
+}
+
+.topArea{
+    display: flex;
+    font-size: 20px;
+    justify-content: space-between;
+    width: 56vw;
+    margin: 2vh auto 1vh auto;
+}
+
+.timeToWrite{
+    color: #EE551E;
+}
+
+.controlBtnArea{
+    display: flex;
+    color: rgb(90, 90, 90);
+}
+
+.editBtn, .deleteBtn{
+    cursor: pointer;
+}
+
+.editBtn{
+    margin-right: 0.6vw;
+}
+
+.writtenCommentItem{
+    width: 56vw;
+    font-size: 23px;
+    text-align: left;
+    margin: 1.5vh auto 2vh auto;
+    color: rgb(60, 60, 60);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@media (max-width:1600px){
+    .selectNoticeBoard, .selectQuestionBoard, .selectFreeBoard{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .noDataListArea{
+        font-size: 20px;
+    }
+
+    .topArea{
+        font-size: 17px;
+    }
+
+    .writtenCommentItem{
+        font-size: 20px;
+    }
+}

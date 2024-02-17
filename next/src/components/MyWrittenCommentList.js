@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Pagination from "react-js-pagination";
 
-import styles from './MyWrittenContentList.module.css';
+import styles from './MyWrittenCommentList.module.css';
 
 import dataMyPost from '../dataMyPost';
 
-function MyWrittenContentList() {
+function MyWrittenCommentList() {
     //게시판 선택 기능
     const [selectedBoard, setSelectedBoard] = useState('공지');
 
@@ -27,7 +27,7 @@ function MyWrittenContentList() {
     const totalItemsCount = filteredData.length;
 
     return (
-        <div className={styles.myWrittenContentList}>
+        <div className={styles.myWrittenCommentList}>
             <div className={styles.selectBoardArea}>
                 <div className={styles.selectNoticeBoard} style={{backgroundColor:selectedBoard == "공지" ? '#ffe6dd' : ''}}
                     onClick={() => handleBoardClick('공지')}>
@@ -38,20 +38,20 @@ function MyWrittenContentList() {
                     질문
                 </div>
                 <div className={styles.selectFreeBoard} style={{backgroundColor:selectedBoard == "자유" ? '#ffe6dd' : ''}}
-                    onClick={() => handleBoardClick('자유ㅈ')}>
+                    onClick={() => handleBoardClick('자유')}>
                     자유
                 </div>
             </div>
             {
                 totalItemsCount >= 1 ? 
-                <div className={styles.writtenContentListArea}>
+                <div className={styles.writtenCommentListArea}>
                     {filteredData.slice((page - 1) * itemsPerPage, page * itemsPerPage).map((item, i) => (
-                        <WrittenContentList key={item.id} list={item} />
+                        <WrittenCommentList key={item.id} list={item} />
                     ))}
                 </div>
                 :
                 <div className={styles.noDataListArea}>
-                    {selectedBoard}게시판 작성글이 없습니다.
+                    {selectedBoard}게시판 작성 댓글이 없습니다.
                 </div>
             }
             
@@ -75,28 +75,20 @@ function MyWrittenContentList() {
     );
 }
 
-function WrittenContentList(props){
+function WrittenCommentList(props){
     return(
-        <div className={styles.writtenContentList}>
+        <div className={styles.writtenCommentList}>
             <div className={styles.topArea}>
                 <div className={styles.timeToWrite}>
                     {props.list.time}
                 </div>
-                <div className={styles.controlBtnArea}>
-                    <div className={styles.editBtn}>
-                        수정
-                    </div>
-                    <div className={styles.deleteBtn}>
-                        삭제
-                    </div>
-                </div>  
             </div>
 
-            <div className={styles.writtenContentItem}>
+            <div className={styles.writtenCommentItem}>
                 {props.list.title}
             </div>
         </div>
     );
 }
 
-export default MyWrittenContentList;
+export default MyWrittenCommentList;

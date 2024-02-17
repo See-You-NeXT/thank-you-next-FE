@@ -34,7 +34,7 @@ function MyPage() {
                 <div className={styles.myCommentArea}>
                     <FaRegCommentDots className={styles.icon} onClick={()=>{ navigate('/myComment') }}/>
                     <div className={styles.myCommentText} onClick={()=>{ navigate('/myComment') }}>
-                        내가 쓴 댓글
+                        댓글 단 글
                     </div>
                 </div>
                 <div className={styles.myProfileArea}>
