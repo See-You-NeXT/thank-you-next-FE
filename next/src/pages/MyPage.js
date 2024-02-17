@@ -6,6 +6,7 @@ import { CgProfile } from "react-icons/cg";
 import { BsPersonVcard } from "react-icons/bs";
 
 import styles from './MyPage.module.css';
+import dataMyInfo from '../dataMyInfo';
 
 function MyPage() {
     let navigate = useNavigate();
@@ -17,10 +18,10 @@ function MyPage() {
                     <img src='/developerImg/kcs.png' />
                 </div>
                 <div className={styles.myPageName}>
-                    김명지
+                    {dataMyInfo[0].name}
                 </div>
                 <div className={styles.myPageClassNum}>
-                    6019XXXX
+                    {dataMyInfo[0].classNum}
                 </div>
             </div>
 
