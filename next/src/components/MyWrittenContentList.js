@@ -38,17 +38,27 @@ function MyWrittenContentList() {
                     질문
                 </div>
                 <div className={styles.selectFreeBoard} style={{backgroundColor:selectedBoard == "자유" ? '#ffe6dd' : ''}}
-                    onClick={() => handleBoardClick('자유')}>
+                    onClick={() => handleBoardClick('자유ㅈ')}>
                     자유
                 </div>
             </div>
-            <div className={styles.writtenContentListArea}>
-                {filteredData.slice((page - 1) * itemsPerPage, page * itemsPerPage).map((item, i) => (
-                    <WrittenContentList key={item.id} list={item} />
-                ))}
-            </div>
+            {
+                totalItemsCount >= 1 ? 
+                <div className={styles.writtenContentListArea}>
+                    {filteredData.slice((page - 1) * itemsPerPage, page * itemsPerPage).map((item, i) => (
+                        <WrittenContentList key={item.id} list={item} />
+                    ))}
+                </div>
+                :
+                <div className={styles.noDataListArea}>
+                    {selectedBoard}게시판 작성글이 없습니다.
+                </div>
+            }
+            
 
-            <Pagination
+            {
+                totalItemsCount >= 1 ? 
+                <Pagination
                 activePage={page}
                 itemsCountPerPage={itemsPerPage}
                 totalItemsCount={totalItemsCount}
@@ -56,7 +66,11 @@ function MyWrittenContentList() {
                 prevPageText={"‹"}
                 nextPageText={"›"}
                 onChange={handlePageChange}
-            />
+                />
+                :
+                <></>
+            }
+            
         </div>
     );
 }

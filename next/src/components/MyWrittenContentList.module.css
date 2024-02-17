@@ -6,7 +6,7 @@
 .selectNoticeBoard, .selectQuestionBoard, .selectFreeBoard{
     border: 2px solid rgb(200, 200, 200);
     border-bottom: none;
-    width: 7vw;
+    width: 6vw;
     height: 6vh;
     line-height: 6vh;
     font-size: 23px;
@@ -25,6 +25,15 @@
 
 .selectFreeBoard{
     border-top-right-radius: 10px;
+}
+
+.noDataListArea{
+    border: 2px solid rgb(200, 200, 200);
+    border-radius: 10px;
+    width: 62vw;
+    margin: 0 auto 15vh auto;
+    font-size: 22px;
+    padding: 20vh 0 20vh 0 ;
 }
 
 .writtenContentListArea{
@@ -82,6 +91,10 @@
     .selectNoticeBoard, .selectQuestionBoard, .selectFreeBoard{
         font-size: 20px;
         font-weight: 600;
+    }
+
+    .noDataListArea{
+        font-size: 20px;
     }
 
     .topArea{
