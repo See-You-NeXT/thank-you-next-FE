@@ -83,10 +83,11 @@ function Landing(){
   return(
     <div>
       <div className='landing'>
-        <img src='/landingpage.png'></img>
+        <img src='/landingpage.png'/>
         <div className='roadmap'>
           <div className='shortcut' onClick={()=>{ navigate('/login') }}>로그인하러 가기 ➔</div>
           <div className='shortcut' onClick={()=>{ navigate('/introduce') }}>스터디 소개 보러가기 ➔</div>
+          <div className='shortcut' onClick={()=>{ navigate('/activity') }}>스터디 활동 보러가기 ➔</div>
         </div>
       </div>
     </div>
