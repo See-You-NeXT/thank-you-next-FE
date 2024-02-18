@@ -62,6 +62,7 @@ function EditMyProfile() {
         const updatedData = {
             ...dataMyInfo[0],
             name: name,
+            img: img,
             classNum: classNum,
             selfIntro: selfIntro,
             github: github,

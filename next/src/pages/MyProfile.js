@@ -23,6 +23,30 @@ function MyProfile() {
 
     const classNumPrefix = classNum.substring(2, 4);
 
+    const handleGitClick = () => {
+        if (github) {
+            window.location.href = github;
+        } else {
+            window.alert("등록된 링크가 없습니다.");
+        }
+    };
+    
+    const handleInstaClick = () => {
+        if (insta) {
+            window.location.href = insta;
+        } else {
+            window.alert("등록된 링크가 없습니다.");
+        }
+    };
+    
+    const handleEmailClick = () => {
+        if (email) {
+            copyToClipboard(email);
+        } else {
+            window.alert("등록된 이메일이 없습니다.");
+        }
+    };
+
     const copyToClipboard = async (text) => {
         try {
             await navigator.clipboard.writeText(text);
@@ -58,15 +82,15 @@ function MyProfile() {
                         <div className={styles.linkTitle}>Link 🔗</div>
                         <div className={styles.linkContent}>
                             <div className={styles.gitLink} 
-                                onClick={() => window.location.href = github}>
-                                <img src='/link/git.png' />
+                                onClick={handleGitClick}>
+                                <img src='/link/git.png' />     
                             </div>
                             <div className={styles.instaLink}
-                                onClick={() => window.location.href = insta}>
+                                onClick={handleInstaClick}>
                                 <img src='/link/insta.jpeg' />
                             </div>
                             <div className={styles.emailLink} 
-                                onClick={() => copyToClipboard(email)}>
+                                onClick={handleEmailClick}>
                                 <HiOutlineMail className={styles.emailImg}/>
                             </div>
                         </div>

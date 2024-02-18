@@ -62,7 +62,7 @@
 .introduction{
     text-align: left;
     color: rgb(80, 80, 80);
-    font-size: 27px;
+    font-size: 25px;
     padding: 2vh 0 5vh 0;
     border-bottom: 1px solid rgb(200, 200, 200);
 }
@@ -166,7 +166,7 @@
     }
     
     .introduction{
-        font-size: 23px;
+        font-size: 21px;
     }
 
     .linkTitle{
