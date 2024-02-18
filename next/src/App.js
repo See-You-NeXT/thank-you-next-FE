@@ -17,6 +17,7 @@ import WritePost from './pages/WritePost';
 import EditPost from './pages/EditPost';
 import BoardPost from './pages/BoardPost';
 import Introduce from './pages/Introduce';
+import Activity from './pages/Activity';
 import Gallery from './pages/Gallery';
 import GalleryInfo from './pages/GalleryInfo';
 import GalleryUpload from './pages/GalleryUpload';
@@ -47,6 +48,7 @@ function App() {
         <Route path="/editPost" element={<EditPost />} />
         <Route path="/boardPost" element={<BoardPost />} />
         <Route path="/introduce" element={<Introduce />}/>
+        <Route path="/activity" element={<Activity />}/>
         <Route path="/gallery" element={<Gallery />}/>
         <Route path="/galleryInfo" element={<GalleryInfo />}/>
         <Route path="/galleryUpload" element={<GalleryUpload />}/>
