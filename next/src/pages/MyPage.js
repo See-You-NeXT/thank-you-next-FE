@@ -15,7 +15,7 @@ function MyPage() {
         <div className={styles.myPageArea}>
             <div className={styles.myPageProfile}>
                 <div className={styles.myPageImg}>
-                    <img src='/developerImg/kcs.png' />
+                    <img src={dataMyInfo[0].img} />
                 </div>
                 <div className={styles.myPageName}>
                     {dataMyInfo[0].name}

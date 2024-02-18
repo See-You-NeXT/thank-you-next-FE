@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { HiOutlineMail } from "react-icons/hi";
 import { FaCirclePlus } from "react-icons/fa6";
+import { RiImageEditFill } from "react-icons/ri";
 
 import styles from './EditMyProfile.module.css';
 import dataMyInfo from '../dataMyInfo';
@@ -10,6 +11,7 @@ function EditMyProfile() {
     let navigate = useNavigate();
 
     const [name, setName] = useState(dataMyInfo[0].name);
+    const [img, setImg] = useState(dataMyInfo[0].img);
     const [classNum, setClassNum] = useState(dataMyInfo[0].classNum);
     const [selfIntro, setSelfIntro] = useState(dataMyInfo[0].selfIntro);
     const [github, setGithub] = useState(dataMyInfo[0].github);
@@ -22,6 +24,20 @@ function EditMyProfile() {
     const [newTech, setNewTech] = useState('');
 
     const classNumPrefix = classNum.substring(2, 4);
+
+    const handleProfileImg = () => {
+        const fileInput = document.getElementById('profileInput');
+        fileInput.click();
+    };
+
+    const handleImageUpload = (event) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onloadend = () => {
+            setImg(reader.result);
+        };
+        reader.readAsDataURL(file);
+    };
 
     const handleAddTech = () => {
         if (newTech.trim() !== '') {
@@ -70,7 +86,14 @@ function EditMyProfile() {
         <div className={styles.editMyProfileArea}>
             <div className={styles.backgroundWrap}>
                 <div className={styles.profileImg}>
-                    <img src='/developerImg/kcs.png' />
+                    <img src={img} />
+                    <RiImageEditFill className={styles.editProfileImgBtn} onClick={handleProfileImg}/>
+                    <input type="file" 
+                        id="profileInput"
+                        accept="image/*"
+                        style={{ display: 'none' }} 
+                        onChange={handleImageUpload} 
+                    />
                 </div>
             </div>
 
@@ -114,7 +137,7 @@ function EditMyProfile() {
                             <div className={styles.emailLink}>
                                 <HiOutlineMail className={styles.emailImg}/>
                                 <input
-                                    placeholder='GitHub Link'
+                                    placeholder='Email address'
                                     value={email}
                                     className={styles.linkInputBox} 
                                     onChange={(e) => setEmail(e.target.value)}

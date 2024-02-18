@@ -10,6 +10,7 @@ function MyProfile() {
     let navigate = useNavigate();
 
     const [name, setName] = useState(dataMyInfo[0].name);
+    const [img, setImg] = useState(dataMyInfo[0].img);
     const [classNum, setClassNum] = useState(dataMyInfo[0].classNum);
     const [selfIntro, setSelfIntro] = useState(dataMyInfo[0].selfIntro);
     const [github, setGithub] = useState(dataMyInfo[0].github);
@@ -35,7 +36,7 @@ function MyProfile() {
         <div className={styles.myProfileArea}>
             <div className={styles.backgroundWrap}>
                 <div className={styles.profileImg}>
-                    <img src='/developerImg/kcs.png' />
+                    <img src={img} /> 
                 </div>
                 <div className={styles.profileEdit}>
                     <MdModeEdit className={styles.profileEditBtn} 
