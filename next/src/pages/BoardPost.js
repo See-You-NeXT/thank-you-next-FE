@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaRegCommentDots } from "react-icons/fa";
 
 import styles from './BoardPost.module.css';
@@ -7,32 +7,50 @@ import Comment from '../components/Comment';
 
 import dataGalleryInfoComment from '../dataGalleryInfoComment';
 
+function getTotalCommentCount(comments) {
+    let total = comments.length;
+
+    comments.forEach(comment => {
+        total += comment.replies ? comment.replies.length : 0;
+    });
+
+    return total;
+}
+
 function BoardPost() {
     const [comment, setComment] = useState(dataGalleryInfoComment);
-  return (
-    <div className={styles.boardPostArea}>
-        <Post />
+    const [commentNum, setCommentNum] = useState(dataGalleryInfoComment.length);
 
-        <div className={styles.postCommentArea}>
-            <div className={styles.postCommentWrap}>
-                <div className={styles.postCommentTitleArea}>
-                    <FaRegCommentDots className={styles.commentIcon}/>
+    useEffect(() => {
+        setCommentNum(comment.length);
+    }, [comment]);
 
-                    <div className={styles.postCommentTitle}>
-                        댓글
+    const totalCommentCount = getTotalCommentCount(comment);
+
+    return (
+        <div className={styles.boardPostArea}>
+            <Post />
+
+            <div className={styles.postCommentArea}>
+                <div className={styles.postCommentWrap}>
+                    <div className={styles.postCommentTitleArea}>
+                        <FaRegCommentDots className={styles.commentIcon}/>
+
+                        <div className={styles.postCommentTitle}>
+                            댓글
+                        </div>
+                        <div className={styles.postCommentNum}>
+                            {totalCommentCount}
+                        </div>
                     </div>
-                    <div className={styles.postCommentNum}>
-                        {comment.length}
-                    </div>
+
+                    <Comment commentData={comment} setCommentData={setComment} />
                 </div>
-
-                <Comment commentData={comment} />
             </div>
-        </div>
-        
+            
 
-    </div>
-  );
+        </div>
+    );
 }
 
 export default BoardPost;

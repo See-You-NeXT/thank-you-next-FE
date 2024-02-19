@@ -4,7 +4,7 @@ import { MdOutlineSubdirectoryArrowRight } from "react-icons/md";
 
 import styles from './Comment.module.css';
 
-function Comment({ commentData }) {
+function Comment({ commentData, setCommentData }) {
     const [textAreaValue, setTextAreaValue] = useState('');
     const [comment, setComment] = useState(commentData);
     const [replyTextAreaValue, setReplyTextAreaValue] = useState('');
@@ -25,10 +25,12 @@ function Comment({ commentData }) {
                 date: '현재 날짜 및 시간',
                 content: textAreaValue,
                 img: '/default-profile-image.png',
-                replies: [] // 답글들을 저장할 배열 추가
+                replies: []
             };
-    
+
             setComment([...comment, newComment]);
+
+            setCommentData([...comment, newComment]);
             setTextAreaValue('');
         }
     };
@@ -43,11 +45,9 @@ function Comment({ commentData }) {
             return;
         }
 
-        // 댓글에 대한 답글 배열 초기화
         const updatedComment = [...comment];
         updatedComment[replyIndex].replies = updatedComment[replyIndex].replies || [];
 
-        // 답글 추가
         updatedComment[replyIndex].replies.push({
             id: updatedComment[replyIndex].replies.length + 1,
             name: '사용자',
@@ -56,7 +56,7 @@ function Comment({ commentData }) {
             img: '/default-profile-image.png'
         });
 
-        setComment(updatedComment);
+        setCommentData(updatedComment);
         setReplyIndex(null);
         setIsReplying(false);
         setReplyTextAreaValue('');
