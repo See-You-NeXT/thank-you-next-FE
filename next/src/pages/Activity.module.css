@@ -1,9 +1,9 @@
 .activities img:first-child{
-    width: 55vw;
+    width: 60vw;
     margin-top: 10vh;
 }
 
 .activities img:last-child{
-    width: 55vw;
+    width: 60vw;
     margin: 7vh 0 12vh 0;
 }
