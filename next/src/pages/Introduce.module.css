@@ -1,12 +1,53 @@
 .originArea{
-    margin-top: 5vh;
+    margin: 5vh 0 15vh 0;
 }
 
 .originArea img{
     width: 70vw;
 }
 
-@media (max-width:1600px){
+.developerArea{
+    margin-bottom: 15vh;
+}
 
+.developerTitle{
+    font-size: 32px;
+    font-weight: 800;
+    color: rgb(80,80,80);
+    text-align: left;
+    margin: 0 0 5vh 22vw;
+}
+
+.selectFeBe{
+    display: flex;
+    margin-left: 20vw;
+}
+
+.feBtn, .beBtn{
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 10px;
+    border-bottom: none;
+    width: 10vw;
+    height: 6vh;
+    line-height: 6vh;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgb(80,80,80);
+    cursor: pointer;
+}
+
+.developer img{
+    width: 62vw;
+    border: 1px solid rgb(170, 170, 170);
+    border-radius: 20px;
+}
+
+@media (max-width:1600px){
+    .developerTitle{
+        font-size: 28px;
+    }
     
+    .feBtn, .beBtn{
+        font-size: 20px;
+    }
 }
