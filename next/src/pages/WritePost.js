@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import { MdOutlineCheckBox } from "react-icons/md";
 
@@ -29,6 +30,25 @@ function WritePost() {
         setCheckbox1(false);
         setCheckbox2(false);
         setCheckbox3(!checkbox3);
+    };
+
+    //버튼 경고창
+    let navigate = useNavigate();
+
+    const handleCancleBtn = () => {
+        const confirmCancle = window.confirm("글 작성을 취소하시겠습니까?");
+
+        if(confirmCancle) {
+            navigate(-1);
+        }
+    };
+
+    const handleUploadBtn = () => {
+        const confirmUpload = window.confirm("글을 등록하시겠습니까?");
+
+        if(confirmUpload) {
+            navigate(-1); //글등록으로 바꾸기
+        }
     };
 
     return (
@@ -111,8 +131,8 @@ function WritePost() {
                 }
 
                 <div className={styles.btnArea}>
-                    <div className={styles.cancelBtn}>취소</div>
-                    <div className={styles.uploadBtn}>등록</div>
+                    <div className={styles.cancelBtn} onClick={handleCancleBtn}>취소</div>
+                    <div className={styles.uploadBtn} onClick={handleUploadBtn}>등록</div>
                 </div>
             </div>
         </div>

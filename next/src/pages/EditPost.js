@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import { MdOutlineCheckBox } from "react-icons/md";
 
@@ -19,7 +20,20 @@ function EditPost() {
         setSelectedBoard(dataPost[0].board);
     }, []);
 
-    const handleEdit = () => {
+    //버튼 경고창
+    let navigate = useNavigate();
+
+    const handleCancleBtn = () => {
+        const confirmCancle = window.confirm("글 수정을 취소하시겠습니까?");
+
+        if(confirmCancle) {
+            navigate(-1);
+        }
+    };
+
+    const handleEditBtn = () => {
+        const confirmEdit = window.confirm("글을 수정하시겠습니까?");
+
         const updatedData = {
             ...dataPost[0],
             board: selectedBoard,
@@ -27,7 +41,10 @@ function EditPost() {
             content: content
         };
 
-        dataPost[0] = updatedData;
+        if(confirmEdit) {
+            dataPost[0] = updatedData;
+        }
+        
     };
 
     return (
@@ -115,8 +132,8 @@ function EditPost() {
                 
 
                 <div className={styles.btnArea}>
-                    <div className={styles.cancelBtn}>취소</div>
-                    <div className={styles.editBtn} onClick={handleEdit}>수정</div>
+                    <div className={styles.cancelBtn} onClick={handleCancleBtn}>취소</div>
+                    <div className={styles.editBtn} onClick={handleEditBtn}>수정</div>
                 </div>
             </div>
         </div>

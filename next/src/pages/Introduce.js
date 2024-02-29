@@ -5,15 +5,12 @@ import NeXTNav from '../components/NeXTNav';
 
 function Introduce() {
   const [fe, setFe] = useState(true);
-  // const [be, setBe] = useState(false);
 
   const handleFeBtn = () => {
     setFe(true);
-    // setBe(false);
   }
 
   const handleBeBtn = () => {
-    // setBe(true);
     setFe(false);
   }
 
