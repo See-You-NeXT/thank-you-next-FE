@@ -1,0 +1,158 @@
+.editPostArea{
+    background-color: rgb(245, 245, 245);
+}
+
+.editPostWrap{
+    background-color: white;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.editPostTitle{
+    text-align: left;
+    font-size: 28px;
+    font-weight: 700;
+    color: rgb(50, 50, 50);
+    margin: 0 13vw 0 13vw;
+    padding: 8vh 0 1.5vh 2vw;
+    border-bottom: 4px solid rgb(200, 200, 200);
+}
+
+.selectBoard{
+    display: flex;
+    justify-content: center;
+}
+
+.boardList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    text-align: center;
+    margin-top: 3vh;
+}
+
+.boardList:not(:nth-child(3)){
+    margin-right: 10vw;
+}
+
+.checkboxIcon{
+    margin-right: 10px;
+    color: rgb(160, 160, 160);
+}
+
+.boardListText{
+    font-size: 23px;
+    font-weight: 500;
+    color: rgb(160, 160, 160);
+}
+
+.titleArea{
+    margin: 6vh 13vw 0 13vw;
+}
+
+.inputText{
+    text-align: left;
+    font-size: 21px;
+    color: rgb(70, 70, 70);
+    font-weight: 600;
+    margin: 0 0 1vh 3vw;
+}
+
+.inputBox{
+    width: 47vw;
+    height: 5vh;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+.contentArea{
+    margin: 10vh 13vw 0 13vw;
+}
+
+.textareaText{
+    text-align: left;
+    font-size: 21px;
+    color: rgb(70, 70, 70);
+    font-weight: 600;
+    margin: 0 0 1vh 3vw;
+}
+
+.textareaBox{
+    resize: none;
+    width: 46vw;
+    height: 30vh;
+    line-height: 3vh;
+    padding: 14px 14px 0 14px;
+    font-size: 18px;
+}
+
+.uploadFileArea{
+    margin: 6vh 13vw 0 13vw;
+}  
+
+.hashtagArea{
+    margin: 6vh 13vw 7vh 13vw;
+}
+
+.hashtagTitle{
+    text-align: left;
+    font-size: 21px;
+    color: rgb(70, 70, 70);
+    font-weight: 600;
+    margin: 0 0 0.6vh 3vw;
+}
+
+.hashtag{
+    margin: 3vh 0 0 3vw;
+
+}
+
+.btnArea{
+    margin: 6vh 13vw 0vh 13vw;
+    padding-bottom: 10vh;
+    display: flex;
+    justify-content: end;
+}
+
+.cancelBtn{
+    background-color: rgb(210, 210, 210);
+    width: 80px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.editBtn{
+    background-color: #ffa384;
+    width: 80px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5vh;
+}
+
+@media (max-width:1600px){
+    .editPostTitle{
+        font-size: 24px;
+    }
+
+    .boardList:not(:nth-child(3)){
+        margin-right: 7vw;
+    }
+
+    .boardListText{
+        font-size: 19px;
+    }
+
+    .inputText, .textareaText, .uploadPicTitle, .hashtagTitle{
+        font-size: 18px;
+    }
+
+    .uploadPicContent{
+        font-size: 16px;
+    }
+}

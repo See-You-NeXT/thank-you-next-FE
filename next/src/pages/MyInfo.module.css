@@ -1,0 +1,193 @@
+.basicInfoArea{
+    width: 50vw;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 20px;
+    margin: 10vh auto 5vh auto;
+    padding: 4vh 7vw 4vh 7vw;
+    display: flex;
+}
+
+.editProfileImg{
+    border-right: 1px solid rgb(200, 200, 200);
+    padding: 3vh 8vw 3vh 0;
+}
+
+.editProfileImg Img{
+    border-radius: 50%;
+    border: 2px solid rgb(210, 210, 210);
+    width: 12vw;
+    height: 12vw;
+    object-fit: contain;
+}
+
+.basicInfo{
+    padding-left: 8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nameArea, .classNumArea, .emailArea{
+    display: flex;
+}
+
+.nameArea, .classNumArea{
+    margin-bottom: 4vh;
+}
+
+.basicInfoItemsText{
+    font-size: 27px;
+    font-weight: 700;
+    text-align: left;
+    width: 9vw;
+    color: rgb(80,80,80);
+}
+
+.basicInfoItemsContent{
+    font-size: 25px;
+    text-align: left;
+    width: 13vw;
+    color: rgb(80,80,80);
+    overflow-wrap: break-word;
+}
+
+.editPwTitle{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: left;
+    margin: 10vh 0 3vh 20vw;
+}
+
+.editPwAreaContainer{
+    position: relative;
+    width: 48vw;
+    height: 22vh;
+    margin-bottom: 15vh;
+}
+
+.overlay{
+    position: absolute;
+    left: 17.5vw; 
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 20px;
+    padding: 4vh 8vw 4vh 8vw;
+    background-color: rgba(0, 0, 0, 0.17);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.lockIcon{
+    margin-top: 8%;
+    font-size: 80px;
+    color: gray;
+}
+
+.editPwArea{
+    position: absolute;
+    left: 17.5vw; 
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 20px;
+    padding: 4vh 8vw 4vh 8vw;
+}
+
+.newPwArea, .confirmPwArea{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 3vh 0 5vh 0;
+}
+
+.editPwText{
+    height: 6vh;
+    line-height: 6vh;
+    font-size: 27px;
+    font-weight: 600;
+    text-align: left;
+    width: 18vw;
+    color: rgb(80,80,80);
+}
+
+.editPwContent{
+    text-align: right;
+    width: 30vw;
+    height: 5vh;
+    color: rgb(80,80,80);
+}
+
+.editPwBox, .editConfirmPwBox{
+    width: 24vw;
+    height: 3.5vh;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 0.8vh 1vw;
+    font-size: 23px;
+    color: rgb(80,80,80);
+}
+
+.errorMessage{
+    text-align: left;
+    width: 24vw;
+    height: 1.5vh;
+    color: rgb(182, 0, 0);
+    font-size: 18px;
+    margin: 1vh 0 0 5vw;
+}
+
+.saveBtn{
+    font-size: 20px;
+    width: 100px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 0 10vh 75vw;
+}
+
+@media(max-width:1600px){
+    .editProfileImg{
+        padding: 2vh 8vw 2vh 1vw;
+    }
+
+    .editProfileImg Img{
+        width: 11vw;
+        height: 11vw;
+    }
+
+    .basicInfoItemsText{
+        font-size: 23px;
+    }
+
+    .basicInfoItemsContent{
+        font-size: 20px;
+    }
+
+    .editPwTitle{
+        font-size: 26px;
+    }
+
+    .editPwText{
+        font-size: 23px;
+    }
+
+    .editPwBox, .editConfirmPwBox{
+        font-size: 19px;
+        height: 3.2vh;
+        margin-top: 0.3vh;
+    }
+
+    .lockIcon{
+        font-size: 70px;
+    }
+
+    .errorMessage{
+        font-size: 15px;
+    }
+
+    .saveBtn{
+        margin: 0 0 10vh 73vw;
+    }
+}

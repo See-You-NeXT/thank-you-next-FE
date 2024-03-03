@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import { LuDot } from "react-icons/lu";
 import { FaRegHeart } from "react-icons/fa";
@@ -10,6 +10,16 @@ import Comment from '../components/Comment';
 
 import dataGalleryInfo from '../dataGalleryInfo';
 import dataGalleryInfoComment from '../dataGalleryInfoComment';
+
+function getTotalCommentCount(comments) {
+    let total = comments.length;
+
+    comments.forEach(comment => {
+        total += comment.replies ? comment.replies.length : 0;
+    });
+
+    return total;
+}
 
 function GalleryInfo() {
 
@@ -51,6 +61,13 @@ function GalleryInfo() {
 
     //댓글 기능
     const [comment, setComment] = useState(dataGalleryInfoComment);
+    const [commentNum, setCommentNum] = useState(dataGalleryInfoComment.length);
+
+    useEffect(() => {
+        setCommentNum(comment.length);
+    }, [comment]);
+
+    const totalCommentCount = getTotalCommentCount(comment);
 
     return (
         <div className={styles.galleryInfoArea}>
@@ -100,11 +117,11 @@ function GalleryInfo() {
                                 댓글
                             </div>
                             <div className={styles.galleryCommentNum}>
-                                {comment.length}
+                                {totalCommentCount}
                             </div>
                         </div>
 
-                        <Comment commentData={comment} />
+                        <Comment commentData={comment} setCommentData={setComment}/>
                     </div>
                 </div>
 

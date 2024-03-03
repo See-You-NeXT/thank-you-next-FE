@@ -1,0 +1,78 @@
+.neXTNav{
+    width: 70vw;
+    height: 5vh;
+    margin: 6vh auto 0 auto;
+    background-color: rgb(230, 230, 230);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.neXTNavTitle{
+    font-size: 22px;
+    margin-left: 3vw;
+    margin-right: 1.5vw;
+}
+
+.neXTNavArrow{
+    font-size: 25px;
+    color: rgb(90, 90, 90);
+    margin-top: 0.4vh;
+    margin-right: 1.5vw;
+}
+
+.currentPage{
+    font-size: 20px;
+    margin-right: 0.8vw;
+    cursor: pointer;
+}
+
+.navDropDownArrow{
+    font-size: 25px;
+    color: rgb(90, 90, 90);
+    margin-bottom: 0.6vh;
+    cursor: pointer;
+}
+
+.dropdownUl{
+    border: 1px solid gray;
+    border-radius: 10px;
+    background-color: rgb(250, 250, 250);
+    position: absolute;
+    margin-top: 2.3vh;
+    margin-left: -9vw;
+}
+
+.dropdownLi{
+    font-size: 18px;
+    width: 9vw;
+    height: 5vh;
+    line-height: 5vh;
+    cursor: pointer;
+}
+
+.dropdownLi:not(:last-child){
+    border-bottom: 1px solid gray;
+}
+
+@media (max-width:1600px){
+    .neXTNavTitle{
+        font-size: 19px;
+    }
+
+    .neXTNavArrow{
+        font-size: 22px;
+    }
+
+    .currentPage{
+        font-size: 17px;
+    }
+
+    .navDropDownArrow{
+        font-size: 22px;
+    }
+
+    .dropdownLi{
+        font-size: 15px;
+    }
+}

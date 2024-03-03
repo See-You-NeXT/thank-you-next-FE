@@ -9,12 +9,13 @@ import axios from 'axios'
 const instance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
   headers: {"Content-Type": "application/json"},
-  timeout: 5000,  //5초 이내 응답 없으면 에러 발생
+  timeout: 10000,  //5초 이내 응답 없으면 에러 발생
 });
 
 
 
 /**
+ * --요청 인터셉터--
  * 첫 번째 콜백의 인자로 config를 받아오는데 이 config는 
  * 만들어놓은 axios 객체의 기본 설정을 가져오는 것
  * 이 config 를 return 해줘야지 네트워크 요청을 보낼 수 있음
@@ -25,13 +26,14 @@ const instance = axios.create({
 */
 instance.interceptors.request.use(
   (config) => {  
-    
+    //요청이 전달되기 전에 작업 수행
 
     //차후 인증 구현 시 로그인이 되어 있다면 토큰을 담아보내는 코드를 추가해야함
 
     return config;
   },
   (error) => {
+    //요청 오류가 있는 작업 수행
     console.log(error);
     return Promise.reject(error);
   }
@@ -40,13 +42,18 @@ instance.interceptors.request.use(
 
 
 /**
+ * --응답 인터셉터--
  * 요청과 마찬가지로 첫 번째 인자는 응답 성공, 두 번째 인자는 실패
 */
 instance.interceptors.response.use(
   (response) => {
+    // 2xx 범위에 있는 상태 코드는 이 함수를 트리거
+    // 응답 데이터가 있는 작업 수행
     return response;
   },
   (error) => {
+    // 2xx 외의 범위에 있는 상태 코드는 이 함수를 트리거
+    // 응답 오류가 있는 작업 수행
     return Promise.reject(error);
   }
 );

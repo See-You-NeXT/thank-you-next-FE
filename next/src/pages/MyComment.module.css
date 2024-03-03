@@ -1,0 +1,28 @@
+.myCommentTitleArea{
+    display: flex;
+    margin: 13vh 0 8vh 19vw;
+}
+
+.icon{
+    font-size: 45px;
+    margin-right: 1vw;
+    color: rgb(80,80,80);
+}
+
+.myCommentTitle{
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(80,80,80);
+    line-height: 45px;
+}
+
+@media (max-width:1600px){
+    .icon{
+        font-size: 38px;
+    }
+
+    .myCommentTitle{
+        font-size: 23px;
+        line-height: 38px;
+    }
+}

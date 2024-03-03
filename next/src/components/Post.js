@@ -9,7 +9,7 @@ import OnlyQuestionPost from './OnlyQuestionPost';
 
 function Post() {
     const post = dataPost[1];
-    const navigate = useNavigate();
+    let navigate = useNavigate();
 
     const [presentState, setPresentState] = useState(false);
 

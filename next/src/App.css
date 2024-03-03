@@ -12,34 +12,26 @@ ul,li {margin:0; padding:0;}
 .landing img{
   margin-top: 20vh;
   margin-bottom: 18vh;
-  width: 43vw;
+  width: 44vw;
   height: auto;
 }
 
 .roadmap{
   height: 40px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  align-content: space-evenly;
 }
 
 .shortcut{
-  flex-basis: 200px;
-  align-self: center;
   font-size: 18px;
   font-weight: 500;
   color: rgb(100, 100, 100);
   cursor: pointer;
-
 }
 
-.shortcut:nth-child(1){
-  margin-left: 33vw;
-}
-
-.shortcut:nth-child(2){
-  margin-right: 33vw;
+.shortcut:not(:last-child){
+  margin-right: 5vw;
 }
 
 .notFoundPage{
