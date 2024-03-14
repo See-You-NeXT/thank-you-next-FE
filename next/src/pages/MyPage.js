@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PiNotepadBold } from "react-icons/pi";
 import { FaRegCommentDots } from "react-icons/fa";
@@ -8,8 +8,27 @@ import { BsPersonVcard } from "react-icons/bs";
 import styles from './MyPage.module.css';
 import dataMyInfo from '../dataMyInfo';
 
+import instance from '../api/Axios';
+
 function MyPage() {
     let navigate = useNavigate();
+
+    let [name, setName] = useState('');
+    let [studentId, setStudentId] = useState('');
+
+    async function getUser() {
+        try{
+            const response = await instance.get('/api/member/profile')
+            setName(response.data.result.memberDto.name)
+            setStudentId(response.data.result.memberDto.studentId)
+        } catch(error){
+            console.error();
+        }
+    }
+
+    useEffect(()=> {
+        getUser();
+    }, [])
 
     return (
         <div className={styles.myPageArea}>
@@ -18,10 +37,10 @@ function MyPage() {
                     <img src={dataMyInfo[0].img} />
                 </div>
                 <div className={styles.myPageName}>
-                    {dataMyInfo[0].name}
+                    {name}
                 </div>
                 <div className={styles.myPageClassNum}>
-                    {dataMyInfo[0].classNum}
+                    {studentId}
                 </div>
             </div>
 
