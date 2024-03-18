@@ -1,11 +1,12 @@
-import axios from 'axios'
-
+import axios from 'axios' 
 
 /**
  * create메소드의 인자로 객체를 전달하고 이 객체 안에 설정값(config)을 설정
  * baseURL의 경우 API 주소를 숨기기 위해 .env 파일에 환경변수로 설정하였음
  * .env 파일은 .gitignore 파일에 추가하여 깃허브에는 올라가지 않음
-*/console.log("?",process.env.REACT_APP_API_URL);
+*/
+console.log("?",process.env);
+console.log("?",process.env.REACT_APP_API_URL);
 const instance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
   //baseURL: 'http://develop.seeunext.store',
