@@ -18,8 +18,6 @@ function MyPage() {
 
     async function getUser() {
 
-console.log("?>>>>>>>>>>>",process.env);
-console.log("?",process.env.REACT_APP_API_URL);
         try{
             const response = await instance.get('/api/member/profile')
             setName(response.data.result.memberDto.name)

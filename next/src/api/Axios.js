@@ -5,11 +5,8 @@ import axios from 'axios'
  * baseURL의 경우 API 주소를 숨기기 위해 .env 파일에 환경변수로 설정하였음
  * .env 파일은 .gitignore 파일에 추가하여 깃허브에는 올라가지 않음
 */
-console.log("?",process.env);
-console.log("?",process.env.REACT_APP_API_URL);
 const instance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
-  //baseURL: 'http://develop.seeunext.store',
   //headers: {'Content-Type': 'application/json'},
   timeout: 10000,  //10초 이내 응답 없으면 에러 발생
   
@@ -32,7 +29,6 @@ instance.interceptors.request.use(
     switch(config.url){
       case '/api/member/profile': //유저 정보 조회
         config.headers = {'Content-Type': 'application/json'}
-        console.log("창식앙ㅜㅜㅜ");
         break;
 
       case '/api/post': //게시글 등록
@@ -61,7 +57,6 @@ instance.interceptors.response.use(
   (response) => {
     // 2xx 범위에 있는 상태 코드는 이 함수를 트리거
     // 응답 데이터가 있는 작업 수행
-    console.log(response.data);
     return response;
   },
   (error) => {
