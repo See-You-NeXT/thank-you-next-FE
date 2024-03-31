@@ -7,6 +7,7 @@ import styles from './WritePost.module.css';
 
 import Hashtag from '../components/Hashtag';
 import UploadImg from '../components/UploadImg';
+import instance from '../api/Axios';
 
 function WritePost() {
     //게시판 선택 기능
@@ -38,7 +39,7 @@ function WritePost() {
     const handleCancleBtn = () => {
         const confirmCancle = window.confirm("글 작성을 취소하시겠습니까?");
 
-        if(confirmCancle) {
+        if (confirmCancle) {
             navigate(-1);
         }
     };
@@ -46,10 +47,60 @@ function WritePost() {
     const handleUploadBtn = () => {
         const confirmUpload = window.confirm("글을 등록하시겠습니까?");
 
-        if(confirmUpload) {
-            navigate(-1); //글등록으로 바꾸기
+        if (confirmUpload) {
+            postWritePost()
+            //navigate(-1); //글등록으로 바꾸기
         }
     };
+
+
+    let [title, setTitle] = useState('')
+    let [content, setContent] = useState('')
+    let [files, setFiles] = useState([])
+
+    async function postWritePost() {
+
+        try {
+            const formData = new FormData()
+
+            formData.append('title', title)
+            formData.append('content', content)
+            
+            //CORS를 만나버린..
+            files.forEach((file, index) => {
+                formData.set(`file${index}`, file)
+            });
+            
+
+            /*CORS 대비용, 근데 얘도 되는 건지는 모름
+            Array.from(files).forEach((file, index) => {
+                formData.set(`file${index}`, file)
+            })
+            */
+
+            //디버깅용
+            for (let [key, value] of formData.entries()) {
+                if (value instanceof File) {
+                    console.log(`${key}: 파일명=${value.name}, 유형=${value.type}`);
+                } else {
+                    console.log(`${key}: ${value}`);
+                }
+            }
+
+            const response = await instance.post('/api/post', formData)
+
+            //디버깅용
+            console.log(response);
+
+        }catch(error){
+            console.error();
+        }
+        
+        
+
+        
+        
+    }
 
     return (
         <div className={styles.writePostArea}>
@@ -62,61 +113,67 @@ function WritePost() {
                     <li className={styles.boardList} onClick={handleCheckbox1Click}>
                         <div className={styles.checkboxIcon}>
                             {
-                                checkbox1 ? <MdOutlineCheckBox size={25}/> : <MdOutlineCheckBoxOutlineBlank size={25}/>
+                                checkbox1 ? <MdOutlineCheckBox size={25} /> : <MdOutlineCheckBoxOutlineBlank size={25} />
                             }
                         </div>
                         <div className={styles.boardListText}>
-                            공지게시판 
+                            공지게시판
                         </div>
-                        
+
                     </li>
                     <li className={styles.boardList} onClick={handleCheckbox2Click}>
                         <div className={styles.checkboxIcon}>
                             {
-                                checkbox2 ? <MdOutlineCheckBox size={25}/> : <MdOutlineCheckBoxOutlineBlank size={25}/>
+                                checkbox2 ? <MdOutlineCheckBox size={25} /> : <MdOutlineCheckBoxOutlineBlank size={25} />
                             }
                         </div>
                         <div className={styles.boardListText}>
-                            질문게시판 
+                            질문게시판
                         </div>
                     </li>
                     <li className={styles.boardList} onClick={handleCheckbox3Click}>
                         <div className={styles.checkboxIcon}>
                             {
-                                checkbox3 ? <MdOutlineCheckBox size={25} /> : <MdOutlineCheckBoxOutlineBlank size={25}/>
+                                checkbox3 ? <MdOutlineCheckBox size={25} /> : <MdOutlineCheckBoxOutlineBlank size={25} />
                             }
                         </div>
                         <div className={styles.boardListText}>
-                            자유게시판 
+                            자유게시판
                         </div>
                     </li>
                 </ul>
 
                 <div className={styles.titleArea}>
                     <div className={styles.inputText}>
-                        제목    
+                        제목
                     </div>
-                    <input 
+                    <input
                         placeholder='제목을 입력하세요'
                         id='title'
-                        className={styles.inputBox} 
+                        className={styles.inputBox}
+                        onChange={e => {
+                            setTitle(e.target.value)
+                        }}
                     />
                 </div>
 
                 <div className={styles.contentArea}>
                     <div className={styles.textareaText}>
-                        내용    
+                        내용
                     </div>
-                    <textarea 
+                    <textarea
                         placeholder='내용을 입력하세요'
                         id='content'
-                        className={styles.textareaBox} 
+                        className={styles.textareaBox}
+                        onChange={e => {
+                            setContent(e.target.value)
+                        }}
                     />
                 </div>
 
                 <div className={styles.uploadFileArea}>
-                    <UploadImg />
-                </div>    
+                    <UploadImg onFilesChange={(selectedFiles) => setFiles(selectedFiles)} />
+                </div>
 
                 {
                     checkbox2 ?
@@ -124,7 +181,7 @@ function WritePost() {
                             <div className={styles.hashtagTitle}>해시태그</div>
                             <div className={styles.hashtag}>
                                 <Hashtag />
-                            </div>  
+                            </div>
                         </div>
                         :
                         <div></div>

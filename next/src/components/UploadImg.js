@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { GoPlusCircle } from "react-icons/go";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
 import styles from './UploadImg.module.css';
 
-function UploadImg() {
+function UploadImg({onFilesChange}) {
     const disabledColor = 'rgb(220,220,220)';
 
     let [selectedFiles, setSelectedFiles] = useState([]);
     let [selectedPageIndex, setSelectedPageIndex] = useState(0);
+
+    useEffect(()=>{
+        onFilesChange(selectedFiles)
+    }, [selectedFiles])
 
     const handleSelectingPicBoxClick = () => {
         const fileInput = document.getElementById('fileInput');
