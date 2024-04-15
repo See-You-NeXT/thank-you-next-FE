@@ -65,8 +65,8 @@ function MyPage() {
                     </div>
                 </div>
                 <div className={styles.myInfoEditArea}>
-                    <BsPersonVcard className={styles.icon} onClick={()=>{ navigate('/myInfoPage') }}/>
-                    <div className={styles.myInfoEditText} onClick={()=>{ navigate('/myInfoPage') }}>
+                    <BsPersonVcard className={styles.icon} onClick={()=>{ navigate('/myInfo') }}/>
+                    <div className={styles.myInfoEditText} onClick={()=>{ navigate('/myInfo') }}>
                         내 개인 정보
                     </div>
                 </div>
