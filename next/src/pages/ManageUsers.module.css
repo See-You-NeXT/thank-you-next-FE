@@ -1,0 +1,96 @@
+.manageUsersArea{
+    width: 70vw;
+    margin: 6vh auto 10vh auto;
+}
+
+.userTopArea{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.userTitleArea{
+    display: flex;
+    align-items: center;
+}
+
+.userTitle{
+    font-size: 28px;
+    font-weight: 800;
+    color: rgb(80,80,80);
+}
+
+.userIcon{
+    font-size: 28px;
+    margin-right: 0.5vw;
+}
+
+.deleteBtn{
+    background-color: #ffa384;
+    border-radius: 10px;
+    width: 5vw;
+    height: 4vh;
+    font-size: 20px;
+    align-content: center;
+}
+
+.userInfoArea{
+    margin-top: 5vh;
+}
+
+.basicInfoTitle{
+    background-color: #f4dad2;
+    border: 1px solid #f4dad2;
+    width: 23vw;
+    height: 4vh;
+    line-height: 4vh;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: left;
+    padding-left: 2vw;
+}
+
+.basicInfoContent{
+    width: 25vw;
+    border: 1px solid rgb(200, 200, 200);
+    border-top: none;
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    padding: 1vh 0 1vh 0;
+}
+
+.titleItems, .contentItems{
+    height: 4vh;
+    align-content: center;
+    font-size: 18px;
+}
+
+
+.userPostArea{
+    margin-top: 5vh;
+}
+
+.userPost{
+    background-color: #f4dad2;
+    height: 4vh;
+    line-height: 4vh;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: left;
+    padding-left: 2vw;
+}
+
+.userCommentArea{
+    margin-top: 5vh;
+}
+
+.userComment{
+    background-color: #f4dad2;
+    height: 4vh;
+    line-height: 4vh;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: left;
+    padding-left: 2vw;
+}
