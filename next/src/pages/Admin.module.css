@@ -3,21 +3,20 @@
     justify-content: space-between;
     align-items: center;
     margin: 10vh auto 0 auto;
-    width: 55vw;
+    width: 60vw;
 }
 
 .adminTitle{
-    width: 10vw;
+    width: 12vw;
     font-size: 30px;
     font-weight: 700;
 }
 
 .totalUser{
-    width: 5vw;
+    width: 6vw;
     font-size: 22px;
     font-weight: 600;
     color: rgb(80,80,80);
-    margin-left: -10vw;
 }
 
 .userIcon{
@@ -62,7 +61,6 @@
 
     .totalUser{
         font-size: 20px;
-        margin-left: -3vw;
     }
 
     .usersListContent{
