@@ -3,14 +3,18 @@ import { FaUserCircle } from "react-icons/fa";
 
 import styles from './ManageUsers.module.css';
 
+import dataMyInfo from '../dataMyInfo';
+
 function ManageUsers() {
+    let user = dataMyInfo[0];
+
     return (
     <div className={styles.manageUsersArea}>
         <div className={styles.userTopArea}>
             <div className={styles.userTitleArea}>
                 <FaUserCircle className={styles.userIcon}/>
                 <div className={styles.userTitle}>
-                    김창식
+                    {user.name}
                 </div>
             </div>
             
@@ -31,10 +35,10 @@ function ManageUsers() {
                     <div className={styles.titleItems}>비밀번호</div>
                 </div>
                 <div className={styles.infoContent}>
-                    <div className={styles.contentItems}>김창식</div>
-                    <div className={styles.contentItems}>60404040</div>
-                    <div className={styles.contentItems}>ㄱㅅ걷서ㅏㄷ@naver.com</div>
-                    <div className={styles.contentItems}>ㅇㄴ람ㄴㅇ러ㅣㅓ</div>
+                    <div className={styles.contentItems}>{user.name}</div>
+                    <div className={styles.contentItems}>{user.classNum}</div>
+                    <div className={styles.contentItems}>{user.email}</div>
+                    <div className={styles.contentItems}>{user.pw}</div>
                 </div>
             </div>  
         </div>
