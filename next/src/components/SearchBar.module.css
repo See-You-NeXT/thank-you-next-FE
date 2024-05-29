@@ -5,13 +5,13 @@
 }
 
 .searchInput{
-    position: relative;
+    position :relative;
     float: left;
     width: 21vw;
     height: 40px;
     border-radius: 20px;
     border: 2px solid #7b7b7b;
-    margin: 1vh 0 0 17vw;
+    margin: 1vh 0 0 18.5vw;
     padding-left: 23px;
     font-size: 15px;
 }
@@ -31,8 +31,7 @@
     background-color: #e3a18b;
     border: 2px solid #7b7b7b;
     top: 1vh;
-    right: 0vw;
-    margin-right: 60vw;
+    left: 38vw;
     cursor: pointer;
 }
 
@@ -43,6 +42,9 @@
 
     .searchButton{
         width: 6vw;
-        margin-right: 54vw;
+    }
+
+    .searchButton{
+        left: 40vw;
     }
 }
