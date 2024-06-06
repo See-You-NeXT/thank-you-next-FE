@@ -23,7 +23,7 @@ function MyPage() {
             setName(response.data.result.memberDto.name)
             setStudentId(response.data.result.memberDto.studentId)
         } catch(error){
-            console.error();
+            console.error(error);
         }
     }
 

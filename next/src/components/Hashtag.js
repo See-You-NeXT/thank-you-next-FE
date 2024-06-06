@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import hashData from "../hashData";
 
 import './Hashtag.css';
 
-function Hashtag(){
+function Hashtag({onTagsChange}){
     let [hash, setHash] = useState(hashData.map(hash => ({ ...hash, click: false })));  
     
     const handleHashClick = (index) => {
@@ -13,6 +13,11 @@ function Hashtag(){
             return newHash;
         });    
     };
+
+    useEffect(() => {
+        const selectedTags = hash.filter(tag => tag.click).map(tag => tag.name);
+        onTagsChange(selectedTags);
+    }, [hash]);
 
     return(
         <div className="hashtag">

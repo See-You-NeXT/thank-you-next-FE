@@ -45,32 +45,49 @@ function WritePost() {
     };
 
     const handleUploadBtn = () => {
+        // 게시글 타입 설정
+        let postId = '';
+        if (checkbox1) postId = 0; // 공지게시판
+        else if (checkbox2) postId = 1; // 질문게시판
+        else if (checkbox3) postId = 2; // 자유게시판
+
+        if (postId === '') {
+            alert("게시글 아이디를 지정해 주세요.");
+            return;
+        }
+
         const confirmUpload = window.confirm("글을 등록하시겠습니까?");
 
         if (confirmUpload) {
-            postWritePost()
-            //navigate(-1); //글등록으로 바꾸기
+            postWritePost(postId);
         }
     };
 
 
-    let [title, setTitle] = useState('')
-    let [content, setContent] = useState('')
-    let [files, setFiles] = useState([])
+    let [title, setTitle] = useState('');
+    let [content, setContent] = useState('');
+    let [files, setFiles] = useState([]);
+    let [tags, setTags] = useState([]);
 
-    async function postWritePost() {
+    async function postWritePost(postId) {
 
         try {
-            const formData = new FormData()
+            const formData = new FormData();
 
-            formData.append('title', title)
-            formData.append('content', content)
-            
-            //CORS를 만나버린..
-            files.forEach((file, index) => {
-                formData.set(`file${index}`, file)
+            formData.append('postId', postId);
+            formData.append('title', title);
+            formData.append('content', content);
+
+            // 파일 추가
+            files.forEach((file) => {
+                formData.append('fileList', file);
             });
-            
+
+            // 태그 추가
+            tags.forEach((tag) => {
+                formData.append('tagList', tag);
+            });
+
 
             /*CORS 대비용, 근데 얘도 되는 건지는 모름
             Array.from(files).forEach((file, index) => {
@@ -89,17 +106,20 @@ function WritePost() {
 
             const response = await instance.post('/api/post', formData)
 
-            //디버깅용
+            // 디버깅용
             console.log(response);
+            if (response.data.isSuccess) {
+                navigate(-1); // 등록 후 이전 페이지로 이동
+            }
 
-        }catch(error){
-            console.error();
+        } catch (error) {
+            console.error(error);
         }
-        
-        
 
-        
-        
+
+
+
+
     }
 
     return (
@@ -180,7 +200,7 @@ function WritePost() {
                         <div className={styles.hashtagArea}>
                             <div className={styles.hashtagTitle}>해시태그</div>
                             <div className={styles.hashtag}>
-                                <Hashtag />
+                                <Hashtag onTagsChange={(selectedTags) => setTags(selectedTags)} />
                             </div>
                         </div>
                         :
