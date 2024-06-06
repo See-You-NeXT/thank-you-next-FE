@@ -2,83 +2,83 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FaLock } from "react-icons/fa";
 
 import styles from './MyInfo.module.css';
-import dataMyInfo from '../dataMyInfo';
+
+import instance from '../api/Axios';
 
 function MyInfo() {
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [birth, setBirth] = useState('');
-    const [selfIntro, setSelfIntro] = useState('');
-    const [github, setGithub] = useState('');
-    const [link, setLink] = useState('');
-    const [showPassword, setShowPassword] = useState(false);
-    const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
+    //기본정보
+    let [name, setName] = useState('');
+    let [studentId, setStudentId] = useState('');
+    let [email,setEmail] = useState('');
+    let [password, setPassword] = useState('');
 
-    const [passwordValid,setPasswordValid] = useState(false);
-    const [confirmPasswordValid,setConfirmPasswordValid] = useState(false);
+    //비밀번호 변경
+    let [newPassword, setNewPassword] = useState('');
+    let [confirmPassword, setConfirmPassword] = useState('');
+
+    let [showPassword, setShowPassword] = useState(false);
+    let [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
+
+    let [passwordValid,setPasswordValid] = useState(false);
+    let [confirmPasswordValid,setConfirmPasswordValid] = useState(false);
 
     const editPwAreaRef = useRef(null);
 
+    async function getUser() {
+        try{
+            const response = await instance.get('/api/member/profile');
+            setName(response.data.result.memberDto.name);
+            setStudentId(response.data.result.memberDto.studentId);
+            setEmail(response.data.result.memberDto.email);
+            setPassword(response.data.result.memberDto.password);
+        } catch(error){
+            console.error();
+        }
+    }
+
     useEffect(() => {
-        const myInfoData = dataMyInfo[0];
-        setBirth(myInfoData.birth);
-        setSelfIntro(myInfoData.selfIntro);
-        setGithub(myInfoData.github);
-        setLink(myInfoData.link);
+        getUser();
     }, []);
 
     const checkValid = () =>{
         const regexPw = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
-        regexPw.test(password) ? setPasswordValid(true) : setPasswordValid(false);
-        confirmPassword == password ? setConfirmPasswordValid(true) : setConfirmPasswordValid(false);
+        regexPw.test(newPassword) ? setPasswordValid(true) : setPasswordValid(false);
+        confirmPassword == newPassword ? setConfirmPasswordValid(true) : setConfirmPasswordValid(false);
 
     }
 
     const handleSave = () => {
-        if(isPasswordCorrect){
-            const shouldSave = window.confirm("변경된 내용을 저장하시겠습니까?");
-            if (!shouldSave) {
-                return;
-            }
+        // if(isPasswordCorrect){
+        //     const shouldSave = window.confirm("변경된 내용을 저장하시겠습니까?");
+        //     if (!shouldSave) {
+        //         return;
+        //     }
 
-            window.confirm("비밀번호가 변경되었습니다.");
+        //     window.confirm("비밀번호가 변경되었습니다.");
 
-            const updatedData = {
-                name: "김창식",
-                classNum: "6019XXXX",
-                email: "abc@mju.ac.kr",
-                pw: password,
-                birth: birth,
-                selfIntro: selfIntro,
-                github: github,
-                link: link,
-            };
 
-            dataMyInfo[0] = updatedData;
 
-            // 여기에서 수정된 데이터를 서버에 보내거나 로컬 스토리지에 저장하는 등의 로직을 추가
+        //     setIsPasswordCorrect(false);
+        //     setShowPassword(false);
 
-            setIsPasswordCorrect(false);
-            setShowPassword(false);
+        //     setPassword('');
+        //     setConfirmPassword('');
 
-            setPassword('');
-            setConfirmPassword('');
-
-            setPasswordValid(false);
-            setConfirmPasswordValid(false);
-        }
+        //     setPasswordValid(false);
+        //     setConfirmPasswordValid(false);
+        // }
         
     };
 
     const handleShowPassword = () => {
-        const password = dataMyInfo[0].pw;
+        const userPassword = password;
   
         if (isPasswordCorrect) {
             setShowPassword(true);
         } else {
             const enteredPassword = prompt("본인 확인을 위해 비밀번호를 입력하세요:");
-            if (enteredPassword !== null && enteredPassword === password) {
+            if (enteredPassword !== null && enteredPassword === userPassword) {
                 setIsPasswordCorrect(true);
                 setShowPassword(true);
             } else {
@@ -112,7 +112,7 @@ function MyInfo() {
                             이름
                         </div>
                         <div className={styles.basicInfoItemsContent}>
-                            {dataMyInfo[0].name}
+                            {name}
                         </div>
                     </div>
                     <div className={styles.classNumArea}>
@@ -120,7 +120,7 @@ function MyInfo() {
                             학번
                         </div>
                         <div className={styles.basicInfoItemsContent}>
-                            {dataMyInfo[0].classNum}
+                            {studentId}
                         </div>
                     </div>
                     <div className={styles.emailArea}>
@@ -128,7 +128,7 @@ function MyInfo() {
                             이메일
                         </div>
                         <div className={styles.basicInfoItemsContent}>
-                            {dataMyInfo[0].email}
+                            {email}
                         </div>
                     </div>
                 </div>
@@ -151,15 +151,15 @@ function MyInfo() {
                             <input
                                 type="password"
                                 placeholder="새 비밀번호"
-                                value={password}
+                                value={newPassword}
                                 className={styles.editPwBox}
                                 onKeyUp={checkValid}
-                                onChange={(e) => setPassword(e.target.value)}
+                                onChange={(e) => setNewPassword(e.target.value)}
                                 readOnly={!isPasswordCorrect}
                             />
                             <div className={styles.errorMessage}>
                                 {
-                                    !passwordValid && password.length > 0 &&(
+                                    !passwordValid && newPassword.length > 0 &&(
                                         <div>비밀번호는 대소문자/숫자 포함 8자 이상 입력해주세요.</div>
                                     )
                                 }

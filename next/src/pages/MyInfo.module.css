@@ -21,7 +21,7 @@
 }
 
 .basicInfo{
-    padding-left: 8vw;
+    padding-left: 5vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,14 +39,14 @@
     font-size: 27px;
     font-weight: 700;
     text-align: left;
-    width: 9vw;
+    width: 8vw;
     color: rgb(80,80,80);
 }
 
 .basicInfoItemsContent{
     font-size: 25px;
     text-align: left;
-    width: 13vw;
+    width: 15vw;
     color: rgb(80,80,80);
     overflow-wrap: break-word;
 }

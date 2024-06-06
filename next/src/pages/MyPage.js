@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { PiNotepadBold } from "react-icons/pi";
 import { FaRegCommentDots } from "react-icons/fa";
@@ -17,6 +17,7 @@ function MyPage() {
     let [studentId, setStudentId] = useState('');
 
     async function getUser() {
+
         try{
             const response = await instance.get('/api/member/profile')
             setName(response.data.result.memberDto.name)
@@ -64,8 +65,8 @@ function MyPage() {
                     </div>
                 </div>
                 <div className={styles.myInfoEditArea}>
-                    <BsPersonVcard className={styles.icon} onClick={()=>{ navigate('/myInfoPage') }}/>
-                    <div className={styles.myInfoEditText} onClick={()=>{ navigate('/myInfoPage') }}>
+                    <BsPersonVcard className={styles.icon} onClick={()=>{ navigate('/myInfo') }}/>
+                    <div className={styles.myInfoEditText} onClick={()=>{ navigate('/myInfo') }}>
                         내 개인 정보
                     </div>
                 </div>

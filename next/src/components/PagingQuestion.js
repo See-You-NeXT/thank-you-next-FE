@@ -15,7 +15,6 @@ function Paging(){
     const [filteredData, setFilteredData] = useState(dataQuestion);
 
     const handleSearch = (search) => {
-        // 검색어에 따라 데이터 필터링
         const filteredResults = dataQuestion.filter((item) =>
             item.title.toLowerCase().includes(search.toLowerCase())
         );
@@ -24,7 +23,6 @@ function Paging(){
     };
 
     //페이지네이션
-    let [list] = useState(dataQuestion);
     const [page, setPage] = useState(1);
     const itemsPerPage = 10;
 
@@ -56,7 +54,6 @@ function Paging(){
                     <div className="questionListTitleItems">날짜</div>
                     <div className="questionListTitleItems">진행</div>
                 </div>
-                 {/* 데이터 역순으로 보내주세용 */}
                 {
                     currentItems.map((item,i)=>{
                         return(

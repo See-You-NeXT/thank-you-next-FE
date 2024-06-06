@@ -27,6 +27,8 @@ import MyComment from './pages/MyComment';
 import MyProfile from './pages/MyProfile';
 import EditMyProfile from './pages/EditMyProfile';
 import MyInfo from './pages/MyInfo';
+import Admin from './pages/Admin';
+import ManageUsers from './pages/ManageUsers';
 
 function App() {
 
@@ -57,7 +59,9 @@ function App() {
         <Route path="/myComment" element={<MyComment />}/>
         <Route path="/myProfile" element={<MyProfile />}/>
         <Route path="/editMyProfile" element={<EditMyProfile />}/>
-        <Route path="/myInfoPage" element={<MyInfo />}/>
+        <Route path="/myInfo" element={<MyInfo />}/>
+        <Route path="/admin" element={<Admin />}/>
+        <Route path="/manageUsers" element={<ManageUsers />}/>
 
 
         <Route path="*" element={

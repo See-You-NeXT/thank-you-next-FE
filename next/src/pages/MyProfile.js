@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MdModeEdit } from "react-icons/md";
 import { HiOutlineMail } from "react-icons/hi";
@@ -6,22 +6,41 @@ import { HiOutlineMail } from "react-icons/hi";
 import styles from './MyProfile.module.css';
 import dataMyInfo from '../dataMyInfo';
 
+import instance from '../api/Axios';
+
+
 function MyProfile() {
     let navigate = useNavigate();
 
-    const [name, setName] = useState(dataMyInfo[0].name);
-    const [img, setImg] = useState(dataMyInfo[0].img);
-    const [classNum, setClassNum] = useState(dataMyInfo[0].classNum);
-    const [selfIntro, setSelfIntro] = useState(dataMyInfo[0].selfIntro);
-    const [github, setGithub] = useState(dataMyInfo[0].github);
-    const [insta, setInsta] = useState(dataMyInfo[0].insta);
-    const [email, setEmail] = useState(dataMyInfo[0].email);
-    const [birth, setBirth] = useState(dataMyInfo[0].birth);
-    const [mbti, setMbti] = useState(dataMyInfo[0].mbti);
-    const [dreamJob, setDreamJob] = useState(dataMyInfo[0].dreamJob);
-    const [techStack, setTechStack] = useState(dataMyInfo[0].techStack);
+    let [name, setName] = useState('');
+    let [img, setImg] = useState(dataMyInfo[0].img);
+    let [studentId, setStudentId] = useState('');
+    let [selfIntro, setSelfIntro] = useState(dataMyInfo[0].selfIntro);
+    let [github, setGithub] = useState(dataMyInfo[0].github);
+    let [insta, setInsta] = useState(dataMyInfo[0].insta);
+    let [email, setEmail] = useState(dataMyInfo[0].email);
+    let [birth, setBirth] = useState(dataMyInfo[0].birth);
+    let [mbti, setMbti] = useState(dataMyInfo[0].mbti);
+    let [dreamJob, setDreamJob] = useState(dataMyInfo[0].dreamJob);
+    let [techStack, setTechStack] = useState(dataMyInfo[0].techStack);
 
-    const classNumPrefix = classNum.substring(2, 4);
+    async function getUser() {
+
+        try{
+            const response = await instance.get('/api/member/profile')
+            setName(response.data.result.memberDto.name)
+            setStudentId(response.data.result.memberDto.studentId)
+            console.log(response);
+        } catch(error){
+            console.error();
+        }
+    }
+
+    useEffect(()=> {
+        getUser();
+    }, [])
+
+    let studentIdPrefix = studentId.substring(2, 4);
 
     const handleGitClick = () => {
         if (github) {
@@ -70,9 +89,9 @@ function MyProfile() {
 
             <div className={styles.profileInfoArea}>
                 <div className={styles.basicInfoArea}>
-                    <div className={styles.nameAndClassNum}>
+                    <div className={styles.nameAndStudentId}>
                         <div className={styles.myName}>{name}</div>
-                        <div className={styles.myClassNum}>{classNumPrefix}학번</div>
+                        <div className={styles.myStudentId}>{studentIdPrefix}학번</div>
                     </div>
                     <div className={styles.introduction}>
                         {selfIntro}

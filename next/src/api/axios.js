@@ -1,5 +1,4 @@
-import axios from 'axios'
-
+import axios from 'axios' 
 
 /**
  * create메소드의 인자로 객체를 전달하고 이 객체 안에 설정값(config)을 설정
@@ -11,8 +10,6 @@ const instance = axios.create({
   //headers: {'Content-Type': 'application/json'},
   timeout: 10000,  //10초 이내 응답 없으면 에러 발생
 });
-
-
 
 /**
  * --요청 인터셉터--
@@ -59,7 +56,6 @@ instance.interceptors.response.use(
   (response) => {
     // 2xx 범위에 있는 상태 코드는 이 함수를 트리거
     // 응답 데이터가 있는 작업 수행
-    console.log(response.data);
     return response;
   },
   (error) => {
