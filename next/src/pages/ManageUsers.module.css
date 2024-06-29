@@ -32,6 +32,7 @@
     height: 4vh;
     font-size: 20px;
     align-content: center;
+    cursor: pointer;
 }
 
 .userInfoArea{
