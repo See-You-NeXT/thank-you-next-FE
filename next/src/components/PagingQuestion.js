@@ -95,12 +95,10 @@ import { useNavigate } from 'react-router-dom';
 import Pagination from "react-js-pagination";
 import "./PagingQuestion.css";
 import { PiNotePencil } from "react-icons/pi";
-
 import SearchBar from "./SearchBar";
-
 import instance from "../api/Axios";
 
-function PagingQuestion() {
+function PagingQuestion({ selectedTags }) {
     let navigate = useNavigate();
 
     // 검색창
@@ -112,17 +110,18 @@ function PagingQuestion() {
 
     useEffect(() => {
         fetchPosts();
-    }, [page, keyword]); // page, keyword가 변경될 때마다 데이터 가져오기
+    }, [page, keyword, selectedTags]); // page, keyword, selectedTags가 변경될 때마다 데이터 가져오기
 
     const fetchPosts = async () => {
         try {
             const response = await instance.get('/api/posts', {
                 params: {
                     dType: 'QUESTION',
-                    page: page - 1, // 서버에서 페이지는 0부터 시작하므로 -1 해줍니다.
+                    page: page - 1, // 서버에서 페이지는 0부터 시작하므로 -1
                     size: itemsPerPage,
                     sort: 'string',
-                    keyword: keyword
+                    keyword: keyword,
+                    tagList: selectedTags.join(',') // 태그 목록을 콤마로 구분된 문자열로 전달
                 }
             });
 

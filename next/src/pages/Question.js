@@ -6,11 +6,6 @@ import { useEffect, useState } from 'react';
 function Question(){
     const [selectedTags, setSelectedTags] = useState([]);
 
-    useEffect(() => {
-        //나중에 선택된 태그별로 조회하는 기능 코드 추가해야 함, 지금은 선택된 해시태그 출력으로 대체
-        console.log(selectedTags);
-    }, [selectedTags])
-
     return(
         <div className={styles.question}>
             <div className={styles.textArea}>
@@ -27,7 +22,7 @@ function Question(){
             </div>
             
 
-            <PagingQuestion />
+            <PagingQuestion selectedTags={selectedTags}/>
             
         </div>
     );

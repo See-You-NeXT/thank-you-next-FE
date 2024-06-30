@@ -15,7 +15,7 @@ function Hashtag({onTagsChange}){
     };
 
     useEffect(() => {
-        const selectedTags = hash.filter(tag => tag.click).map(tag => tag.name);
+        const selectedTags = hash.filter(tag => tag.click).map(tag => tag.id);
         onTagsChange(selectedTags);
     }, [hash]);
 
