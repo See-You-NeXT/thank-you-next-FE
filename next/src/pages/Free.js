@@ -16,7 +16,7 @@ function Free(){
             </div>
 
 
-            <Paging />
+            <Paging postType={'FREE'}/>
             
         </div>
     );

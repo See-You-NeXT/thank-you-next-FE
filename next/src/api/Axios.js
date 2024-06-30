@@ -8,6 +8,10 @@ import axios from 'axios'
 const instance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
   //headers: {'Content-Type': 'application/json'},
+  headers: {
+    'Access-Control-Allow-Origin': `http://localhost:3000`,
+    'Access-Control-Allow-Credentials': 'true',
+  },
   timeout: 10000,  //10초 이내 응답 없으면 에러 발생
 });
 
@@ -25,6 +29,7 @@ instance.interceptors.request.use(
   (config) => {  
     //요청이 전달되기 전에 작업 수행
 
+    /*
     switch(config.url){
       case '/api/member/profile': //유저 정보 조회
         config.headers = {'Content-Type': 'application/json'}
@@ -33,7 +38,7 @@ instance.interceptors.request.use(
       case '/api/post': //게시글 등록
         config.headers = {'Content-Type': 'multipart/form-data'}
         break;
-    }
+    }*/
     
     //차후 인증 구현 시 로그인이 되어 있다면 토큰을 담아보내는 코드를 추가해야함
 

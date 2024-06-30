@@ -46,20 +46,20 @@ function WritePost() {
 
     const handleUploadBtn = () => {
         // 게시글 타입 설정
-        let postId = '';
-        if (checkbox1) postId = 0; // 공지게시판
-        else if (checkbox2) postId = 1; // 질문게시판
-        else if (checkbox3) postId = 2; // 자유게시판
+        let postType = '';
+        if (checkbox1) postType = 'NOTICE'; // 공지게시판
+        else if (checkbox2) postType = 'QUESTION'; // 질문게시판
+        else if (checkbox3) postType = 'FREE'; // 자유게시판
 
-        if (postId === '') {
-            alert("게시글 아이디를 지정해 주세요.");
+        if (postType === '') {
+            alert("게시글을 지정해 주세요.");
             return;
         }
 
         const confirmUpload = window.confirm("글을 등록하시겠습니까?");
 
         if (confirmUpload) {
-            postWritePost(postId);
+            postWritePost(postType);
         }
     };
 
@@ -69,16 +69,16 @@ function WritePost() {
     let [files, setFiles] = useState([]);
     let [tags, setTags] = useState([]);
 
-    async function postWritePost(postId) {
+    async function postWritePost(postType) {
 
         try {
             const formData = new FormData();
 
-            formData.append('postId', postId);
+            formData.append('dType', postType);
             formData.append('title', title);
             formData.append('content', content);
 
-            // 파일 추가
+            /*// 파일 추가
             files.forEach((file) => {
                 formData.append('fileList', file);
             });
@@ -86,7 +86,7 @@ function WritePost() {
             // 태그 추가
             tags.forEach((tag) => {
                 formData.append('tagList', tag);
-            });
+            });*/
 
 
             /*CORS 대비용, 근데 얘도 되는 건지는 모름
@@ -104,7 +104,7 @@ function WritePost() {
                 }
             }
 
-            const response = await instance.post('/api/post', formData)
+            const response = await instance.post('/api/post', formData);
 
             // 디버깅용
             console.log(response);

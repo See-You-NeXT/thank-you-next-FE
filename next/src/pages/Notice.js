@@ -14,7 +14,7 @@ function Notice(){
                 </div>
             </div>
 
-            <Paging />
+            <Paging postType={'NOTICE'}/>
             
         </div>
     );
