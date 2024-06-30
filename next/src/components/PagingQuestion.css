@@ -107,10 +107,16 @@
     white-space: nowrap;
 }
 
-.questionListContentItems:nth-child(4){
+.solved {
     flex-basis: 80px;
     margin-right: 4.7vw;
-    color: rgb(0, 137, 34);
+    color: rgb(0, 137, 34); /* 해결 상태의 색상 */
+}
+
+.unsolved {
+    flex-basis: 80px;
+    margin-right: 4.7vw;
+    color: rgb(223, 65, 65); /* 미해결 상태의 색상 */
 }
 
 
