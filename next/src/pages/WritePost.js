@@ -47,7 +47,6 @@ function WritePost() {
     async function postWritePost(postType) {
         try {
             const formData = new FormData();
-
             const requestBody = {
                 dType: postType,
                 title: title,
@@ -56,15 +55,9 @@ function WritePost() {
             };
 
             formData.append('request', new Blob([JSON.stringify(requestBody)], { type: 'application/json' }));
-            //files.forEach(file => formData.append('fileList', file));
+            files.forEach(file => formData.append('fileList', file));
 
-            const response = await instance.post('/api/post', formData
-                /*{
-                // headers: {
-                //     'Content-Type': 'multipart/form-data',
-                // }
-            }*/
-           );
+            const response = await instance.post('/api/post', formData);
             console.log(response);
             if (response.data.isSuccess) {
                 navigate(-1);

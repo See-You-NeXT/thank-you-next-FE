@@ -28,8 +28,8 @@ const instance = axios.create({
 instance.interceptors.request.use(
   config => {
     //요청이 전달되기 전에 작업 수행
- 
-    //console.log(config);
+    
+    console.log(config);
     //차후 인증 구현 시 로그인이 되어 있다면 토큰을 담아보내는 코드를 추가해야함
     return config;
   },
