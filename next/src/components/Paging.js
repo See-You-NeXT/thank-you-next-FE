@@ -79,7 +79,7 @@ function Paging({ postType }) {
                     <div className="listTitleItems">날짜</div>
                 </div>
                 {currentItems.map((item) => (
-                    <ListContent key={item.id} list={item} />
+                    <ListContent key={item.id} list={item} navigate={navigate} />
                 ))}
             </div>
             <Pagination
@@ -95,7 +95,7 @@ function Paging({ postType }) {
     );
 }
 
-function ListContent({ list }) {
+function ListContent({ list, navigate }) {
     // 날짜 형식 변환 함수
     const formatDate = (dateString) => {
         const date = new Date(dateString);
@@ -111,7 +111,7 @@ function ListContent({ list }) {
     };
 
     return (
-        <div className="listContent">
+        <div className="listContent" onClick={() => { navigate(`/boardPost/${list.id}`) }}>
             <div className="listContentItems">{list.author}</div>
             <div className="listContentItems">{list.title}</div>
             <div className="listContentItems">{formatDate(list.auditingDto.createdAt)}</div>

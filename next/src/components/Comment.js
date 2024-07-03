@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { HiOutlinePaperAirplane, HiPaperAirplane } from "react-icons/hi2";
 import { MdOutlineSubdirectoryArrowRight } from "react-icons/md";
 
@@ -6,10 +6,15 @@ import styles from './Comment.module.css';
 
 function Comment({ commentData, setCommentData }) {
     const [textAreaValue, setTextAreaValue] = useState('');
-    const [comment, setComment] = useState(commentData);
+    const [comment, setComment] = useState([]);
     const [replyTextAreaValue, setReplyTextAreaValue] = useState('');
     const [replyIndex, setReplyIndex] = useState(null);
     const [isReplying, setIsReplying] = useState(false);
+
+    useEffect(() => {
+        setComment(commentData);
+        console.log(comment);
+    }, [commentData]);
 
     const handleWriteComment = () => {
         if (textAreaValue.trim() === '') {
@@ -120,7 +125,7 @@ function WrittenComment({ comment, onReply }) {
                     <img src={comment.img}/>
                 </div>
                 <div className={styles.writtenCommentName}>
-                    {comment.name}
+                    {comment.author}
                 </div>
                 <div className={styles.writtenCommentTime}>
                     {comment.date}

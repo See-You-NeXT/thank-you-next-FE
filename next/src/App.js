@@ -48,7 +48,7 @@ function App() {
         <Route path="/free" element={<Free />}/>
         <Route path="/writePost" element={<WritePost />} />
         <Route path="/editPost" element={<EditPost />} />
-        <Route path="/boardPost" element={<BoardPost />} />
+        <Route path="/boardPost/:postId" element={<BoardPost />} />
         <Route path="/introduce" element={<Introduce />}/>
         <Route path="/activity" element={<Activity />}/>
         <Route path="/gallery" element={<Gallery />}/>

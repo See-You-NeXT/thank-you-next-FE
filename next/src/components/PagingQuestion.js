@@ -82,7 +82,7 @@ function PagingQuestion({ selectedTags }) {
                 {
                     currentItems.map((item, i) => {
                         return (
-                            <ListContent key={item.id} list={item} />
+                            <ListContent key={item.id} list={item} navigate={navigate}/>
                         )
                     })
                 }
@@ -100,7 +100,7 @@ function PagingQuestion({ selectedTags }) {
     );
 }
 
-function ListContent({ list }) {
+function ListContent({ list, navigate }) {
     // 날짜 형식 변환 함수
     const formatDate = (dateString) => {
         const date = new Date(dateString);
@@ -116,7 +116,7 @@ function ListContent({ list }) {
     };
 
     return (
-        <div className="questionListContent">
+        <div className="questionListContent" onClick={() => { navigate(`/boardPost/${list.id}`) }}>
             <div className="questionListContentItems">{list.author}</div>
             <div className="questionListContentItems">{list.title}</div>
             <div className="questionListContentItems">{formatDate(list.auditingDto.createdAt)}</div>

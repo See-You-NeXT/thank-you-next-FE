@@ -1,28 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaAngleLeft } from "react-icons/fa6";
-
 import styles from './Post.module.css';
-
-import dataPost from '../dataPost';
 import OnlyQuestionPost from './OnlyQuestionPost';
 
-function Post() {
-    const post = dataPost[1];
+function Post({ post }) {
     let navigate = useNavigate();
+    const [presentState, setPresentState] = useState(post.isSolved === 'TRUE');
+    const [postType, setPostType] = useState('');
 
-    const [presentState, setPresentState] = useState(false);
+    useEffect(() => {
+        if (post.dType === 'NOTICE') setPostType('공지 게시판'); // 공지게시판
+        else if (post.dType === 'QUESTION') setPostType('질문 게시판'); // 질문게시판
+        else if (post.dType === 'FREE') setPostType('자유 게시판'); // 자유게시판
+    }, [post.dType]);
 
     const handleSolveStateChange = (newSolveState) => {
         setPresentState(newSolveState);
     };
 
+    // 날짜 형식 변환 함수
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const now = new Date();
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const day = date.getDate().toString().padStart(2, '0');
+        
+        if (date.getFullYear() !== now.getFullYear()) {
+            return `${date.getFullYear()}.${month}.${day}`;
+        } else {
+            return `${month}.${day}`;
+        }
+    };
+
     return (
         <div className={styles.post}>
             <div className={styles.boardTitleArea}>
-                <FaAngleLeft className={styles.arrowToBackIcon} onClick={()=>{navigate(-1)}}/>
+                <FaAngleLeft className={styles.arrowToBackIcon} onClick={() => {navigate(-1)}}/>
                 <div className={styles.boardTitle}>
-                    {post.board}
+                    {postType}
                 </div>
             </div>
 
@@ -31,13 +47,15 @@ function Post() {
             </div>
             <div className={styles.postInfo}>
                 <div className={styles.postName}>
-                    {post.name}
+                    {/** 이 부분 수정해야 함. postDto에 author 추가되면 수정할 것 */}
+                    {/*post.author*/}
+                    임시 사용자
                 </div>
                 <div className={styles.postDate}>
-                    {post.date}
+                    {formatDate(post.auditingDto.createdAt)}
                 </div>
                 {
-                    post.board =="질문게시판" ? <PresentState presentState={presentState}/> : <div></div>
+                    post.dType === "QUESTION" ? <PresentState presentState={presentState}/> : <div></div>
                 }
             </div>
             
@@ -46,7 +64,7 @@ function Post() {
             </div>
 
             {
-                post.board =="질문게시판" ? <OnlyQuestionPost onSolveStateChange={handleSolveStateChange}/> : <div></div>
+                post.dType === "QUESTION" ? <OnlyQuestionPost onSolveStateChange={handleSolveStateChange}/> : <div></div>
             }
 
         </div>
