@@ -1,4 +1,4 @@
-import axios from 'axios' 
+import axios from 'axios'
 
 /**
  * create메소드의 인자로 객체를 전달하고 이 객체 안에 설정값(config)을 설정
@@ -26,22 +26,11 @@ const instance = axios.create({
  * err를 인자로 받아 return값으로 Promise.reject를 보내 아예 요청을 거절
 */
 instance.interceptors.request.use(
-  (config) => {  
+  config => {
     //요청이 전달되기 전에 작업 수행
-
-    /*
-    switch(config.url){
-      case '/api/member/profile': //유저 정보 조회
-        config.headers = {'Content-Type': 'application/json'}
-        break;
-
-      case '/api/post': //게시글 등록
-        config.headers = {'Content-Type': 'multipart/form-data'}
-        break;
-    }*/
-    
+ 
+    //console.log(config);
     //차후 인증 구현 시 로그인이 되어 있다면 토큰을 담아보내는 코드를 추가해야함
-
     return config;
   },
   (error) => {

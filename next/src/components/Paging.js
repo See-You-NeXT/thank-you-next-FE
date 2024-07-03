@@ -32,8 +32,6 @@ function Paging({ postType }) {
                 }
             });
 
-            console.log('응답 데이터:', response.data);
-
             if (response.data.isSuccess) {
                 const { simplePostDtoList, pageDto } = response.data.result;
                 // 데이터를 최신순으로 정렬 (createdAt 기준 내림차순)

@@ -1,212 +1,132 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
-import { MdOutlineCheckBox } from "react-icons/md";
-
+import { MdOutlineCheckBoxOutlineBlank, MdOutlineCheckBox } from "react-icons/md";
 import styles from './WritePost.module.css';
-
 import Hashtag from '../components/Hashtag';
 import UploadImg from '../components/UploadImg';
 import instance from '../api/Axios';
 
 function WritePost() {
-    //게시판 선택 기능
-    let [checkbox1, setCheckbox1] = useState(false);
-    let [checkbox2, setCheckbox2] = useState(false);
-    let [checkbox3, setCheckbox3] = useState(false);
+    const [checkbox1, setCheckbox1] = useState(false);
+    const [checkbox2, setCheckbox2] = useState(false);
+    const [checkbox3, setCheckbox3] = useState(false);
+    const [title, setTitle] = useState('');
+    const [content, setContent] = useState('');
+    const [files, setFiles] = useState([]);
+    const [tags, setTags] = useState([]);
+    const navigate = useNavigate();
 
-    const handleCheckbox1Click = () => {
-        setCheckbox1(!checkbox1);
-        setCheckbox2(false);
-        setCheckbox3(false);
+    const handleCheckboxClick = (index) => {
+        setCheckbox1(index === 1);
+        setCheckbox2(index === 2);
+        setCheckbox3(index === 3);
     };
-
-    const handleCheckbox2Click = () => {
-        setCheckbox1(false);
-        setCheckbox2(!checkbox2);
-        setCheckbox3(false);
-    };
-
-    const handleCheckbox3Click = () => {
-        setCheckbox1(false);
-        setCheckbox2(false);
-        setCheckbox3(!checkbox3);
-    };
-
-    //버튼 경고창
-    let navigate = useNavigate();
 
     const handleCancleBtn = () => {
-        const confirmCancle = window.confirm("글 작성을 취소하시겠습니까?");
-
-        if (confirmCancle) {
+        if (window.confirm("글 작성을 취소하시겠습니까?")) {
             navigate(-1);
         }
     };
 
     const handleUploadBtn = () => {
-        // 게시글 타입 설정
         let postType = '';
-        if (checkbox1) postType = 'NOTICE'; // 공지게시판
-        else if (checkbox2) postType = 'QUESTION'; // 질문게시판
-        else if (checkbox3) postType = 'FREE'; // 자유게시판
+        if (checkbox1) postType = 'NOTICE';
+        else if (checkbox2) postType = 'QUESTION';
+        else if (checkbox3) postType = 'FREE';
 
         if (postType === '') {
             alert("게시글을 지정해 주세요.");
             return;
         }
 
-        const confirmUpload = window.confirm("글을 등록하시겠습니까?");
-
-        if (confirmUpload) {
+        if (window.confirm("글을 등록하시겠습니까?")) {
             postWritePost(postType);
         }
     };
 
-
-    let [title, setTitle] = useState('');
-    let [content, setContent] = useState('');
-    let [files, setFiles] = useState([]);
-    let [tags, setTags] = useState([]);
-
     async function postWritePost(postType) {
-
         try {
             const formData = new FormData();
 
-            formData.append('dType', postType);
-            formData.append('title', title);
-            formData.append('content', content);
+            const requestBody = {
+                dType: postType,
+                title: title,
+                content: content,
+                tagList: tags
+            };
 
-            /*// 파일 추가
-            files.forEach((file) => {
-                formData.append('fileList', file);
-            });
+            formData.append('request', new Blob([JSON.stringify(requestBody)], { type: 'application/json' }));
+            //files.forEach(file => formData.append('fileList', file));
 
-            // 태그 추가
-            tags.forEach((tag) => {
-                formData.append('tagList', tag);
-            });*/
-
-
-            /*CORS 대비용, 근데 얘도 되는 건지는 모름
-            Array.from(files).forEach((file, index) => {
-                formData.set(`file${index}`, file)
-            })
-            */
-
-            //디버깅용
-            for (let [key, value] of formData.entries()) {
-                if (value instanceof File) {
-                    console.log(`${key}: 파일명=${value.name}, 유형=${value.type}`);
-                } else {
-                    console.log(`${key}: ${value}`);
-                }
-            }
-
-            const response = await instance.post('/api/post', formData);
-
-            // 디버깅용
+            const response = await instance.post('/api/post', formData
+                /*{
+                // headers: {
+                //     'Content-Type': 'multipart/form-data',
+                // }
+            }*/
+           );
             console.log(response);
             if (response.data.isSuccess) {
-                navigate(-1); // 등록 후 이전 페이지로 이동
+                navigate(-1);
             }
-
         } catch (error) {
-            console.error(error);
+            console.error('Error posting data:', error);
         }
-
-
-
-
-
     }
 
     return (
         <div className={styles.writePostArea}>
             <div className={styles.writePostWrap}>
-                <div className={styles.writePostTitle}>
-                    게시판 글쓰기 ✏️
-                </div>
-
+                <div className={styles.writePostTitle}>게시판 글쓰기 ✏️</div>
                 <ul className={styles.selectBoard}>
-                    <li className={styles.boardList} onClick={handleCheckbox1Click}>
+                    <li className={styles.boardList} onClick={() => handleCheckboxClick(1)}>
                         <div className={styles.checkboxIcon}>
-                            {
-                                checkbox1 ? <MdOutlineCheckBox size={25} /> : <MdOutlineCheckBoxOutlineBlank size={25} />
-                            }
+                            {checkbox1 ? <MdOutlineCheckBox size={25} /> : <MdOutlineCheckBoxOutlineBlank size={25} />}
                         </div>
-                        <div className={styles.boardListText}>
-                            공지게시판
-                        </div>
-
+                        <div className={styles.boardListText}>공지게시판</div>
                     </li>
-                    <li className={styles.boardList} onClick={handleCheckbox2Click}>
+                    <li className={styles.boardList} onClick={() => handleCheckboxClick(2)}>
                         <div className={styles.checkboxIcon}>
-                            {
-                                checkbox2 ? <MdOutlineCheckBox size={25} /> : <MdOutlineCheckBoxOutlineBlank size={25} />
-                            }
+                            {checkbox2 ? <MdOutlineCheckBox size={25} /> : <MdOutlineCheckBoxOutlineBlank size={25} />}
                         </div>
-                        <div className={styles.boardListText}>
-                            질문게시판
-                        </div>
+                        <div className={styles.boardListText}>질문게시판</div>
                     </li>
-                    <li className={styles.boardList} onClick={handleCheckbox3Click}>
+                    <li className={styles.boardList} onClick={() => handleCheckboxClick(3)}>
                         <div className={styles.checkboxIcon}>
-                            {
-                                checkbox3 ? <MdOutlineCheckBox size={25} /> : <MdOutlineCheckBoxOutlineBlank size={25} />
-                            }
+                            {checkbox3 ? <MdOutlineCheckBox size={25} /> : <MdOutlineCheckBoxOutlineBlank size={25} />}
                         </div>
-                        <div className={styles.boardListText}>
-                            자유게시판
-                        </div>
+                        <div className={styles.boardListText}>자유게시판</div>
                     </li>
                 </ul>
-
                 <div className={styles.titleArea}>
-                    <div className={styles.inputText}>
-                        제목
-                    </div>
+                    <div className={styles.inputText}>제목</div>
                     <input
                         placeholder='제목을 입력하세요'
                         id='title'
                         className={styles.inputBox}
-                        onChange={e => {
-                            setTitle(e.target.value)
-                        }}
+                        onChange={e => setTitle(e.target.value)}
                     />
                 </div>
-
                 <div className={styles.contentArea}>
-                    <div className={styles.textareaText}>
-                        내용
-                    </div>
+                    <div className={styles.textareaText}>내용</div>
                     <textarea
                         placeholder='내용을 입력하세요'
                         id='content'
                         className={styles.textareaBox}
-                        onChange={e => {
-                            setContent(e.target.value)
-                        }}
+                        onChange={e => setContent(e.target.value)}
                     />
                 </div>
-
                 <div className={styles.uploadFileArea}>
-                    <UploadImg onFilesChange={(selectedFiles) => setFiles(selectedFiles)} />
+                    <UploadImg onFilesChange={setFiles} />
                 </div>
-
-                {
-                    checkbox2 ?
-                        <div className={styles.hashtagArea}>
-                            <div className={styles.hashtagTitle}>해시태그</div>
-                            <div className={styles.hashtag}>
-                                <Hashtag onTagsChange={(selectedTags) => setTags(selectedTags)} />
-                            </div>
+                {checkbox2 && (
+                    <div className={styles.hashtagArea}>
+                        <div className={styles.hashtagTitle}>해시태그</div>
+                        <div className={styles.hashtag}>
+                            <Hashtag onTagsChange={setTags} />
                         </div>
-                        :
-                        <div></div>
-                }
-
+                    </div>
+                )}
                 <div className={styles.btnArea}>
                     <div className={styles.cancelBtn} onClick={handleCancleBtn}>취소</div>
                     <div className={styles.uploadBtn} onClick={handleUploadBtn}>등록</div>
