@@ -56,10 +56,6 @@ function Paging({ postType }) {
         setPage(pageNumber);
     };
 
-    const startIndex = (page - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const currentItems = filteredData.slice(startIndex, endIndex);
-
     return (
         <>
             <SearchBar onSearch={handleSearch} />
@@ -76,7 +72,7 @@ function Paging({ postType }) {
                     <div className="listTitleItems">제목</div>
                     <div className="listTitleItems">날짜</div>
                 </div>
-                {currentItems.map((item) => (
+                {filteredData.map((item) => (
                     <ListContent key={item.id} list={item} navigate={navigate} />
                 ))}
             </div>

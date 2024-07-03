@@ -56,10 +56,6 @@ function PagingQuestion({ selectedTags }) {
         setPage(pageNumber);
     };
 
-    const startIndex = (page - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
-    const currentItems = filteredData.slice(startIndex, endIndex);
-
     return (
         <>
             <SearchBar onSearch={handleSearch} />
@@ -78,7 +74,7 @@ function PagingQuestion({ selectedTags }) {
                     <div className="questionListTitleItems">진행</div>
                 </div>
                 {
-                    currentItems.map((item, i) => {
+                    filteredData.map((item, i) => {
                         return (
                             <ListContent key={item.id} list={item} navigate={navigate}/>
                         )
