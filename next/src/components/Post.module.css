@@ -18,13 +18,34 @@
     font-weight: 500;
 }
 
+.postHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60vw;
+    margin: 0 auto;
+    padding: 1vh 0;
+}
+
 .postTitle{
-    width: 45vw;
     font-size: 33px;
     font-weight: 500;
     text-align: left;
-    margin-left: 23vw;
     color: rgb(60, 60, 60);
+    margin-left: 2.5vw;
+}
+
+.actionButtons{
+    display: flex;
+    gap: 0.3rem;
+}
+
+.editButton, .deleteButton{
+    background-color: transparent;
+    color: #4A4A4A;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
 }
 
 .postInfo{
@@ -38,7 +59,7 @@
 }
 
 .postName{
-    margin-left: 3.7vw;
+    margin-left: 2.5vw;
     margin-right: 1vw;
 }
 
@@ -77,7 +98,7 @@
         font-size: 24px;
         margin-top: 0.3vh;
     }
-    
+
     .boardTitle{
         font-size: 21px;
         line-height: 30px;

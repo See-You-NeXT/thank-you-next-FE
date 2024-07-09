@@ -33,6 +33,14 @@ function Post({ post }) {
         }
     };
 
+    const handleEdit = () => {
+        console.log("수정");
+    };
+
+    const handleDelete = () => {
+        console.log("삭제");
+    };
+
     return (
         <div className={styles.post}>
             <div className={styles.boardTitleArea}>
@@ -42,14 +50,19 @@ function Post({ post }) {
                 </div>
             </div>
 
-            <div className={styles.postTitle}>
-                {post.title}
+            <div className={styles.postHeader}>
+                <div className={styles.postTitle}>
+                    {post.title}
+                </div>
+                <div className={styles.actionButtons}>
+                    <button className={styles.editButton} onClick={handleEdit}>수정</button>
+                    <button className={styles.deleteButton} onClick={handleDelete}>삭제</button>
+                </div>
             </div>
+
             <div className={styles.postInfo}>
                 <div className={styles.postName}>
-                    {/** 이 부분 수정해야 함. postDto에 author 추가되면 수정할 것 */}
-                    {/*post.author*/}
-                    임시 사용자
+                    테스터
                 </div>
                 <div className={styles.postDate}>
                     {formatDate(post.auditingDto.createdAt)}
