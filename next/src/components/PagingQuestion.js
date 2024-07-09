@@ -15,10 +15,17 @@ function PagingQuestion({ selectedTags }) {
     const [totalItemsCount, setTotalItemsCount] = useState(0);
     const itemsPerPage = 10;
     const [keyword, setKeyword] = useState('');
+    const [currentTags, setCurrentTags] = useState(selectedTags);
 
     useEffect(() => {
-        fetchPosts();
-    }, [page, keyword, selectedTags]); // page, keyword, selectedTags가 변경될 때마다 데이터 가져오기
+        // 태그가 변경될 때 페이지를 1로 설정
+        if (selectedTags !== currentTags) {
+            setPage(1);
+            setCurrentTags(selectedTags);
+        } else {
+            fetchPosts();
+        }
+    }, [page, keyword, selectedTags, currentTags]);
 
     const fetchPosts = async () => {
         try {
